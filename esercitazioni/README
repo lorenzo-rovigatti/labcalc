@@ -1,0 +1,7 @@
+per le informazioni personali da usare negli esercizi
+creare un file chiamato "persinfo.tex" e metteteci quanto segue:
+\persinfo{<canale>}{<nome_e_cognome_docente>}{<login_username_studente>}
+ad es.
+> cat persinfo.tex
+
+\persinfo{L-PA}{Cristiano De Michele}{lccdmXXX}
