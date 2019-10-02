@@ -104,9 +104,9 @@ Un semplice esempio completo è il seguente:
 
 ```Python
 import numpy as np
-import pylab as plt
+import matplotlib.pyplot as plt
 
-# prepara due array di esempio
+# prepariamo due array di esempio
 x = [1, 2, 3, 4, 5]
 y = [1, 4, 9, 16, 25]
 
