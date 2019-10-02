@@ -72,4 +72,4 @@ __pycache__/
 *.tar.gz
 *.tgz
 
-esercitazioni/persinfo.tex
+**/persinfo.tex
