@@ -9,6 +9,7 @@
 %con T1 i caratteri sono rappresentati a 8 bit e quindi si hanno a disposizione 256 glyphs
 %la scelta migliore sare TU (unicode) ma questa è supportata solo da XeTeX e LuaTeX
 \input{listings_styles.tex}
+\input{custom.tex}
 \newcommand{\voto}[1]{[\textbf{#1} punti]}
 \def\cmu{\mbox{cm$^{-1}$}}
 \def\half{\frac{1}{2}}
@@ -27,7 +28,7 @@
 
 \begin{center}
 {\Large \bf  Laboratorio di Calcolo per Fisici, Prima esercitazione\\[2mm]}
-{\large Canale Pb-Z, Docente: Lilia Boeri}
+{\large Canale \canale, Docente: \docente}
 \end{center}
 \vspace{4mm}
 
@@ -48,7 +49,7 @@
 \vspace{2mm}
 \textbf{$\RHD$ Prima parte (obbligatoria)} 
 \begin{enumerate}
-\item Effettuare il {\em login\/} sulla propria macchina {\em Unix\/} utilizzando lo {\em userid\/} \texttt{lcblxx}, 
+\item Effettuare il {\em login\/} sulla propria macchina {\em Unix\/} utilizzando lo {\em userid\/} \texttt{\login}, 
 dove $xx$ \`e il numero del gruppo a cui siete stati assegnati.
 \item Aprire una finestra di {\em terminale}.
 \item Creare una cartella  \texttt{EX1} in cui copiare il materiale della prima esercitazione.

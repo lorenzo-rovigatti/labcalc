@@ -5,6 +5,7 @@
 \usepackage{color}
 \usepackage{floatflt}
 \input{listings_styles.tex}
+\input{custom.tex}
 \usepackage[shortlabels]{enumitem}
 \usepackage[italian]{babel}
 \def\cmu{\mbox{cm$^{-1}$}}
@@ -24,7 +25,7 @@
 
 \begin{center}
 {\Large \bf  Laboratorio di Calcolo per Fisici, Seconda esercitazione\\[2mm]}
-{\large Canale Pb-Z, Docente: Lilia Boeri}
+{\large Canale \canale, Docente: \docente}
 \end{center}
 \vspace{1mm}
 
@@ -58,15 +59,13 @@ nell'{\em header\/} del programma, e chiamare il compilatore \texttt{gcc} con l'
 \end{lstlisting} 
 \item Una volta verificato che il programma calcola esattamente le quantit\`a richieste, utilizzare i comandi di formattazione del C per stampare i risultati
   su due righe con i seguenti formati:
-  \begin{itemize}
+\begin{itemize}
   \item {\em per i numeri interi\/}: una larghezza minima di tre caratteri;
   \item {\em Per i numeri in virgola mobile\/}: quattro cifre dopo la virgola.
-  \end{itemize}
-  \\
+\end{itemize}
     {\em Suggerimento:\/} Nella stringa di formattazione oltre ai caratteri relativi al formato delle variabili si possono
-inserire lettere, numeri e caratteri speciali.
-    
-\item Aggiungere al programma un messaggio iniziale, che viene stampato prima della lista di numeri, del tipo:\\
+    inserire lettere, numeri e caratteri speciali.
+  \item Aggiungere al programma un messaggio iniziale, che viene stampato prima della lista di numeri, del tipo:\\
 \texttt{Benvenuto! Questo \`e un programma dimostrativo delle funzioni della libreria math.h}.
 \item Aggiungere una sezione di programma che chieda all'utente di inserire il proprio nome come {\em stringa\/}
 e lo stampi all'interno del messaggio di benvenuto; il risultato finale deve essere qualcosa del tipo:\\
@@ -178,7 +177,7 @@ E per $t=10$? In quali punti  sono massimi/minimi i valori di $v_x(t)$ e $v_y(t)
     yi = y[cc]
     vxi = vx[cc]
     vyi = vy[cc]
-    plt.arrow(xi, yi, vxi, vyi, width=0.2, head_width=0.5, head_length=0.3, fc='r', ec='r')   
+    plt.arrow(xi, yi, vxi, vyi, width=0.2, head_width=0.5, head_length=0.3,           fc='r', ec='r')   
 \end{lstlisting}
 che disegna \texttt{len(x)} frecce di lunghezza \texttt{(vx,vy)} nei punti \texttt{(x,y)}. 
 \end{enumerate}  
