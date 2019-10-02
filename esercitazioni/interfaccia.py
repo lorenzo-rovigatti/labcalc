@@ -83,7 +83,7 @@ class ExamplePanel(wx.Panel):
                 exec("%s = %.15G" % (iv,x))
                 ypa.append(eval(txt))
             except SyntaxError:
-                print('Parse error in expressio...')
+                print('Parse error in expression...')
                 pass
             ya=np.array(ypa)
         plt.plot(xa,ya)    
