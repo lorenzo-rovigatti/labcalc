@@ -10,7 +10,7 @@ fi
 for f in $(ls -1 ex*tex)
 do
 	pdf_file=$(basename $f .tex).pdf
-	if [ $f -nt $pdf_file ]
+	if [ $f -nt $pdf_file ] || [ persinfo.tex -nt $pdf_file ]
 	then
 		lualatex $f
 	fi
