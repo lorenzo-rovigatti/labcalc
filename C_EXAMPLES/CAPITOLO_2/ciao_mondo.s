@@ -43,6 +43,8 @@ _main:
         movl    $1, %edi                # 1 è standard out (stdout)
         leaq    message(%rip), %rsi     # metto nel registro %rsi l'indirizzo della stringa da stampare
         movq    $len, %rdx              # metto in %rdx il numero di bytes da stampare (lungh. stringa + 1), 'len' è una costante!
+        #avrei anche potuto usare il corrispondente registro a 32 bit ossia edx usando l'istruzione:
+        #movl   $len, %edx
         syscall                         # effettua la chiamata di sistema
 
         # exit(0)
