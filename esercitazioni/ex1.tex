@@ -52,15 +52,16 @@
 \item Effettuare il {\em login\/} sulla propria macchina {\em Unix\/} utilizzando lo {\em userid\/} \texttt{\login}, 
 dove $xx$ \`e il numero del gruppo a cui siete stati assegnati.
 \item Aprire una finestra di {\em terminale}.
-\item Creare una cartella  \texttt{EX1} in cui copiare il materiale della prima esercitazione.
-\item Nella cartella \texttt{EX1} aprire con l'editor di testo il file \texttt{temp.c}, e digitare il listato sottostante. Salvare il contenuto del file.
+\item Creare una cartella  \texttt{EX1} che conterrà il materiale della prima esercitazione.
+\item Nella cartella \texttt{EX1} aprire con l'editor di testo il file \texttt{temp.c}, e digitare il listato sottostante. Salvare il contenuto del file. {\em Suggerimento:} Per entrare nella cartella \texttt{EX1} usare il comando linux \texttt{cd}.
 
 \item Compilare il programma in c digitando sul terminale:
   \texttt{gcc temp.c -o temp.x}
 \item Eseguire il file {\em temp.x\/} digitando \texttt{./temp.x}
 \item Inserire i dati richiesti dal programma; il programma \`e un semplice convertitore di temperature da gradi Celsius a gradi Fahrenheit.
 \item Sempre nella cartella \texttt{EX1} aprire con l'editor di testo il file \texttt{ex1\_2.py} e digitare il listato
-  sottostante rispettando accuratamente l'indentazione:
+  contenuto nella prossima pagina rispettando accuratamente l'indentazione. Il file \texttt{ex1\_2.py} contiene un
+  semplice script in linguaggio \texttt{python} per creare un plot (grafico) nel piano cartesiano, utilizzando i dati contenuti in un file con due colonne $x,y$. 
 \end{enumerate}
 \begin{lstlisting}[caption={Programma \texttt{temp.c}},language=c]
 #include <stdio.h>
@@ -95,9 +96,9 @@ plt.show()
 \textbf{$\RHD$ Seconda parte (obbligatoria)} 
 %
 \begin{enumerate}
-\item Eseguire il programma \texttt{temp.x} quattro o pi\`u volte, con valori di input diversi, e creare un file di testo chiamato \texttt{temp.dat} con due colonne,
-  che contenga i valori di input e di output --- temperatura in Celsius (Tc) e
-  temperatura in Fahrenheit (Tf).
+\item Eseguire il programma \texttt{temp.x} quattro o più volte, con valori di input diversi, e creare un file di testo chiamato \texttt{temp.dat} con due colonne,
+  che contenga i valori delle temperature in Celsius (Tc) e
+  in Fahrenheit (Tf), cioè i valori di input e output del programma \texttt{temp.c}.
 %\item 
   %Aprire il programma di grafica \texttt{gnuplot} digitando nella shell il
   %comando \texttt{gnuplot}.
@@ -105,13 +106,13 @@ plt.show()
   \begin{lstlisting}[language=bash,numbers=none]
     python3 ./ex1_2.py
 \end{lstlisting}
-\item Aggiungere le legende all'asse $x$ e $y$ aggiungendo prima di \texttt{plt.show()} i comandi:
+\item Aggiungere le legende all'asse $x$ e $y$ aprendo il file \texttt{ex1\_2.py} con l'editor di testo e aggiungendo prima di \texttt{plt.show()} i comandi:
 \\
 \texttt{plt.xlabel('Tc')}
 \\
 \texttt{plt.ylabel('Tf')}
          % {\em Ogni volta che si d\`a un nuovo comando a gnuplot bisogna ricordarsi di fare il refresh dello schermo con il comando \texttt{replot}.}
- \item Eseguire 
+ \item Eseguire nuovamente lo script.
  \end{enumerate}
 
 
@@ -133,6 +134,6 @@ In questo modo viene aggiunto il plot della retta $y=x$ nell'intervallo $[-10,50
 %Utilizzando l'{\em help} di {\em gnuplot}, che si invoca con il comando \texttt{help},
 Inserire una legenda nel grafico per la retta interpolante aggiungendo nel programma \textit{python} prima di 
 \lstinline[language=python]!plt.show()! 
-il comando \lstinline[language=python]!plt.legend()! e riscalare gli assi $x$ e $y$ in modo che vadano dalla pi\`u piccola alla pi\`u grande delle temperature scelte. 
+il comando \lstinline[language=python]!plt.legend()! e riscalare gli assi $x$ e $y$ in modo che vadano dalla più piccola alla più grande delle temperature scelte. {\em Suggerimento}: Per modificare il range degli assi $x$ e $y$ modificare gli argomenti di \texttt{plt.xlim()} e \texttt{plt.ylim()}.
 \end{enumerate}  
 \end{document}
