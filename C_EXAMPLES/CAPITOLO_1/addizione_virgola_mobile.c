@@ -6,7 +6,7 @@ void printBitsnm(size_t const size, void *ptr, int n, int m)
 // stampa i bits dall'n-esimo all'm-esimo (estremi inclusi)
 // n e m partono da 1
 // size indica il numero di byte puntati da ptr
-// notare che in little-endian il segno è il bit meno significativo
+// notare che il segno è il bit più significativo
 {
   // size in bytes
   unsigned char *b = (unsigned char*) ptr;
