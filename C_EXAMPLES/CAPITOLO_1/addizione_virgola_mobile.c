@@ -143,7 +143,8 @@ int main(int argc, char **argv)
   printBits(4,(void*)&a);
   printf(" + \n");
   printBitsDenormalized(&b, &a);
-  printf("   (C=0)\n----------------------------------\n");
+  printf("%s", ea == eb ? "    (C=1)" : "   (C=0)");
+  printf("\n----------------------------------\n");
   printBits(4,(void*)&c);
   ec = getexponent(&c);
   printf("   (0 = +, %d-127=%d, mantissa)", ec+127,ec);
@@ -165,7 +166,7 @@ int main(int argc, char **argv)
   printBits(4,(void*)&e);
   printf(" + \n");
   printBitsDenormalized(&f, &e);
-  printf("   (C=0)");
+  printf("%s", ea == eb ? "    (C=1)" : "   (C=0)");
   printf("\n----------------------------------\n");
   printBits(4,(void*)&g);
   ec = getexponent(&g);

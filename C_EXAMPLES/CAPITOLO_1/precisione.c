@@ -50,7 +50,7 @@ int main(int argc, char**argv)
   press_key();
   printf("1/(a-c+b)= %G\n", 1/(flt(a) - flt(c) + flt(b)));
 
-  printf("\nPremi un tasto per continuare...\n");
+  press_key();
   printf("\nOVERFLOW\n\n");
   a = 2E38;
   b = 2E38;
@@ -58,11 +58,13 @@ int main(int argc, char**argv)
   printf("a=%.0e\n", flt(a));
   printf("b=%.0e\n", flt(b));
   printf("c=%.0e\n", flt(c));
+  press_key();
   printf("(a+b)/c= %G\n", (flt(a)+flt(b))/flt(c));
 
   press_key();
   printf("a/c+b/c= %G\n", flt(a)/flt(c)+flt(b)/flt(c));
 
+  press_key();
   printf("\nUNDERFLOW\n\n");
   a = 5*FLT_MIN*FLT_EPSILON;
   b = 5*FLT_MIN*FLT_EPSILON;
@@ -70,6 +72,7 @@ int main(int argc, char**argv)
   printf("a=%G\n", flt(a));
   printf("b=%G\n", flt(b));
   printf("c=%G\n", flt(c));
+  press_key();
   printf("a/c+b/c= %G\n", flt(a)/flt(c)+flt(b)/flt(c));
 
   press_key();
