@@ -2,6 +2,24 @@
 #include<stdio.h>
 #include<math.h>
 #include<float.h>
+#include<curses.h>
+#include <termios.h>
+
+void init_press_key()
+{
+  struct termios info;
+  tcgetattr(0, &info);          /* get current terminal attirbutes; 0 is the file descriptor for stdin */
+  info.c_lflag &= ~ICANON;      /* disable canonical mode */
+  info.c_cc[VMIN] = 1;          /* wait until at least one keystroke available */
+  info.c_cc[VTIME] = 0;         /* no timeout */
+  tcsetattr(0, TCSANOW, &info); /* set immediately */
+}
+void press_key()
+{
+  printf("\nPremi un tasto per continuare...\n");
+  getchar();
+}
+
 void printBitsnm(size_t const size, void *ptr, int n, int m)
 // stampa i bits dall'n-esimo all'm-esimo (estremi inclusi)
 // n e m partono da 1
@@ -120,9 +138,10 @@ int main(int argc, char **argv)
   printf("\nEsempio di conversione di 1.327 in binario è:\n\n");
   printBits(4, (void*)&d);
   printf("\n");
+  press_key();
 
   print_sep();
-  printf("Esempio di somma di numeri in virgola mobile:\n");
+  printf("\nEsempio di somma di numeri in virgola mobile:\n");
 
   c=a+b;
   printf("\n%5.2f + %5.2f = %5.2f\n\n", a, b, c);
@@ -130,16 +149,15 @@ int main(int argc, char **argv)
   printBits(4,(void*)&a);
   ea = getexponent(&a);
   eb = getexponent(&b);
+  printf("Rappresentazione in virgola mobile in binario degli addendi (4 byte=32 bit).\n");
+  printf("(bit del segno + 8 bit esponente + 23 bit mantissa)\n\n");
   printf(" (0 = +, %d-N=%d dove N=2^7-1=127, mantissa)\n", ea+127, ea);
   printf("%5.2f -> ", b);
   printBits(4,(void*)&b);
   printf(" (0 = +, %d-N=%d dove N=2^7-1=127, mantissa)\n\n", eb+127, eb);
 
-  printf("Rappresentazione in virgola mobile in binario degli addendi (4 byte=32 bit).\n");
   printf("Notare che l'addendo con esponente minore viene portato ad avere lo stesso\n");
-  printf("esponente spostando la virgola verso sinistra prima di fare la somma.\n");
-  printf("\novvero in binario\n");
-  printf("(bit del segno + 8 bit esponente + 23 bit mantissa)\n\n");
+  printf("esponente spostando la virgola verso sinistra prima di fare la somma.\n\n");
   printBits(4,(void*)&a);
   printf(" + \n");
   printBitsDenormalized(&b, &a);
@@ -149,7 +167,7 @@ int main(int argc, char **argv)
   ec = getexponent(&c);
   printf("   (0 = +, %d-127=%d, mantissa)", ec+127,ec);
   printf("\n");
-
+  press_key();
   print_sep();
   printf("\nesempio di errore di arrotondamento\n");
   g=e+f;
