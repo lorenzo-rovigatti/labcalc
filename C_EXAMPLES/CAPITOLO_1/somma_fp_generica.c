@@ -64,10 +64,9 @@ void printBitsMantissaShifted(float *a, int s)
   unsigned int *pi;
   pi = (unsigned int*)a;
   *pi = *pi & 0x007FFFFF; // il segno è il bit più significativo
-  *pi = *pi | (1 << 23); // imposta il bit meno significativo dell'esponente 
-                         // (per poterlo shiftarre nella mantissa)
-  *pi = *pi >> s;        // shift a destra pari a s
-  // porta un 1 come nono bit e poi shifta di s 
+  *pi = *pi | (1 << 23);  // imposta il bit meno significativo dell'esponente 
+                          // (per poterlo shiftare nella mantissa)
+  *pi = *pi >> s;         // shift a destra pari a s
   ptr = (void*) pi;
   printBitsnm(sizeof(float), ptr, 10, 32);
 }
@@ -94,7 +93,7 @@ void printBitsDenormalized(float *b, float *a)
   printf(" ");
   printBitsEsponente(a);
   printf(" ");
-  // shift la mantissa riportando l'1 che è implicito nella rappresentazione floating point
+  // shifta la mantissa riportando l'1 che è implicito nella rappresentazione floating point
   // dove ogni numero è assunto del tipo C.XXXXX (dove C=1). Nel numero risultante si assume quindi C=0.
   ea = getexponent(a);
   eb = getexponent(b);
