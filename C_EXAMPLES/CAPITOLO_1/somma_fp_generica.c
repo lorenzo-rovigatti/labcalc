@@ -146,17 +146,17 @@ int main(int argc, char **argv)
       fine=1;
     }
   c=a+b;
-  printf("\n%10G + %10G = %10G\n", a, b, c);
+  printf("\n%18.16G + %18.16G = %18.16G\n", a, b, c);
   printf("\nRappresentazione binaria degli addendi:\n");
   printf("X      XXXXXXXX           XXXXXXXXXXXXXXXXXXXXXXX\n");
   printf("segno  8 bit esponente    23 bit mantissa\n");
   printf("esponente rappresentato in eccesso a N con N=2^7-1=127\n\n");
-  printf("%10G -> ", a); 
+  printf("%18.16G -> ", a); 
   printBits(4,(void*)&a);
   ea = getexponent(&a);
   eb = getexponent(&b);
   printf(" (0/1=+/-,%d-N=%d,mantissa)\n", ea+127, ea);
-  printf("%10G -> ", b);
+  printf("%18.16G -> ", b);
   printBits(4,(void*)&b);
   printf(" (0/1=+/-,%d-N=%d,mantissa)\n\n", eb+127, eb);
 
