@@ -147,17 +147,19 @@ int main(int argc, char **argv)
       fine=1;
     }
   c=a+b;
-  printf("\n%10G + %10G = %10G\n\n", a, b, c);
-  printf("\nrappresentazione binaria degli addendi\n");
-  printf("(bit del segno + 8 bit esponente + 23 bit mantissa)\n\n");
-   printf("%5.2f -> ", a); 
+  printf("\n%10G + %10G = %10G\n", a, b, c);
+  printf("\nRappresentazione binaria degli addendi:\n");
+  printf("X      XXXXXXXX           XXXXXXXXXXXXXXXXXXXXXXX\n");
+  printf("segno  8 bit esponente    23 bit mantissa\n");
+  printf("esponente rappresentato in eccesso a N con N=2^7-1=127\n\n");
+  printf("%10G -> ", a); 
   printBits(4,(void*)&a);
   ea = getexponent(&a);
   eb = getexponent(&b);
-  printf(" (0/1 = +/-, %d-N=%d dove N=2^7-1=127, mantissa)\n", ea+127, ea);
-  printf("%5.2f -> ", b);
+  printf(" (0/1=+/-,%d-N=%d,mantissa)\n", ea+127, ea);
+  printf("%10G -> ", b);
   printBits(4,(void*)&b);
-  printf(" (0/1 = +/-, %d-N=%d dove N=2^7-1=127, mantissa)\n\n", eb+127, eb);
+  printf(" (0/1=+/-,%d-N=%d,mantissa)\n\n", eb+127, eb);
 
   printf("Notare che l'addendo con esponente minore viene portato ad avere lo stesso\n");
   printf("esponente spostando la virgola verso sinistra prima di fare la somma.\n\n");
@@ -168,6 +170,6 @@ int main(int argc, char **argv)
   printf("\n----------------------------------\n");
   printBits(4,(void*)&c);
   ec = getexponent(&c);
-  printf("   (0/1 = +/-, %d-127=%d, mantissa)", ec+127,ec);
+  printf("   (0/1=+/-,%d-N=%d,mantissa)", ec+127,ec);
   printf("\n");
 }
