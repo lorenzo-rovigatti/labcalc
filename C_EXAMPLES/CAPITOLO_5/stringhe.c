@@ -1,7 +1,7 @@
 #include<time.h>
 #include<stdio.h>
 #include<stdlib.h>
-#define NUMMSG 4
+#define NUMMSG 5
 #define MAXCHARS 128
 int main(int arcg, char**argv)
 {
@@ -11,7 +11,10 @@ int main(int arcg, char**argv)
     "Immetti una stringa non vuota composta da sole lettere o spazi", 
     "Problema nella conversione",
     "ERRORE: La stringa non è composta di solo lettere minuscole!",
-    "Immissione corretta, hai immesso:"};
+    "Immissione corretta, hai immesso:",
+    {'c','i','a','o','!','\0'}
+  };
+  
   char a[256];
   fine=0;
   while (!fine)
@@ -46,5 +49,5 @@ int main(int arcg, char**argv)
       // successo e si avrebbe un ciclo infinito.  
       while ((c=getchar())!='\n'); 
     }
-  printf("%s %s\n", testo[3], a); 
+  printf("%s %s\n%s\n", testo[3], a, testo[4]); 
 }
