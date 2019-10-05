@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
           printf("Devi scegliere 10 o 20 giocate!\n");
           fine=0;
         }
-      while ((c=getchar())!='\n'); // svuota il buffer di tutti i caratteri eccetto '\n'=newline
+      while ((c=getchar())!='\n'); // svuota il buffer di tutti i caratteri e termina con '\n'=newline
     }
   ptot=0.0;
   for (i = 0; i < N; ++i) 
@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
             }
           else
             printf("ok punti %4.2f\n", puntata);
-          while ((c=getchar())!='\n'); // svuota il buffer di tutti i caratteri eccetto '\n'=newline
+          while ((c=getchar())!='\n'); // svuota il buffer di tutti i caratteri e termina con '\n'=newline
         }
       ptot+=puntata;
       pocket -= puntata;

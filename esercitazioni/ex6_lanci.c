@@ -25,7 +25,7 @@ void inserimento(char *msg, char *fmt, void *v)
           printf("Problema nella conversione\n");
           fine=0;
         }
-      while ((c=getchar())!='\n'); // svuota il buffer di tutti i caratteri eccetto '\n'=newline
+      while ((c=getchar())!='\n'); // svuota il buffer di tutti i caratteri e termina con '\n'=newline
     }
 }
 int lancio_dado()
