@@ -20,7 +20,7 @@ int main(int arcg, char**argv)
       fine=1;
       res=scanf("%255[^\n]", a); // massimo 255 caratteri, il 256-esimo carattere è per il null di fine stringa('\0')
         
-      // se il valore restituiro da scanf è minore di 1 vuol dire che non è 
+      // se il valore restituito da scanf è minore di 1 vuol dire che non è 
       // stata acquisita la stringa
       if (res < 1)
         {
@@ -28,7 +28,7 @@ int main(int arcg, char**argv)
           fine=0;
         }
       // controlla che i caratteri immessi siano validi, cioè che 
-      // siano lettere maiuscolo o minuscole o spazi
+      // siano lettere maiuscole o minuscole o spazi
       wrongchar = 0;
       for (int i = 0; a[i]!=0 && wrongchar==0 && res == 1; ++i) 
         {
