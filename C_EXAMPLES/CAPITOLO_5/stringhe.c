@@ -28,7 +28,7 @@ int main(int arcg, char**argv)
           fine=0;
         }
       // controlla che i caratteri immessi siano validi, cioè che 
-      // siano lettere maiuscolo o minuscole o spazi
+      // siano lettere maiuscole o minuscole o spazi
       wrongchar = 0;
       for (int i = 0; a[i]!=0 && wrongchar==0 && res == 1; ++i) 
         {
