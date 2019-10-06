@@ -86,7 +86,7 @@ int main(int argc, char **argv)
   printf("Minimo numero float rappresentabile:%.7G\n", fmin); 
   printf("che in notazione binaria si rappresenta così:\n");
   printBits(4,(void*)&fmin);
-  printf("\n");
+  printf("   (l'esponente 0 vuol dire -126)\n");
   press_key();
 
   printf("Massimo numero float rappresentabile:%.7G\n", fmax); 
@@ -111,12 +111,12 @@ int main(int argc, char **argv)
   printf("inf float:%f\n", finf); 
   printf("che in notazione binaria si rappresenta così:\n");
   printBits(4,(void*)&finf);
-  printf("\n");
+  printf("  (esponente con tutti 1 e mantissa uguale a 0)\n");
   press_key();
 
   printf("NaN float:%f\n", fnan); 
   printf("che in notazione binaria si rappresenta così:\n");
   printBits(4,(void*)&fnan);
-  printf("\n");
+  printf("   (esponente con tutti 1 e mantissa diversa a 0)\n");
   press_key();
 }
