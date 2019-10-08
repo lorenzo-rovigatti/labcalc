@@ -7,6 +7,7 @@ int main(int arcg, char**argv)
 {
   // immetti una stringa
   int fine, res, c, wrongchar=0;
+  char testo0[] = "Benvenuto!";
   char testo[NUMMSG][MAXCHARS] = {
     "Immetti una stringa non vuota composta da sole lettere o spazi", 
     "Problema nella conversione",
@@ -18,6 +19,7 @@ int main(int arcg, char**argv)
   
   char a[256];
   fine=0;
+  printf("%s\n", testo0);
   while (!fine)
     {
       printf("%s\n", testo[0]);
