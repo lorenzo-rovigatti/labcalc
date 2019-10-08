@@ -54,15 +54,6 @@ dove \texttt{XX} \`e il numero del gruppo a cui siete stati assegnati.
 \item Aprire una finestra di {\em terminale}.
 \item Creare una cartella  \texttt{EX1} che conterrà il materiale della prima esercitazione.
 \item Nella cartella \texttt{EX1} aprire con l'editor di testo il file \texttt{temp.c}, e digitare il listato sottostante. Salvare il contenuto del file. {\em Suggerimento:} Per entrare nella cartella \texttt{EX1} usare il comando linux \texttt{cd}.
-
-\item Compilare il programma in c digitando sul terminale:
-  \texttt{gcc temp.c -o temp.x}
-\item Eseguire il file {\em temp.x\/} digitando \texttt{./temp.x}
-\item Inserire i dati richiesti dal programma; il programma \`e un semplice convertitore di temperature da gradi Celsius a gradi Fahrenheit.
-\item Sempre nella cartella \texttt{EX1} aprire con l'editor di testo il file \texttt{ex1\_2.py} e digitare il listato
-  contenuto nella prossima pagina rispettando accuratamente l'indentazione. Il file \texttt{ex1\_2.py} contiene un
-  semplice script in linguaggio \texttt{python} per creare un plot (grafico) nel piano cartesiano, utilizzando i dati contenuti in un file con due colonne $x,y$. 
-\end{enumerate}
 \begin{lstlisting}[caption={Programma \texttt{temp.c}},language=c]
 #include <stdio.h>
 
@@ -77,10 +68,24 @@ int main()
   printf("La temperatura in gradi Fahrenheit vale %5.2f gradi\n",tf);
 }
 \end{lstlisting}
+\item Compilare il programma in c digitando sul terminale:
+  \texttt{gcc temp.c -o temp.x}
+\item Eseguire il file {\em temp.x\/} digitando \texttt{./temp.x}
+\item Inserire i dati richiesti dal programma; il programma \`e un semplice convertitore di temperature da gradi Celsius a gradi Fahrenheit.
+\end{enumerate}
 
-\newpage
+%\newpage
+
+\textbf{$\RHD$ Seconda parte (obbligatoria)} 
+%
+\begin{enumerate}
+\item Eseguire il programma \texttt{temp.x} quattro o più volte, con valori di input diversi, e creare un file di testo chiamato \texttt{temp.dat} con due colonne,
+  che contenga i valori delle temperature in Celsius (Tc) e
+  in Fahrenheit (Tf), cioè i valori di input e output del programma \texttt{temp.c}.
+\item Aprire con l'editor di testo il file \texttt{ex1\_2.py} e digitare il listato
+  contenuto sottostante rispettando accuratamente l'indentazione. Il file \texttt{ex1\_2.py} contiene un
+  semplice script in linguaggio \texttt{python} per creare un plot (grafico) nel piano cartesiano, utilizzando i dati contenuti in un file con due colonne $x,y$. 
 \begin{lstlisting}[caption={Programma {\it python} \texttt{ex1\_2.py}},language=Python]
-#!/usr/bin/env python3
 import matplotlib.pyplot as plt
 import numpy as np
 plt.title('Un primo plot con Python')
@@ -90,23 +95,11 @@ plt.xlim((-10,50)) # intervallo lungo asse x
 plt.ylim((10,125)) # intervallo lungo asse y
 plt.show()
 \end{lstlisting}
-\vspace{2mm}
-\hrule
-\vspace{2mm}
-\textbf{$\RHD$ Seconda parte (obbligatoria)} 
-%
-\begin{enumerate}
-\item Eseguire il programma \texttt{temp.x} quattro o più volte, con valori di input diversi, e creare un file di testo chiamato \texttt{temp.dat} con due colonne,
-  che contenga i valori delle temperature in Celsius (Tc) e
-  in Fahrenheit (Tf), cioè i valori di input e output del programma \texttt{temp.c}.
-%\item 
-  %Aprire il programma di grafica \texttt{gnuplot} digitando nella shell il
-  %comando \texttt{gnuplot}.
 \item Dal terminale graficare i dati contenuti nel file \texttt{temp.dat} con il comando:\\
   \begin{lstlisting}[language=bash,numbers=none]
     python3 ./ex1_2.py
 \end{lstlisting}
-\item Aggiungere le legende all'asse $x$ e $y$ aprendo il file \texttt{ex1\_2.py} con l'editor di testo e aggiungendo prima di \texttt{plt.show()} i comandi:
+\item Aggiungere le legende all'asse $x$ e $y$ aprendo il file \texttt{ex1\_2.py} con l'editor di testo e inserendo prima di \texttt{plt.show()} i comandi:
 \\
 \texttt{plt.xlabel('Tc')}
 \\
