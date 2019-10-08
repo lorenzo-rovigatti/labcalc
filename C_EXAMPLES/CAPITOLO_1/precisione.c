@@ -23,15 +23,21 @@ void press_key()
 int main(int argc, char**argv)
 {
   init_press_key();
-  printf("Numeri in singola precisione (float):\n");
-  printf("epsilon (ovvero differenza minima)=\t%.7G\n", FLT_EPSILON);
-  printf("massimo numero rappresentabile=\t\t%.7G\n", FLT_MAX);
-  printf("minimo  numero rappresentabile=\t\t%.7G\n", FLT_MIN*FLT_EPSILON);
+  printf("Numeri in singola precisione (float), nel seguito ^ = elevamento a potenza:\n");
+  // 23 sono i bit della mantissa e 8 quelli dell'esponente 
+  printf("massimo esponente=%d\n", (int)(pow(2,8-1)-1));
+  printf("minimno esponente=%d\n", (int)(-(pow(2,8-1)-2)));
+  printf("epsilon (ovvero differenza minima)=\t%.7G (=2^(-23))\n", FLT_EPSILON);
+  printf("massimo numero rappresentabile=\t\t%.7G (=1+1/2+1/4+...+ 1/2^(23))*2^(127)\n", FLT_MAX);
+  printf("minimo  numero rappresentabile=\t\t%.7G (=1/2^(23))*2^(-126)\n", FLT_MIN*FLT_EPSILON);
   
   printf("\nNumeri in doppia precisione (double):\n");
-  printf("epsilon (ovvero differenza minima)=\t%.7G\n", DBL_EPSILON);
-  printf("massimo numero rappresentabile=\t\t%.7G\n", DBL_MAX);
-  printf("minimo  numero rappresentabile=\t\t%.7G\n", DBL_MIN*DBL_EPSILON);
+  // 52 sono i bit della mantissa e 11 quelli dell'esponente 
+  printf("massimo esponente=%d\n", (int)(pow(2,11-1)-1));
+  printf("minimno esponente=%d\n", (int)(-(pow(2,11-1)-2)));
+  printf("epsilon (ovvero differenza minima)=\t%.7G (= 2^(-52))\n", DBL_EPSILON);
+  printf("massimo numero rappresentabile=\t\t%.7G (= 1+1/2+1/4+...+1/2^(52))*2^(1023)\n", DBL_MAX);
+  printf("minimo  numero rappresentabile=\t\t%.7G (=1/2^(52))*2^(-1022))\n", DBL_MIN*DBL_EPSILON);
     
   press_key();
   printf("ERRORE DI ARROTONDAMENTO\n\n");
