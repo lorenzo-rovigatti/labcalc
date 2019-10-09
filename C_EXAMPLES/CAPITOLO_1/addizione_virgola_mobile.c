@@ -139,6 +139,9 @@ int main(int argc, char **argv)
   printf("\nEsempio di conversione di 1.327 in binario è:\n\n");
   printBits(4, (void*)&d);
   printf("\n");
+  printf("\nN.B. 011111111 in binario è 127 in base 10\n");
+  printf("e nella rappresentazione in eccesso con N=2^7-1=127\n");
+  printf("questo equivale a 0.\n");
   press_key();
 
   print_sep();
@@ -181,7 +184,7 @@ int main(int argc, char **argv)
   printf(" (0 = +, %d-N=%d dove N=2^7-1=127, mantissa)\n", ea+127, ea);
   printf("\n%11.1f -> ", f);
   printBits(4,(void*)&f);
-  printf(" (0 = +, %d-N=%d dove N=2^7-1=127, mantissa)\n", eb+127, eb);
+  printf(" (C=0, 0 = +, %d-N=%d dove N=2^7-1=127, mantissa)\n", eb+127, eb);
   printf("\n\n");
   printBits(4,(void*)&e);
   printf(" + \n");
