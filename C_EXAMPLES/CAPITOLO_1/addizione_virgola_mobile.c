@@ -126,6 +126,7 @@ int main(int argc, char **argv)
 {
   float a=22.75, b=4.5, c, d=1.327, e=100000000.0, f=1.0, g;
   int ea, eb, ec;
+  init_press_key();
   printf("Algoritmo di conversione:\n");
   printf("1) convertire il numero prima della virgola in binario e poi la parte frazionaria (moltiplicando per 2)\n");
   printf("22.75 = 10110.11 \n");
@@ -145,12 +146,13 @@ int main(int argc, char **argv)
 
   c=a+b;
   printf("\n%5.2f + %5.2f = %5.2f\n\n", a, b, c);
+  printf("Rappresentazione in virgola mobile in binario degli addendi (4 byte=32 bit).\n");
+  printf("(bit del segno + 8 bit esponente + 23 bit mantissa)\n\n");
   printf("%5.2f -> ", a); 
   printBits(4,(void*)&a);
   ea = getexponent(&a);
   eb = getexponent(&b);
-  printf("Rappresentazione in virgola mobile in binario degli addendi (4 byte=32 bit).\n");
-  printf("(bit del segno + 8 bit esponente + 23 bit mantissa)\n\n");
+  
   printf(" (0 = +, %d-N=%d dove N=2^7-1=127, mantissa)\n", ea+127, ea);
   printf("%5.2f -> ", b);
   printBits(4,(void*)&b);
