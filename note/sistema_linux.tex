@@ -49,7 +49,7 @@
 \freccia{Procedura di Login}
 
 Una volta acceso il computer e caricato il sistema operativo, l'utente esegue la procedura di Login. Il Login richiede uno username e una password. 
-Per ciascun gruppo sono stati preparati degli account i cui nomi sono {\tt lcYYXX} dove  {\tt YY} sono le iniziali del docente e {\tt XX=}$0,1,..., 50 $ 
+Per ciascun gruppo sono stati preparati degli account i cui nomi sono {\tt lcYYXX} dove  {\tt YY} sono le iniziali del docente e {\tt XX=}$0,1,\ldots, 50 $ 
 
 \begin{lstlisting}
 Username: lcng07
@@ -58,8 +58,8 @@ Password: lcng07
 
 \freccia{Cartelle e documenti}
 
-Quando l'utente entra nel sistema gli viene assegnata un'area di disco dedicata ai propri documenti (files) che pu\`{o}essere divisa in cartelle (directories). Una directory rappresenta una divisione logica dell'area di disco. Le directories hanno un nome che segue le stesse convenzioni dei nomi dei files. Una directory pu\`{o} contenere altre directories in un albero gerarchico. Il livello pi\`{u} alto della gerarchia \`{e} rappresentato dalla directory \emph{radice} (root), rappresentata dal simbolo $/$ (slash). La radice, contiene altre directories tra cui la directory \emph{home} che contiene a sua volta le directories dei singoli utenti. L'albero delle directories si pu\`{o} navigare separando i nomi delle directories con uno il simbolo $/$ .
-Il percorso di una directory descrive la sua collocazione nella struttura gerarchica. Ad esempio, se la cartella \texttt{/home/} contiene la sottocartella utente1 (come nell'esempio grafico), allora il percorso della directory sar\`{a} {\tt /home/utente1/} . La stessa cosa vale se all'interno della directory ci sia un file: ad esempio, il percorso del file chiamato file1 \`{e}  {\tt /home/utente1/file1}. Si noti come le directories possano contenere sia files che altre directories (vedere Figura 1).
+Quando l'utente entra nel sistema gli viene assegnata un'area di disco dedicata ai propri documenti (files) che pu\`{o}essere divisa in cartelle (directories). Una directory rappresenta una divisione logica dell'area di disco. Le directories hanno un nome che segue le stesse convenzioni dei nomi dei files. Una directory pu\`{o} contenere altre directories in un albero gerarchico. Il livello pi\`{u} alto della gerarchia \`{e} rappresentato dalla directory \emph{radice} (root), rappresentata dal simbolo $/$ (slash). La radice, contiene altre directories tra cui la directory \emph{home} che contiene a sua volta le directories dei singoli utenti. L'albero delle directories si pu\`{o} navigare separando i nomi delle directories con uno il simbolo $/$.
+Il percorso di una directory descrive la sua collocazione nella struttura gerarchica. Ad esempio, se la cartella \texttt{/home/} contiene la sottocartella utente1 (come nell'esempio grafico), allora il percorso della directory sar\`{a} {\tt /home/utente1/}. La stessa cosa vale se all'interno della directory ci sia un file: ad esempio, il percorso del file chiamato file1 \`{e}  {\tt /home/utente1/file1}. Si noti come le directories possano contenere sia files che altre directories (vedere Figura 1).
 
 \begin{center}
 \includegraphics[width=0.75\textwidth]{Albero}
@@ -67,7 +67,7 @@ Il percorso di una directory descrive la sua collocazione nella struttura gerarc
 
 \freccia{La shell}
 
-In Linux (e in UNIX) si interagisce con il sistema attraverso un programma  chiamato shell che viene invocato automaticamente al Login. I comandi sono dati sotto la shell che li interpreta, esegue e scrive il risultato su terminale. La linea comandi \`{e} caratterizzata un prompt ($\$$) e da un cursore (che generalmente \`{e} rappresentato dal carattere $\_$ o da un rettangolino lampeggiante). Nel prompt possono essere indicate alcune informazioni come ad esempio il nome dell'utente
+In Linux (e in UNIX) si interagisce con il sistema attraverso un programma chiamato shell che viene invocato automaticamente al Login. I comandi sono dati sotto la shell che li interpreta, li esegue e scrive il risultato su terminale. La linea comandi \`{e} caratterizzata un prompt ($\$$) e da un cursore (che generalmente \`{e} rappresentato dal carattere $\_$ o da un rettangolino lampeggiante). Nel prompt possono essere indicate alcune informazioni come ad esempio il nome dell'utente
 
 \begin{lstlisting}[style=linux]
 utente1:~$
@@ -158,6 +158,18 @@ utente1:~$ pwd
 \end{lstlisting}
 
 I due punti $..$ rappresentano dunque la directory che si trova al livello superiore di quella attuale. Il punto singolo invece rappresenta la directory corrente. 
+
+Infine un utilissimo comando \`e  \texttt{cd -} con cui si torna all'ultima cartella visitata. Ad es. 
+\begin{lstlisting}[style=linux]
+utente1:~$ pwd
+/home/utente1/directory1
+utente1:~$ cd ../directory2/my_dir
+utente1:~$ pwd
+/home/utente1/directory1/my_dir
+utente1:~$ cd -
+utente1:~$ pwd
+/home/utente1/directory1
+\end{lstlisting}
 
 \freccia{Spostare e cambiare nome a files e directories (\texttt{mv})}
 
