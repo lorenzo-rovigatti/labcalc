@@ -164,14 +164,14 @@ v_y(t) = \omega R \cos \left(\omega t \right),
 \]
 
 \begin{enumerate}
-\item Modificare il programma \texttt{circle.c} per calcolare anche la velocit\`a del punto lungo la traiettoria.
+\item Modificare il programma \texttt{circle.c} per calcolare anche la velocit\`a del punto lungo la traiettoria e inserire i risultati ottenuti nel file {\em traiettoria.dat} creando altre due colonne oltre quelle esistenti.
 \item Graficare l'andamento della velocit\`a in funzione del tempo lungo la traiettoria: quanto vale il {\em modulo della velocit\`a\/}? In che direzione punta il {\em vettore velocit\`a\/} per $t=0$?
 E per $t=10$? In quali punti  sono massimi/minimi i valori di $v_x(t)$ e $v_y(t)$? Qual \`e il significato fisico di quello che osservate? ({\em Scrivere le risposte sul file di testo \texttt{risposte.txt}\/}) creato in precedenza.
 \item Disegnare il vettore velocit\`a lungo la traiettoria, come una freccia che punta nella direzione corretta sfruttando
   il seguente codice \emph{python}:\\
 
 \begin{lstlisting}[language=Python,numbers=none]
-  x, y, vx, vy = np.loadtxt('temp.dat', usecols=(0,1,2,3), unpack=True)
+  x, y, vx, vy = np.loadtxt('traiettoria.dat', usecols=(0,1,2,3), unpack=True)
   for cc in range(0, len(x)):
     xi = x[cc]
     yi = y[cc]
