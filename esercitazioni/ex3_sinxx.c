@@ -8,7 +8,7 @@ int main(int argc, char** argv)
   x=xmin;
   fprintf(stderr,"0/0=%.15G\n", sin(0.0)/0.0);
   fprintf(stderr,"1/0=%.15G\n", 1.0/0.0);
-  dx = (xmax-xmin)/(Np-1);// poiché ho 3 punti e due intervalli
+  dx = (xmax-xmin)/Np;
   for (i=0; i < Np; i++)
     {
       if (x==0.0)
