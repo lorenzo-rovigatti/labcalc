@@ -131,7 +131,7 @@ studiare l'andamento del moto circolare uniforme, utilizzando \texttt{python}.
   {\em Per graficare solo due colonne di un file che ne contiene molte, la funzione \texttt{loadtext} va chiamata 
   con il parametro \texttt{usecols=(i,j)}, dove \lstinline!i! e \lstinline!j! sono le colonne da graficare (partendo da $0$, che indica la prima colonna). Nel nostro caso, se volessimo graficare solo la seconda e la terza colonna il comando completo da usare nello script \texttt{python} diventerebbe:\/} \\
   \begin{lstlisting}[language=Python,numbers=none]
-  np.loadtext('traiettoria.dat', comments=['#'], usecols(1,2), unpack=True)
+  np.loadtxt('traiettoria.dat', comments=['#'], usecols=(1,2), unpack=True)
 \end{lstlisting}
 \item 
   Creare altri due grafici che mostrino l'andamento della coordinata $x$ e della coordinata $y$ in funzione del tempo, rispettivamente.
