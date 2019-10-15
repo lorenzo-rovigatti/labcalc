@@ -4,7 +4,7 @@
 // anche essere definite dalla riga di comando in fase
 // di compilazione
 
-#define STAMPA_SEP 0 // oppure da riga di comando gcc -D STIMA_SEP=1 (o 0)
+#define STAMPA_SEP 0 // oppure da riga di comando gcc -D STAMPA_SEP=1 (o 0)
 #define CHIEDI_INTERO 
 // oppure #undef CHIEDI_INTERO oppure 
 // da riga di comando: gcc -D CHIEDI_INTERO 
