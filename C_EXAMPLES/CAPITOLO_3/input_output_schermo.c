@@ -18,7 +18,7 @@ int main(int argc, char **argv)
   float b = 1.0/3; // casting implicito
   int i=5, l=-5, k;
   printf("a=%f b=%f  c=%g\n", a, b, c); 
-  printf("i=%d l=%d l=%ud\n", i, l, l); // casting implicito da int ad unsigned int --> C è "weakly typed"!!
+  printf("i=%d l=%d l=%u\n", i, l, l); // casting implicito da int ad unsigned int --> C è "weakly typed"!!
 
 #if STAMPA_SEP==1
   printf("---------------------\n");
@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 
   // gli operatori relazionali (>, <, !=, ==) agiscono su interi o float e restituiscono vero (1) o falso (0) 
   k = i > l;
-  printf("k=%d\tNOT k=%d\n", k, !k);
+  printf("k=%d\t!k=%d\n", k, !k);
 
 
   printf("k=3\t!k=%d\n", !3); // diverso da 0 vuol dire "vero", uguale a 0 vuol dire "falso"
