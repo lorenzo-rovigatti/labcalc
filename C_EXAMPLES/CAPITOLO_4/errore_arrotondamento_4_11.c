@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
 #ifdef LOCERR
       cS = (unsigned int) S;// converto il float S ad un intero
       // se il valore convertito a intero è diverso dal valore 
-      // esatto allora stampe ed esci
+      // esatto allora stampa ed esci
       if (cS != iS)  
         {
           pS = iS - ix; // valore si S prima dell'errore di arrotondamento
