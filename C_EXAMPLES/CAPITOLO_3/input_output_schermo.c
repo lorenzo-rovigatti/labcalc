@@ -19,7 +19,7 @@ int main(int argc, char **argv)
   int i=5, l=-5, k;
   printf("a=%f b=%f  c=%g\n", a, b, c); 
   printf("i=%d l=%d l=%u\n", i, l, l); // casting implicito da int ad unsigned int --> C è "weakly typed"!!
-
+  printf("notare che l=%u=2^32-5 è -5 in complemento a 2!\n", l);
 #if STAMPA_SEP==1
   printf("---------------------\n");
 #endif
