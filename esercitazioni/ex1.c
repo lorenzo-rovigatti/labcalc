@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> // dichiarazioni di printf e scanf
 
 int main()
 {
