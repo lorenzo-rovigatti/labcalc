@@ -2,15 +2,15 @@
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "prog.c"
-# 1 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 1 3 4
-# 14 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
-# 1 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include/stdarg.h" 1 3 4
-# 40 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include/stdarg.h" 3 4
+# 1 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 1 3 4
+# 14 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
+# 1 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include/stdarg.h" 1 3 4
+# 40 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include/stdarg.h" 3 4
 
-# 40 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include/stdarg.h" 3 4
+# 40 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include/stdarg.h" 3 4
 typedef __builtin_va_list __gnuc_va_list;
-# 15 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 2 3 4
-# 78 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
+# 15 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 2 3 4
+# 78 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 1 3 4
 # 68 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h" 1 3 4
@@ -23,7 +23,7 @@ typedef __builtin_va_list __gnuc_va_list;
 # 69 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
 # 242 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 3 4
-# 1 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/AvailabilityInternal.h" 1 3 4
+# 1 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/AvailabilityInternal.h" 1 3 4
 # 243 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
 # 70 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 
@@ -351,14 +351,14 @@ typedef struct __sFILE {
  int _blksize;
  fpos_t _offset;
 } FILE;
-# 79 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 2 3 4
+# 79 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 2 3 4
 
 
 extern FILE *__stdinp;
 extern FILE *__stdoutp;
 extern FILE *__stderrp;
 
-# 155 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
+# 155 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
 
 void clearerr(FILE *);
 int fclose(FILE *);
@@ -412,7 +412,7 @@ int vfprintf(FILE * restrict, const char * restrict, __gnuc_va_list) __attribute
 int vprintf(const char * restrict, __gnuc_va_list) __attribute__((__format__ (__printf__, 1, 0)));
 int vsprintf(char * restrict, const char * restrict, __gnuc_va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
 
-# 218 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
+# 218 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
 
 
 
@@ -427,7 +427,7 @@ FILE *fdopen(int, const char *) __asm("_" "fdopen" );
 
 int fileno(FILE *);
 
-# 245 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
+# 245 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
 
 int pclose(FILE *) ;
 
@@ -436,7 +436,7 @@ int pclose(FILE *) ;
 FILE *popen(const char *, const char *) __asm("_" "popen" ) ;
 
 
-# 266 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
+# 266 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
 
 int __srget(FILE *);
 int __svfscanf(FILE *, const char *, __gnuc_va_list) __attribute__((__format__ (__scanf__, 2, 0)));
@@ -455,7 +455,7 @@ extern __inline __attribute__((__gnu_inline__)) __attribute__ ((__always_inline_
  else
   return (__swbuf(_c, _p));
 }
-# 303 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
+# 303 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
 
 void flockfile(FILE *);
 int ftrylockfile(FILE *);
@@ -477,11 +477,11 @@ __attribute__((deprecated("This function is provided for compatibility reasons o
 
 char *tempnam(const char *__dir, const char *__prefix) __asm("_" "tempnam" );
 
-# 342 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
+# 342 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_off_t.h" 1 3 4
 # 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_off_t.h" 3 4
 typedef __darwin_off_t off_t;
-# 343 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 2 3 4
+# 343 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 2 3 4
 
 
 int fseeko(FILE * __stream, off_t __offset, int __whence);
@@ -497,11 +497,11 @@ int vscanf(const char * restrict __format, __gnuc_va_list) __attribute__((__form
 int vsnprintf(char * restrict __str, size_t __size, const char * restrict __format, __gnuc_va_list) __attribute__((__format__ (__printf__, 3, 0)));
 int vsscanf(const char * restrict __str, const char * restrict __format, __gnuc_va_list) __attribute__((__format__ (__scanf__, 2, 0)));
 
-# 367 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
+# 367 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 1 3 4
 # 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 3 4
 typedef __darwin_ssize_t ssize_t;
-# 368 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 2 3 4
+# 368 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 2 3 4
 
 
 int dprintf(int, const char * restrict, ...) __attribute__((__format__ (__printf__, 2, 3))) ;
@@ -542,7 +542,7 @@ FILE *funopen(const void *,
                  fpos_t (* )(void *, fpos_t, int),
                  int (* )(void *));
 
-# 425 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
+# 425 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h" 1 3 4
 # 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h" 3 4
 # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_common.h" 1 3 4
@@ -571,21 +571,21 @@ extern int __vsprintf_chk (char * restrict, int, size_t,
 
 extern int __vsnprintf_chk (char * restrict, size_t, int, size_t,
        const char * restrict, va_list);
-# 426 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 2 3 4
+# 426 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/stdio.h" 2 3 4
 # 2 "prog.c" 2
-# 1 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 1 3 4
-# 48 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
+# 1 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 1 3 4
+# 48 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
 
-# 59 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
+# 59 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
     typedef float float_t;
     typedef double double_t;
-# 126 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
+# 126 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
 extern int __math_errhandling(void);
-# 146 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
+# 146 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
 extern int __fpclassifyf(float);
 extern int __fpclassifyd(double);
 extern int __fpclassifyl(long double);
-# 189 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
+# 189 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
 extern __inline __attribute__((__gnu_inline__)) __attribute__ ((__always_inline__)) int __inline_isfinitef(float);
 extern __inline __attribute__((__gnu_inline__)) __attribute__ ((__always_inline__)) int __inline_isfinited(double);
 extern __inline __attribute__((__gnu_inline__)) __attribute__ ((__always_inline__)) int __inline_isfinitel(long double);
@@ -664,7 +664,7 @@ extern __inline __attribute__((__gnu_inline__)) __attribute__ ((__always_inline_
 extern __inline __attribute__((__gnu_inline__)) __attribute__ ((__always_inline__)) int __inline_isnormall(long double __x) {
     return __inline_isfinitel(__x) && __builtin_fabsl(__x) >= 3.36210314311209350626267781732175260e-4932L;
 }
-# 323 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
+# 323 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
 extern float acosf(float);
 extern double acos(double);
 extern long double acosl(long double);
@@ -899,7 +899,7 @@ extern long double fminl(long double, long double);
 extern float fmaf(float, float, float);
 extern double fma(double, double, double);
 extern long double fmal(long double, long double, long double);
-# 566 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
+# 566 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
 extern float __inff(void)
  ;
 extern double __inf(void)
@@ -908,7 +908,7 @@ extern long double __infl(void)
  ;
 extern float __nan(void)
  ;
-# 601 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
+# 601 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
 extern float __exp10f(float) ;
 extern double __exp10(double) ;
 
@@ -918,14 +918,14 @@ extern double __exp10(double) ;
 
 extern __inline __attribute__((__gnu_inline__)) __attribute__ ((__always_inline__)) void __sincosf(float __x, float *__sinp, float *__cosp);
 extern __inline __attribute__((__gnu_inline__)) __attribute__ ((__always_inline__)) void __sincos(double __x, double *__sinp, double *__cosp);
-# 618 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
+# 618 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
 extern float __cospif(float) ;
 extern double __cospi(double) ;
 extern float __sinpif(float) ;
 extern double __sinpi(double) ;
 extern float __tanpif(float) ;
 extern double __tanpi(double) ;
-# 649 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
+# 649 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
 extern __inline __attribute__((__gnu_inline__)) __attribute__ ((__always_inline__)) void __sincospif(float __x, float *__sinp, float *__cosp);
 extern __inline __attribute__((__gnu_inline__)) __attribute__ ((__always_inline__)) void __sincospi(double __x, double *__sinp, double *__cosp);
 
@@ -976,7 +976,7 @@ extern double y1(double) ;
 extern double yn(int, double) ;
 extern double scalb(double, double);
 extern int signgam;
-# 755 "/usr/local/Cellar/gcc/9.2.0/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
+# 755 "/usr/local/Cellar/gcc/9.2.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.2.0/include-fixed/math.h" 3 4
 extern long int rinttol(double)
  ;
 
