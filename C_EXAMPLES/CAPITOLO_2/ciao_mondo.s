@@ -21,7 +21,7 @@
 
 message:
         .ascii  "Ciao, mondo!\n"
-        len = . - message #indirizzo attuale - quello message 
+        len = . - message #indirizzo attuale - quello di message 
 
         .text
         .global _main
@@ -45,10 +45,10 @@ _main:
         movq    $len, %rdx              # metto in %rdx il numero di bytes da stampare (lungh. stringa + 1), 'len' è una costante!
         #avrei anche potuto usare il corrispondente registro a 32 bit ossia edx usando l'istruzione:
         #movl   $len, %edx
-        syscall                         # effettua la chiamata di sistema
+        syscall                         # effettua la chiamata di sistema cioè fa una jump a codice di sistema
 
         # exit(0)
         movl     $0, %edi               # metto il codice da ritornare alla shell nel registro $edi
         movl     $exit_syscall, %eax       # metto in %eax il valore 0x2000001 ($60 in linux) ovvero exit()
-        syscall                         # effettua la chiamata di sistema
+        syscall                         # effettua la chiamata di sistema cioè fa una jump a codice di sistema
 
