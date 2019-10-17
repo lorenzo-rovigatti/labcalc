@@ -128,7 +128,7 @@ studiare l'andamento del moto circolare uniforme, utilizzando \texttt{python}.
   {\em Ricordatevi che se volete inserire un'intestazione in un file di dati letto tramite \texttt{loadtxt} in \texttt{python}, dovete aggiungere il parametro \texttt{comments='\#'}, assumendo che i commenti inizino con il simbolo \texttt{\#}}.
 
 \item Utilizzare \texttt{python} per graficare la traiettoria, graficando $y$ in funzione di $x$.
-  {\em Per graficare solo due colonne di un file che ne contiene molte, la funzione \texttt{loadtext} va chiamata 
+  {\em Per graficare solo due colonne di un file che ne contiene molte, la funzione \texttt{loadtxt} va chiamata 
   con il parametro \texttt{usecols=(i,j)}, dove \lstinline!i! e \lstinline!j! sono le colonne da graficare (partendo da $0$, che indica la prima colonna). Nel nostro caso, se volessimo graficare solo la seconda e la terza colonna il comando completo da usare nello script \texttt{python} diventerebbe:\/} \\
   \begin{lstlisting}[language=Python,numbers=none]
   np.loadtxt('traiettoria.dat', comments=['#'], usecols=(1,2), unpack=True)
