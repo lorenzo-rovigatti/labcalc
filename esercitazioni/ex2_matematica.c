@@ -1,8 +1,7 @@
-#include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 
-int main(int argc, char **argv)
+int main(void)
 {
   printf("Benvenuto! Questo è un programma dimostrativo delle funzioni della libreria math.h.\n");
   printf("\n8 + 7 = %3d [%%3d]\t\t3.2 + 8.4 = %.4f [%%.4f]\t2^2+4^2 = %.4f [%%.4f]\tsqrt(36) = %.4f [%%.4f]\n", 8 + 7, 3.2 + 8.4, pow(2, 2) + pow(4, 2), sqrt(36));
@@ -22,5 +21,4 @@ int main(int argc, char **argv)
   printf("\ncos(pi/6) + 10 = %.7F [%%.7F]\t\t\tcos(pi/6) + 10 = %.7G [%%.7G]\n", cos(M_PI/6) + 10., cos(M_PI/6) + 10.);
   printf("\ncos(pi/6)*10^8 = %.7G [%%.7G]\t\tcos(pi/6)/10^3 = %.7G [%%.7G]\n", cos(M_PI/6)*100000000, cos(M_PI/6.0)/10000);
   
-  return 0; // dice al sistema operativo che non ci sono errori
 }

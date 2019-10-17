@@ -1,8 +1,7 @@
-#include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 
-int main(int argc, char **argv)
+int main(void)
 {
   double R, w, t, x, y;
   R = 6.2; /* m */
@@ -30,6 +29,4 @@ int main(int argc, char **argv)
   y = R * sin(w*t);
   
   printf("%.5f %.5f %.5f\n", t, x, y);
-  
-  return 0; // dice al sistema operativo che non ci sono errori
 }
