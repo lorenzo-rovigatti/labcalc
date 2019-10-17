@@ -2,7 +2,7 @@
 #include<stdlib.h> // exit()
 #include<math.h>    // exp, sin, cos, ...
 
-int main(int argc, char** argv)
+int main(void)
 {
   double a;
   printf("Immetti un numero:");

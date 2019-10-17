@@ -1,7 +1,7 @@
 #include<stdio.h> // printf, scanf
 #include<stdlib.h> // exit
 #define G 9.82 // m/s^2
-int main(int argc, char** argv)
+int main(void)
 {
   double K, U, m, v0, h0, t, v, h;
   printf("Immetti la massa del grave (kg):");
@@ -21,5 +21,5 @@ int main(int argc, char** argv)
   U = m*G*h;
   printf("L'energia cinetica vale %.7f J\n", K);
   printf("L'energia potenziale vale %.7f J\n", U);
-  exit(0);
+  exit(0); // funzione exit di stdlib.h
 }

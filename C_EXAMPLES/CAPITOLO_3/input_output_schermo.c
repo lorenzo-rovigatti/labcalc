@@ -12,7 +12,7 @@
 // definisco la macro K (valore da assegnare ad a, vedi sotto)
 #define K 2/3
 
-int main(int argc, char **argv)
+int main(void)
 {
   double a = K, c=3000000000;
   float b = 1.0/3; // casting implicito
@@ -49,5 +49,4 @@ int main(int argc, char **argv)
   printf("k=3\t!k=%d\n", !3); // diverso da 0 vuol dire "vero", uguale a 0 vuol dire "falso"
   
   printf("(%d > %d) && 1 = %d\n", i, l, (i > l) && 1);
-  return 0;
 }
