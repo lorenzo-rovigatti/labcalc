@@ -1,0 +1,87 @@
+%! TEX program = luatex
+\documentclass[11pt]{article}
+\usepackage{textcomp}
+\usepackage{graphicx,wasysym, mdframed,xcolor,gensymb,verbatim}
+\usepackage{color}
+\usepackage{floatflt}
+\input{listings_styles.tex}
+\input{custom.tex}
+\usepackage[shortlabels]{enumitem}
+\usepackage[italian]{babel}
+\def\cmu{\mbox{cm$^{-1}$}}
+\def\half{\frac{1}{2}}
+
+\voffset -2cm
+\hoffset -2.5cm
+%\marginparwidth 0cm
+\textheight 22cm
+\textwidth 17cm
+%\oddsidemargin  0.2cm                                                                                         
+%\evensidemargin 0.4cm                                                                                         
+\parindent=0pt
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+{\Large \bf  Laboratorio di Calcolo per Fisici, Seconda esercitazione --- Addendum\\[2mm]}
+{\large Canale \canale, Docente: \docente}
+\end{center}
+\vspace{1mm}
+
+\begin{mdframed}[backgroundcolor=panna]
+  Con questo addendum potrete continuare a familiarizzare con il linguaggio C,
+  ovvero con la dichiarazione di variabili, le funzioni matematiche e semplici
+  comandi per l'input/output.
+\end{mdframed}
+%\vspace{1mm}
+%
+%
+\hrule
+\vspace{2mm}
+\textsl{Per questa esercitazione potete continuare ad utilzzare la cartella  \texttt{EX2}.} 
+\vspace{0.2cm}\\
+\textbf{$\RHD$ Quinta parte:} 
+Un proiettile sparato da terra con velocità $v_0$ con un angolo $\alpha$ rispetto all'asse orizzontale, a distanza $x$
+dal punto di lancio raggiunge la quota (da terra):
+\begin{equation}
+y = x \tan (\alpha )-\frac{g x^2}{2 v_0^2 {\left[\cos(\alpha)\right]}^2}   
+\end{equation}
+dove $g=9.82\;\hbox{m/s}^2$.
+Il proiettile ricade sul terreno a una distanza dal punto di lancio $G$ chiamata gittata con:
+\begin{equation}
+G=\frac{2 v_0^2 \sin (\alpha ) \cos (\alpha )}{g}
+\end{equation}
+
+Tra le distanze $x_1$ e $x_2$ dal punto di lancio si trova un muro di altezza $h$.
+Scrivere un programma che:
+\begin{enumerate}
+  \item Acquisisca da tastiera i valori di $v_0$ (in m/s), $\alpha$ (in radianti) e li stampi su schermo utilizzando per ognuno un minimo di 12 caratteri ed con un numero di cifre dopo la virgola pari a 7. 
+  \item Acquisisca da tastiera un valore $L$ (in m), calcoli la quota $y$ (in m) raggiunta nel punto $x = L$ e
+    calcoli la gittata $G$ (in m) del proiettile
+  \item Stampi i risultati del calcolo, cioè il valore di $G$ (in m) e il valore di $y$ (in m) per $x=L$ 
+        con la stessa formattazione utilizzata per $v_0$ e $\alpha$.
+\end{enumerate}
+Assumendo $x_1=5\,\hbox{m}$, $x_2=6\,\hbox{m}$, $h=2.05\,\hbox{m}$, $\alpha=0.7\,\hbox{rad}$ e $v_0=10\,\hbox{m/s}$,
+utilizzate il programma appena scritto per rispondere alla seguente domanda: il proiettile ha urtato il muro? 
+Scrivete la risposta in un file di testo chiamato \texttt{riposte\_addendum.txt}, aggiungendo anche eventuali motivazioni.
+\vspace{3mm} \\
+\textbf{$\RHD$ Sesta parte:} 
+\begin{enumerate}
+  \item Per $v_0=10$ m/s, calcolare la gittata al variare di $\alpha$ per almeno $10$ diversi valori, stampando 
+   ogni volta il valore di $\alpha$ e la gittata G separati da una spazio e con 5 cifre dopo la virgola.
+  
+ \item Copiare i valori ottenuti al punto precedente in file di testo chiamato \texttt{gittata.dat} 
+     in modo da avere due colonne, dove nella prima colonna ci saranno i valori di $\alpha$ 
+      e nella seconda i corrispondenti valori della gittata $G$.
+
+    \item Graficare il file \texttt{gittata.dat} utilizzando \texttt{python} ed unendo i punti con delle linee
+    {\em Suggerimento:\/}: per unire i punti con delle linee modificate il comando \texttt{python}:
+    \vspace{0.2cm}
+\begin{lstlisting}[language=Python,numbers=none]
+  plt.plot(x, y, 'x-',label='Gittata')
+\end{lstlisting}
+ \item Per quale valore di $\alpha$ risulta massima la gittata? Vi sembra ragionevole quanto avete ottenuto?
+      Scrivete la risposta ed eventuali osservazioni nel file di testo \texttt{riposte\_addendum.txt}
+\end{enumerate}  
+\end{document}
