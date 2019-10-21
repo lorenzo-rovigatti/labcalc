@@ -1,0 +1,308 @@
+%! TEX program = luatex
+\documentclass[11pt]{article}
+\usepackage{textcomp}
+\usepackage{graphicx,wasysym, mdframed,xcolor,gensymb,verbatim}
+\usepackage{color}
+\usepackage{floatflt}
+\usepackage[italian]{babel}
+\usepackage{amssymb}
+\input{listings_styles.tex}
+\input{custom.tex}
+\def\cmu{\mbox{cm$^{-1}$}}
+\def\half{\frac{1}{2}}
+
+\voffset -2cm
+\hoffset -2.5cm
+%\marginparwidth 0cm
+\textheight 22cm
+\textwidth 17cm
+%\oddsidemargin  0.2cm                                                                                         
+%\evensidemargin 0.4cm                                                                                         
+\parindent=0pt
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+{\Large \bf  Laboratorio di Calcolo per Fisici, Test di Autovalutazione\\[2mm]}
+{\large Canale A-C, Docente: Nicoletta Gnan}
+\end{center}
+\vspace{4mm}
+
+\begin{mdframed}[backgroundcolor=panna]
+{\bf Nome: \qquad \qquad \qquad\qquad \qquad \qquad Cognome:}\\
+\newline
+{\bf Matricola:}\\
+\newline 
+Avete 20 minuti per rispondere alle domande. Potete usare il libro di testo e gli appunti.
+\end{mdframed}
+%\vspace{1mm}
+%
+%
+
+\hrule
+\vspace{2mm}
+
+\begin{enumerate}
+\item {\bf Si indichino quali sono le righe errate, dal punto di vista sintattico, contenute nell'estratto di codice seguente. }
+\begin{lstlisting}[]
+/* bla bla bla bla bla bla bla bla */
+ /* bla bla bla bla bla // bla bla */
+ bla bla bla */
+ /* bla bla bla bla bla /* bla bla */ bla bla bla */
+// bla bla bla bla bla bla bla bla
+ // bla bla bla bla bla /* bla bla //
+ bla bla bla //
+// bla bla bla bla bla // bla bla // bla bla bla
+\end{lstlisting}
+\itemsep-0.1em
+\item[$\square$] 1
+\item[$\square$] 2
+\item[$\square$] 3
+\item[$\square$] 4
+\item[$\square$] 5
+\item[$\square$] 6
+\item[$\square$] 7
+\item[$\square$] 8
+
+\item {\bf Si indichino quali sono le righe errate, dal punto di vista sintattico, contenute nell'estratto di codice seguente. Se un errore riguarda un'istruzione
+suddivisa su pi\`{u} righe, si indichi solo la prima di queste righe.}
+ \begin{lstlisting}[language=c]
+ a = 123 + b
+ c = d * 34;
+ e *4 = g + f;
+ h = m * 4 +
+ n ;
+ \end{lstlisting}
+\item [\nonumber]
+\item[$\square$] 1
+\item[$\square$] 2
+\item[$\square$] 3
+\item[$\square$] 4
+\item[$\square$] 5
+
+ \item {\bf Segue un elenco di nomi di variabili. Si indichino quali sono i nomi che non possono essere usati.}
+\item[$\square$]  uno
+\item[$\square$] uno$-$due$-$tre
+\item[$\square$]  uno$\_$due$\_$tre
+\item[$\square$]  uno.due.tre
+\item[$\square$]  uno2tre
+\item[$\square$] 1due3
+
+ \item {\bf Cosa fanno le istruzioni seguenti?}
+ 
+ \begin{lstlisting}[language=c]
+ printf ("Ciao");
+ printf ("mondo!");
+  \end{lstlisting}
+ 
+\item[$\square$] Visualizzano la scritta {\bf Ciao mondo!} senza interruzioni di riga.
+\item[$\square$] Visualizzano la scritta {\bf Ciao mondo!} riportando, alla fine, il cursore all'inizio della riga successiva.
+\item[$\square$] Visualizzano la scritta {\bf Ciaomondo!} senza interruzioni di riga.
+\item[$\square$] Visualizzano la scritta {\bf Ciaomondo!} riportando, alla fine, il cursore all'inizio della riga successiva.
+\item[$\square$] Visualizzano la scritta {\bf Ciao}, {\bf mondo!}, in due righe separate.
+ 
+ 
+ \item  {\bf A cosa serve la sequenza $\backslash n$ che appare nell'esempio seguente?}
+ \begin{lstlisting}[language=c]
+ printf ("bla bla\n bla bla");
+ \end{lstlisting}
+ 
+\item[$\square$]  A mandare a capo il testo in quel punto.
+\item[$\square$]  A introdurre una tabulazione orizzontale.
+\item[$\square$]  A impedire che in quel punto il testo sia lasciato andare a capo.
+
+
+\item [\nonumber]
+\item {\bf Si indichino quali sono le righe errate, contenute nell'estratto di codice seguente.}
+\item [\nonumber]
+\item [\nonumber]
+
+ \begin{lstlisting}[language=c]
+ int pi=1000;
+ double pd=0.211;
+ printf ("parte intera: %i parte decimale: 0.211", pi);
+ printf ("parte intera: 1000 parte decimale: %2.4lf\n", pi, pd);
+ printf ("parte intera: %i parte decimale: %lf\n", 1000, 0.211);
+ printf ("parte intera: %i parte decimale: %lf\n", pi, pd, 11);
+ \end{lstlisting}
+ 
+\item[$\square$] 1
+\item[$\square$] 2
+\item[$\square$] 3
+\item[$\square$] 4
+\item[$\square$] 5
+\item[$\square$] 6
+\item [\nonumber]
+\item{\bf Cosa rappresenta una variabile scalare di tipo 'long'?}
+
+\item[$\square$] Un carattere, per cui non conta sapere se il segno viene considerato o meno.
+\item[$\square$] Un carattere con segno.
+\item[$\square$] Un carattere senza segno.
+\item[$\square$] Un intero pi\`{u} breve di 'int', con segno.
+\item[$\square$] Un intero pi\`{u} breve di 'int', senza segno.
+\item[$\square$] Un intero normale con segno.
+\item[$\square$] Un intero normale senza segno.
+\item[$\square$] Un intero pi\`{u} ampio di 'int', con segno.
+\item[$\square$] Un intero pi\`{u} ampio di 'int', senza segno.
+\item[$\square$] Un numero in virgola mobile a precisione singola.
+\item[$\square$] Un numero in virgola mobile a precisione doppia.
+\item [\nonumber]
+ \item {\bf Come si definisce una variabile scalare di tipo intero normale senza segno?}
+ 
+\item[$\square$] char
+\item[$\square$] unsigned char
+\item[$\square$] short int
+\item[$\square$] unsigned short int
+\item[$\square$] int
+\item[$\square$] unsigned int
+\item[$\square$] long int
+\item[$\square$] unsigned long int
+\item[$\square$] long long int
+\item[$\square$] unsigned long long int
+\item[$\square$] float
+\item[$\square$] double
+\item[$\square$] long double
+\item [\nonumber]
+\item {\bf Cosa individua il tipo 'void'?}
+\item[$\square$]  Una variabile qualunque.
+\item[$\square$]  Una variabile composta da una quantit\`{a} infinita di byte.
+\item[$\square$]  Uno spazio in memoria di lunghezza nulla.
+\item[$\square$]  Uno spazio in memoria di lunghezza infinita.
+\item[$\square$]  Un array di lunghezza variabile.
+\item [\nonumber]
+\item{\bf Indicare che tipo di numero genera l'espressione '87.45/32'}
+
+\item[$\square$] intero
+\item[$\square$] in virgola mobile
+
+\item [\nonumber]
+\item {\bf Indicare il tipo del risultato prodotto dall'espressione 'a =123.45/45', sapendo che la variabile a \`{e} di tipo 'long int'}
+
+\item[$\square$] char
+\item[$\square$] unsigned char
+\item[$\square$] short int
+\item[$\square$] unsigned short int
+\item[$\square$] int
+\item[$\square$] unsigned int
+\item[$\square$] long int
+\item[$\square$] unsigned long int
+\item[$\square$] long long int
+\item[$\square$] unsigned long long int
+\item[$\square$] float
+\item[$\square$] double
+\item[$\square$] long double
+
+\item [\nonumber]
+ \item {\bf Osservando la porzione di codice indicata, si scriva il valore contenuto nella variabile b. Si indichi il valore in base dieci.}
+ 
+ \begin{lstlisting}[language=c]
+ int a = 4;
+ int b; 
+ b = a++;
+ ++b;
+ \end{lstlisting}
+ Risultato: 
+ \item [\nonumber]
+ \item{\bf Osservando la porzione di codice indicata, si scriva il valore contenuto nella variabile b. Si indichi il valore in base dieci.}
+ 
+  \begin{lstlisting}[language=c]
+  int a = 4;
+  int b = a % 2;
+  b = b + a;
+ \end{lstlisting}
+  Risultato: 
+  \item [\nonumber]
+  \item {\bf Osservando la porzione di codice indicata, si scriva il valore contenuto nella variabile c. Si indichi il valore in base dieci.}
+ 
+  \begin{lstlisting}[language=c]
+  int a = 7, b=4, c;
+  c = b > a;
+   \end{lstlisting}
+  Risultato: 
+  \item [\nonumber]
+  \item {\bf Osservando il programma indicato, cosa viene visualizzato?}
+  
+  \begin{lstlisting}[language=c]
+   #include <stdio.h>
+    int main (void){
+    int x = 4;
+    if (x % 2){
+    	printf ("Sono felice :-)\n");
+    }else{
+    	printf ("Sono triste :-(\n");
+     }
+  }
+ \end{lstlisting}   
+ 
+\item[$\square$] Sono felice :-)
+\item[$\square$] Sono triste :-(
+\item[$\square$] Non so rispondere
+\item [\nonumber]
+\item {\bf Osservando il programma indicato, cosa contiene la variabile k alla fine del ciclo?}
+
+ \begin{lstlisting}[language=c]
+#include <stdio.h>
+int main (void){
+ int j = 7;
+ int k = 7; 
+ while (j > 2){
+  	j--;
+   	k++;
+  }
+  printf ("La variabile k contiene %i\n", k);
+ }
+\end{lstlisting}   
+
+Risultato: 
+\item [\nonumber]
+\item {\bf Osservando il programma indicato, cosa contiene la variabile k alla fine del ciclo?}
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+ int main (void){
+ int j;
+ int k = 7;
+ for (j = 2; j <=7; j++){
+ 	k++;
+ }
+ printf ("La variabile k contiene %i\n", k);
+ }
+\end{lstlisting} 
+
+Risultato: 
+\item [\nonumber]
+\item{\bf Indica al posto dei puntini l'operazione logica corrispondente alla tabella di verit\`{a} indicata.}
+\begin{center}
+\includegraphics[width=0.28\textwidth]{mm11_connettivi}
+\end{center}
+
+
+\item [\nonumber]
+\item {\bf A cosa serve il programma descritto dal seguente diagramma di flusso?}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{mm4_fig5.jpg}
+\end{center}
+
+\item[$\square$]a dare in ouput i numeri da 0 a 50 a ritroso e di 5 in 5
+\item[$\square$]a dare in ouput 10 volte il numero 50
+\item[$\square$]a dare in ouput i numeri da 0 a 50
+
+\item [\nonumber]
+\item {\bf Che differenza esiste tra programma sorgente (cio\`{e} un programma scritto in linguaggio c) ed un programma oggetto?}
+
+\item[$\square$]Il programma sorgente \`{e} l'algoritmo tradotto in un linguaggio ad alto livello mentre il programma oggetto \`{e} tradotto in linguaggio macchina
+\item[$\square$]Entrambi i programmi sono tradotti in linguaggio macchina
+\item[$\square$]Il programma sorgente \`{e} tradotto in linguaggio macchina mentre il programma oggetto \`{e} tradotto in linguaggio ad alto livello
+
+\item [\nonumber]
+\item {\bf Quali sono gli input del linker?}
+\item[$\square$] i file oggetto
+\item[$\square$] i file eseguibili
+\item[$\square$] i file sorgente
+
+\end{enumerate}
+
+
+
+ 
+
+\end{document}
