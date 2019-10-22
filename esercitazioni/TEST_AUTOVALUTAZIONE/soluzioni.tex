@@ -24,11 +24,10 @@
 
 \begin{center}
 {\Large \bf  Laboratorio di Calcolo per Fisici, Test di Autovalutazione\\[2mm]}
-{\large Canale \canale, Docente: \docente}
+{\large Canale A-C, Docente: Nicoletta Gnan}
 \end{center}
 \vspace{4mm}
-\def\AC{A-C}
-\ifx\cmacro\AC%if nicoletta print also following mdframed
+
 \begin{mdframed}[backgroundcolor=panna]
 {\bf Nome: \qquad \qquad \qquad\qquad \qquad \qquad Cognome:}\\
 \newline
@@ -36,7 +35,6 @@
 %\newline 
 Avete 20 minuti per rispondere alle domande. Potete usare il libro di testo e gli appunti.
 \end{mdframed}
-\fi
 %\vspace{1mm}
 %
 %
@@ -57,14 +55,11 @@ Avete 20 minuti per rispondere alle domande. Potete usare il libro di testo e gl
 // bla bla bla bla bla // bla bla // bla bla bla
 \end{lstlisting}
 \itemsep-0.1em
-\item[$\square$] 1
-\item[$\square$] 2
+
+
 \item[$\square$] 3
 \item[$\square$] 4
-\item[$\square$] 5
-\item[$\square$] 6
 \item[$\square$] 7
-\item[$\square$] 8
 
 \item {\bf Si indichino quali sono le righe errate, dal punto di vista sintattico, contenute nell'estratto di codice seguente. Se un errore riguarda un'istruzione
 suddivisa su pi\`{u} righe, si indichi solo la prima di queste righe.}
@@ -78,17 +73,12 @@ suddivisa su pi\`{u} righe, si indichi solo la prima di queste righe.}
 \item [\nonumber]
 \item [\nonumber]
 \item[$\square$] 1
-\item[$\square$] 2
 \item[$\square$] 3
-\item[$\square$] 4
-\item[$\square$] 5
 
  \item {\bf Segue un elenco di nomi di variabili. Si indichino quali sono i nomi che non possono essere usati.}
-\item[$\square$]  uno
+
 \item[$\square$] uno$-$due$-$tre
-\item[$\square$]  uno$\_$due$\_$tre
 \item[$\square$]  uno.due.tre
-\item[$\square$]  uno2tre
 \item[$\square$] 1due3
 
  \item {\bf Cosa fanno le istruzioni seguenti?}
@@ -98,11 +88,7 @@ suddivisa su pi\`{u} righe, si indichi solo la prima di queste righe.}
  printf ("mondo!");
   \end{lstlisting}
  
-\item[$\square$] Visualizzano la scritta {\bf Ciao mondo!} senza interruzioni di riga.
-\item[$\square$] Visualizzano la scritta {\bf Ciao mondo!} riportando, alla fine, il cursore all'inizio della riga successiva.
 \item[$\square$] Visualizzano la scritta {\bf Ciaomondo!} senza interruzioni di riga.
-\item[$\square$] Visualizzano la scritta {\bf Ciaomondo!} riportando, alla fine, il cursore all'inizio della riga successiva.
-\item[$\square$] Visualizzano la scritta {\bf Ciao}, {\bf mondo!}, in due righe separate.
  
  
  \item  {\bf A cosa serve la sequenza $\backslash n$ che appare nell'esempio seguente?}
@@ -111,8 +97,7 @@ suddivisa su pi\`{u} righe, si indichi solo la prima di queste righe.}
  \end{lstlisting}
  
 \item[$\square$]  A mandare a capo il testo in quel punto.
-\item[$\square$]  A introdurre una tabulazione orizzontale.
-\item[$\square$]  A impedire che in quel punto il testo sia lasciato andare a capo.
+
 
 
 \item [\nonumber]
@@ -128,94 +113,51 @@ suddivisa su pi\`{u} righe, si indichi solo la prima di queste righe.}
  printf ("parte intera: %i parte decimale: %lf\n", 1000, 0.211);
  printf ("parte intera: %i parte decimale: %lf\n", pi, pd, 11);
  \end{lstlisting}
- 
-\item[$\square$] 1
-\item[$\square$] 2
-\item[$\square$] 3
 \item[$\square$] 4
-\item[$\square$] 5
 \item[$\square$] 6
+
 \item [\nonumber]
 \item{\bf A cosa ci si riferisce con il termine 'long'? Barrare una o pi\`{u} caselle}
 
-\item[$\square$] Ad un carattere, per cui non conta sapere se il segno viene considerato o meno.
-\item[$\square$] Ad un carattere con segno.
-\item[$\square$] Ad un carattere senza segno.
-\item[$\square$] Ad un intero pi\`{u} breve di 'int', con segno.
-\item[$\square$] Ad un intero pi\`{u} breve di 'int', senza segno.
-\item[$\square$] Ad un intero normale con segno.
-\item[$\square$] Ad un intero normale senza segno.
 \item[$\square$] Ad un intero pi\`{u} ampio di 'int', con segno.
-\item[$\square$] Ad un intero pi\`{u} ampio di 'int', senza segno.
-\item[$\square$] Ad un numero in virgola mobile a precisione singola.
-\item[$\square$] Ad un numero in virgola mobile a precisione doppia.
 \item[$\square$] Ad un modificatore di tipo.
+
 \item [\nonumber]
  \item {\bf Come si definisce una variabile scalare di tipo intero normale senza segno?}
  
-\item[$\square$] char
-\item[$\square$] unsigned char
-\item[$\square$] short int
-\item[$\square$] unsigned short int
-\item[$\square$] int
 \item[$\square$] unsigned int
-\item[$\square$] long int
-\item[$\square$] unsigned long int
-\item[$\square$] long long int
-\item[$\square$] unsigned long long int
-\item[$\square$] float
-\item[$\square$] double
-\item[$\square$] long double
+
 \item [\nonumber]
 
 \item {\bf L'espressione "Se x>0" si traduce in c come:}
-\item[$\square$]  if x>0;
-\item[$\square$]  if x>0
-\item[$\square$]  If(x>0)
-\item[$\square$]  If[x>0]
-\item[$\square$]  if\{x>0\};
 \item[$\square$]  if(x>0)
 
 \item [\nonumber]
 \item {\bf Nel costrutto IF, il blocco di pi\`{u} istruzioni \`{e} racchiuso:}
-\item[$\square$]  Tra parentesi quadre
-\item[$\square$]  Tra parentesi tonde
 \item[$\square$]  Tra parentesi graffe 
-\item[$\square$]  Non sono necessarie le parentesi
+
 \item [\nonumber]
 
 \item {\bf Nel ciclo WHILE la condizione viene valutata:}
-\item[$\square$]  Alla fine dell'esecuzione del blocco di istruzioni
+
 \item[$\square$]  Prima di eseguire il blocco di istruzioni
-\item[$\square$]  Nel blocco di istruzioni, tra un'istruzione e un'altra; 
+
 
 \item [\nonumber]
 \item {\bf Un ciclo DO-WHILE  esegue il blocco fino a che la condizione \`{e}:}
-\item [$\square$] vera
+
 \item [$\square$] falsa
 
 \item [\nonumber]
 \item{\bf Indicare che tipo di numero genera l'espressione '87.45/32'}
 
-\item[$\square$] intero
+
 \item[$\square$] in virgola mobile
 
 \item [\nonumber]
 \item {\bf Indicare il tipo del risultato prodotto dall'espressione 'a =123.45/45', sapendo che la variabile a \`{e} di tipo 'long int'}
 
-\item[$\square$] char
-\item[$\square$] unsigned char
-\item[$\square$] short int
-\item[$\square$] unsigned short int
-\item[$\square$] int
-\item[$\square$] unsigned int
 \item[$\square$] long int
-\item[$\square$] unsigned long int
-\item[$\square$] long long int
-\item[$\square$] unsigned long long int
-\item[$\square$] float
-\item[$\square$] double
-\item[$\square$] long double
 
 \item [\nonumber]
  \item {\bf Osservando la porzione di codice indicata, si scriva il valore contenuto nella variabile b. Si indichi il valore in base dieci.}
@@ -225,7 +167,7 @@ suddivisa su pi\`{u} righe, si indichi solo la prima di queste righe.}
  b = a++;
  ++b;
  \end{lstlisting}
- Risultato: 
+ Risultato:  5
  \item [\nonumber]
  \item{\bf Osservando la porzione di codice indicata, si scriva il valore contenuto nella variabile b. Si indichi il valore in base dieci.}
  
@@ -234,7 +176,7 @@ suddivisa su pi\`{u} righe, si indichi solo la prima di queste righe.}
   int b = a % 2;
   b = b + a;
  \end{lstlisting}
-  Risultato: 
+  Risultato:  4
   \item [\nonumber]
   \item {\bf Osservando la porzione di codice indicata, si scriva il valore contenuto nella variabile c. Si indichi il valore in base dieci.}
  
@@ -242,7 +184,7 @@ suddivisa su pi\`{u} righe, si indichi solo la prima di queste righe.}
   int a = 7, b=4, c;
   c = b > a;
   \end{lstlisting}
-  Risultato: 
+  Risultato: 0
   \item [\nonumber]
   \item {\bf Osservando il programma indicato, cosa viene visualizzato?}
   
@@ -257,10 +199,8 @@ suddivisa su pi\`{u} righe, si indichi solo la prima di queste righe.}
      }
   }
  \end{lstlisting}   
- 
-\item[$\square$] Sono felice :-)
-\item[$\square$] Sono triste :-(
-\item[$\square$] Non so rispondere
+ \item[$\square$] Sono triste :-(
+
 \item [\nonumber]
 \item {\bf Osservando il programma indicato, cosa contiene la variabile k alla fine del ciclo?}
 
@@ -277,7 +217,7 @@ int main (void){
  }
 \end{lstlisting}   
 
-Risultato: 
+Risultato: 12
 \item [\nonumber]
 \item {\bf Osservando il programma indicato, cosa contiene la variabile k alla fine del ciclo?}
 \begin{lstlisting}[language=c]
@@ -292,12 +232,14 @@ Risultato:
  }
 \end{lstlisting} 
 
-Risultato: 
+Risultato: 13
 \item [\nonumber]
 \item{\bf Indica al posto dei puntini l'operazione logica corrispondente alla tabella di verit\`{a} indicata.}
 \begin{center}
 \includegraphics[width=0.28\textwidth]{mm11_connettivi}
 \end{center}
+
+Risultato: (A) XOR, (B) AND, (C) OR
 
 
 \item [\nonumber]
@@ -306,22 +248,19 @@ Risultato:
 \includegraphics[width=0.45\textwidth]{mm4_fig5.jpg}
 \end{center}
 
-\item[$\square$]a dare in ouput i numeri da 0 a 50 a ritroso e di 5 in 5
 \item[$\square$]a dare in ouput 10 volte il numero 50
-\item[$\square$]a dare in ouput i numeri da 0 a 50
+
 
 \item [\nonumber]
-\item {\bf Che differenza esiste tra programma sorgente ed un programma oggetto?}
+\item {\bf Che differenza esiste tra programma sorgente  ed un programma oggetto?}
 
 \item[$\square$]Il programma sorgente \`{e} l'algoritmo scritto in un linguaggio ad alto livello mentre il programma oggetto \`{e} tradotto in linguaggio macchina
-\item[$\square$]Entrambi i programmi sono tradotti in linguaggio macchina
-\item[$\square$]Il programma sorgente \`{e} tradotto in linguaggio macchina mentre il programma oggetto \`{e} tradotto in linguaggio ad alto livello
+\
 
 \item [\nonumber]
 \item {\bf Quali sono gli input del linker?}
 \item[$\square$] i file oggetto
-\item[$\square$] i file eseguibili
-\item[$\square$] i file sorgente
+
 
 \end{enumerate}
 
