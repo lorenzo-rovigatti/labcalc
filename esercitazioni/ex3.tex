@@ -46,12 +46,13 @@ calcoli il valore della funzione $f(x)=\frac{\sin(x)}{x}$ in una serie di
 punti equispaziati lungo l'asse $x$, nell'intervallo $x \in \left[-15,15 \right]$.
 Si noti che:
 \begin{enumerate}
+\item Creare una cartella  \texttt{EX3} che dovrà contenere il materiale di questa terza esercitazione.
 \item  {\bf Il numero di punti} $N_{p}$ deve essere sufficiente a dar vita ad un grafico ragionevolmente continuo della funzione ($N_p \ge 100$);
 \item Se la funzione viene calcolata nel punto $x=0$ il programma restituisce il valore NAN (\emph{not a number}), 
 dal momento che si tratta di valutare un'espressione del tipo $\frac{0}{0}$. Il limite per $x \to 0$ di 
 $\frac{\sin(x)}{x}$ \`e noto e vale: $\lim_{x \to 0} \frac{\sin(x)}{x} = 1$.
 Inserire nel programma un'opportuna  istruzione \lstinline[language=c]!if! che corregga il risultato numerico con il valore analitico corretto in $x=0$.
-\item Scrivere i risultati su un file \texttt{sinxx.dat} di $N_p$ righe e 2 colonne, nella forma: $x,y$. Per compiere questa operazione potete o incollare manualmente l'output dello schermo su un file vuoto, o {\em ridirigere\/} l'output
+\item Scrivere i risultati su un file \texttt{sinxx.dat} di $N_p$ righe e 2 colonne, nella forma: \texttt{x y}. Per compiere questa operazione potete o incollare manualmente l'output dello schermo su un file vuoto, o {\em ridirigere\/} l'output
 del vostro programma su un file con il comando:
 \\
 \begin{lstlisting}[numbers=none,language=bash]
@@ -71,7 +72,7 @@ basato sul teorema degli zeri di una funzione continua.
 \\
 ({\em Attenzione, l'idea di base \`e simile a quella dell'algoritmo di bisezione, ma l'algoritmo \`e diverso!\/}).
 \begin{enumerate}
-\item L'intervallo di partenza viene diviso in $N$ intervalli contigui,
+\item L'intervallo di partenza viene diviso in $N$ intervalli contigui (attenzione: $N = N_p - 1$),
   tutti uguali, di estremi $x_L^{i}, x_R^{i}$, $i=0,\cdots,(N-1)$.
 \item Per ciascun intervallo l'algoritmo controlla la presenza di eventuali 
 zeri calcolando il valore di $s=f(x_L^{i})\cdot f(x_R^i)$. Se $s>0$,
@@ -89,12 +90,12 @@ trovati dall'algoritmo, N$_{zero}$.
 \item Far girare il programma \texttt{zero.c} con un numero variabile di intervalli 
 $N \ge 1$ e creare un file che contenga $N, N_{zero}$.
 \item Graficare l'andamento di $N, N_{zero}$: qual \`e il valore minimo di $N$
-per cui vengono trovati tutti gli zeri? Qual \`e la {\em risoluzione\/} corrispondente?
+per cui vengono trovati tutti gli zeri?
 \item Se il valore $N=3,4,5,6$ non fanno parte della vostra scelta iniziale, fate girare il programma anche per questi valori. Quanti zeri trovate? Perch\'e? 
 {\em Scrivete le risposte a queste ultime due domande su un file risposte.txt
 nella cartella \texttt{EX3}}.
 \item Utilizzando diversi valori di $N$ abbastanza grandi da trovare tutti gli zeri,
-fate stampare al vostro programma la vostra migliore stima del valore degli zeri con la relativa incertezza.
+fate stampare al vostro programma la vostra migliore stima del valore degli zeri ($x_L^i + x_R^i / 2$) con la relativa incertezza ($(x_R^i - x_L^i) / 2$).
 \end{enumerate}
 
 
@@ -108,7 +109,7 @@ Se questo succede, ci sono due modi di interrompere l'esecuzione:
 \item Se il programma è in esecuzione in modalit\`a {\em background\/}:
 aprire una nuova shell. Lanciare il programma \texttt{top} (non in modalit\`a
  {\em background\/}). Individuare il PID ({\em Process Identifier\/}) del programma bloccato. Premere \texttt{q} per uscire da top.
-Digitare della shell il comando: \texttt{kill -9 numero$_{PID}$} (Enter).
+Digitare della shell il comando: \texttt{kill -9 PID} (Enter).
 \end{itemize}
 \end{mdframed}
 
