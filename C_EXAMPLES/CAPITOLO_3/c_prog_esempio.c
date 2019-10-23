@@ -12,7 +12,7 @@ float fa;
 double da, da_, da1; // fp a 64 bit
 long double lda=3E10, lda_b; // lda viene inizializzata nella dichiarazione
 
-// dimensione 
+// stampa dimensione 
 printf("un char occupa: %lu bytes\n", sizeof(char));
 printf("un int occupa: %lu bytes\n", sizeof(int));
 printf("un long int occupa: %lu bytes\n", sizeof(long int));
@@ -23,7 +23,7 @@ ia=-3;
 uia=(unsigned int)ia;
 printf("uia=%u\n", uia);
 da=3.0;
-da_= sin(M_PI*0.5)+3.0;
+da_= sin(M_PI*0.5)+3.0; // istruzione composta da diversi operatori ed operandi (operatori: =, *, +, operandi: costanti e da_)
 printf("da=%f da_=%f\n", da_, da);
 da1 = (da < da_) + 1.0;
 printf("da1=%f %f\n", da1, da_+da1+da1*sin(3.0));
@@ -35,7 +35,7 @@ printf("hai immesso %c\n", c1);
 
 // inserimento di un intero da tastiera
 printf("immetti un intero:");
-scanf("%ia",&ia);
+scanf("%d",&ia);
 printf("hai immesso %d\n", ia);
 
 printf("immetti un float:");
