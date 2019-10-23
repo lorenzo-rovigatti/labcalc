@@ -26,14 +26,21 @@ da=3.0;
 da_= sin(M_PI*0.5)+3.0; // istruzione composta da diversi operatori ed operandi (operatori: =, *, +, operandi: costanti e da_)
 printf("da=%f da_=%f\n", da_, da);
 da1 = (da < da_) + 1.0;
-printf("da1=%f %f\n", da1, da_+da1+da1*sin(3.0));
+printf("da1=%f %f\n", da1, da_+da1+da1*sinh(3.0)+pow(da1,0.5));
+//
+// stampa in esadecimale
+uia=163;
+printf("%d in esadecimale è: %x\n", uia, uia); 
+
+// stampa di una stringa
+printf("prova di %s\n", "stringa");
 
 // inserimento di un char da tastiera
 printf("immetti un carattere:");
 scanf("%c",&c1);
 printf("hai immesso %c\n", c1);
 
-// inserimento di un intero da tastiera
+/* inserimento di un intero da tastiera */
 printf("immetti un intero:");
 scanf("%d",&ia);
 printf("hai immesso %d\n", ia);
