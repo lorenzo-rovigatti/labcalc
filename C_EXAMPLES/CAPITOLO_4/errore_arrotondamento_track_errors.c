@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
 
   /* stampa riepilogo errori */
   sume = 0; 
-  printf("errore totale (volte x errore) = ");
+  printf("errore totale (volte x errore, errore ad ogni incremento di 7) = ");
   for (i = 1; i < NM; i++)
     {
       if (errori[i]!=0)
@@ -54,7 +54,7 @@ int main(int argc, char **argv) {
         }
     } 
   printf(" = %u\n", sume); 
-  printf("\nsomma (volte x differenza) = ");
+  printf("\nsomma (volte x differenza, la differenza è 7 se l'errore è 0) = ");
   first=1;
   for (i = 1; i < NM; i++)
     {
