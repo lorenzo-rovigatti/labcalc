@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
 	   0.5 * (a + b));
     delta = fabs(a - b);
 #else
-    dc = -cos(c)/sin(c);
+    dc = -cos(c)/sin(c); // x = x - f(x)/f'(x) dove qui f(x)=cos(x) e f'(x)=df/dx=-sin(x)
     c = c - dc;
     printf("Iterazione n. %d: x = %f\n", i++, c);
     delta = fabs(dc);
