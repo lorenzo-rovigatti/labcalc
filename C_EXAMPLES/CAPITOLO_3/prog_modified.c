@@ -7,6 +7,11 @@ char d=-3;
 char d2;
 d2=-30;
 c2=2.0+c;
+double t;
+printf("immetti t:\n");
+scanf("%lf",&t);
+printf("\nhai immesso: %f\n", t);
+#if 0
 printf("un intero occupa %lu\n", sizeof(char));
 a=(unsigned int)d;
 printf("ciao %i %d\n", a, d2);
@@ -14,4 +19,5 @@ return 0;
 printf("immetti un intero:");
 scanf("%d",&a);
 printf("hai immesso %d\n", a);
+#endif
 }

@@ -31,6 +31,10 @@ int main(int argc, char** argv)
   /* operatore ternario ? */
   printf("a è %s\n", (a > 0) ? "positivo" : "negativo" );
   c = (a > 0) ? 'p' : 'n';
+  if (a > 0)
+    c='p';
+  else
+    c='n';
   printf("c = '%c'\n", c);   
   /* (condizione) ? <espressioneA se condizione vera> : <espressioneB se condizione falsa> 
    * espressioneA o espressioneB a seconda della condizione vengono valutate 
