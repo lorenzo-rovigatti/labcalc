@@ -26,7 +26,7 @@ da=3.0;
 da_= sin(M_PI*0.5)+3.0; // istruzione composta da diversi operatori ed operandi (operatori: =, *, +, operandi: costanti e da_)
 printf("da=%f da_=%f\n", da_, da);
 da1 = (da < da_) + 1.0;
-printf("da1=%f %f\n", da1, da_+da1+da1*sinh(3.0)+pow(da1,0.5));
+printf("da1=%f %f lda=%.8Lf\n", da1, da_+da1+da1*sinh(3.0)+pow(da1,0.5), lda);
 //
 // stampa in esadecimale
 uia=163;
