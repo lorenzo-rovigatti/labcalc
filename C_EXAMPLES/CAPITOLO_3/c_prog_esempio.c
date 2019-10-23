@@ -17,7 +17,7 @@ printf("un char occupa: %lu bytes\n", sizeof(char));
 printf("un int occupa: %lu bytes\n", sizeof(int));
 printf("un long int occupa: %lu bytes\n", sizeof(long int));
 printf("un long long int occupa: %lu bytes\n", sizeof(long long int));
-
+printf("un long double occupa: %lu bytes\n", sizeof(long double));
 c1=99; // inizializzo c1 (cioè gli assegno un valore)
 ia=-3;
 uia=(unsigned int)ia;
