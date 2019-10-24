@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<math.h>
-
-int main(int argc, char**argv)
+#include<stdlib.h>
+int main(void)
 {
   int i;
   // do ... while()
@@ -23,12 +23,27 @@ int main(int argc, char**argv)
       printf("i=%d\n", i);
       i++;
     }
+#if 0
+if (0 > 1)
+  {    
+      printf("ciao\n");
+    }
 
-  // che è equivalente a: 
+  printf("-----------\n");
+  i=0;
+  printf("i= %f \n", 1./i++);
+  printf(">>>i=%d\n", i);
+  i=0; 
+  printf("i= %d \n", ++i);
+  i=0;
+  printf("i= %d \n", i=i+1);
+  exit(1);
+  //che è equivalente a: 
   printf("\nfor () ...\n");
+#endif
   for (i=0; i < 3; i++)
     {
-      printf("i=%d\n", i);
+     printf("i=%d\n", i);
     }
 
   //uso di break (si può usare in tutti i costrutti per iterazioni)
