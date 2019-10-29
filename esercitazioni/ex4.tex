@@ -78,7 +78,7 @@ su un file con il comando \texttt{./roulette.x > isto.dat}.
 Far girare il programma \texttt{roulette.c} con un numero variabile di lanci,
 ed effettuare un'analisi dell'andamento dell'istogramma dei risultati.
 \begin{enumerate}
-\item Creare con \texttt{python} un istogramma della distribuzione dei lanci per un numero $N$ fissato di lanci ($N \ge 100$) e salvarlo sul file su un file \texttt{isto1.png}.
+\item Creare con \texttt{python} un istogramma della distribuzione dei lanci per un numero $N$ fissato di lanci ($N \ge 100$) e salvarlo sul file \texttt{isto1.png}.
   Per creare un istogramma con \texttt{python} a partire da un file \texttt{isto.dat} contenente due colonne (la prima
   contenente il numero del bin e la seconda il numero di occorrenze)
 si usa il comando \lstinline[language=Python]!plt.bar(x,y,fill=True)!.
@@ -98,7 +98,7 @@ partita di roulette.
 Una partita si svolge come segue:
 \begin{enumerate}
 \item All'inizio del gioco, il giocatore riceve una dotazione iniziale di 100 euro.
-\item Ad ogni mano, il giocatore  pu\`o decidere di fare una puntata  su pari o dispari, o su un numero maggiore o minore di 18 (Manque/Passe). In caso di vincita, il giocatore riceve due volte la posta per le puntate Pari/Dispari o Manque/Passe.
+\item Ad ogni mano, il giocatore  pu\`o decidere di fare una puntata  su pari o dispari, o su un numero maggiore o minore di 18 (Manque/Passe). In caso di vincita, il giocatore riceve due volte la posta per le puntate Pari/Dispari o Manque/Passe. \textit{Nota Bene:} conviene gestire gli \texttt{if} necessari per questa parte utilizzando numeri interi o singoli caratteri (per esempio E/O e M/P) invece di stringhe intere.
 \item Il gioco termina dopo un numero fissato di mani (10 o 20) o quando il giocatore esaurisce il credito a sua disposizione.
 \end{enumerate}
 
