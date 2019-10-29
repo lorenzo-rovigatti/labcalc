@@ -1,0 +1,175 @@
+%! TEX program = luatex
+\documentclass[12pt]{article}
+\usepackage{textcomp}
+\usepackage{graphicx,wasysym, mdframed,xcolor,gensymb,verbatim}
+\usepackage{color}
+\usepackage{floatflt}
+
+\usepackage[italian]{babel}
+%\input{listings_styles.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{bm}
+
+%New colors defined below
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+\lstset{style=mystyle}
+%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\voto}[1]{[\textbf{#1} punti]}
+\def\cmu{\mbox{cm$^{-1}$}}
+\def\half{\frac{1}{2}}
+
+\voffset -2cm
+\hoffset -2.5cm
+%\marginparwidth 0cm
+\textheight 22cm
+\textwidth 17cm
+%\oddsidemargin  0.2cm                                                                                         
+%\evensidemargin 0.4cm                                                                                         
+\parindent=0pt
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+{\Large \bf  Laboratorio di Calcolo per Fisici, Quarta esercitazione\\[2mm]}
+{\large Canale D-K, Docente: Livia Soffi, \\Esercitatori: Prof. S. Rahatlou e Prof. R. Faccini}
+\end{center}
+\vspace{4mm}
+
+\colorbox{yellow}{\begin{minipage}{17cm}
+  Lo scopo della quarta esercitazione di laboratorio \`e di simulare il gioco della roulette sfruttando la \textbf{generazione di numeri pseudocasuali}.
+\end{minipage}}
+\vspace{2mm}
+%\vspace{1mm}
+%
+%
+
+\hrule
+\vspace{2mm}
+Nel gioco della roulette semplificato, la ruota contiene \textbf{36 caselle numerate da 1 a 36}. Il croupier lancia una piccola palla bianca, e la fa ruotare nella roulette, finché essa non si ferma su uno dei numeri. Le puntate sono piazzate sul tavolo, secondo i possibili esiti del lancio della palla. Un giocatore pu\`o scommettere che la pallina finisca su:
+
+\begin{minipage}{10cm}
+\vspace{2mm}
+\begin{itemize}
+\item Un \textbf{numero preciso} compreso tra 1 e 36
+\item Un numero \textbf{dispari o pari}
+\item Un \textbf{numero basso} [1-18] \textbf{o alto} [19-39]
+\end{itemize}
+ \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+  %   \begin{figure}[h]
+        \begin{center}
+        \includegraphics[scale=0.2]{roulette.jpg}
+        \end{center}
+   %   \end{figure}
+    \end{minipage}
+ \vspace{2mm}  
+\hrule
+\vspace{2mm}
+\textbf{$\RHD$ Prima parte (obbligatoria)} 
+\vspace{2mm}
+
+Scrivere un programma chiamato \textbf{\emph{roulette.c}} che simuli $N$ lanci della pallina.
+\begin{enumerate}
+\item Stampare un messaggio di istruzioni per l'utente che chieda di \textbf{inserire $N$}.
+\item Acquisire il numero di lanci $N$, assicurandosi che $N$ sia minore di 10000.
+\item Per ogni lancio:
+\begin{enumerate}
+\item generare un numero \textbf{intero random tra 1 e 36}
+\item Riconoscere se il numero generato \`e pari ($P$) o dispari ($D$), alto ($A$) o basso ($B$).
+\item Stampare su schermo l'esito del lancio nel formato dell'esempio:\\ \emph{"Hai generato il numero 7. Il numero e' dispari e basso."} 
+\item Contare quante volte si verificano ciascuno dei casi precedenti:$P/D/A/B$
+\end{enumerate}
+\item Alla fine degli $N$ lanci stampare \textbf{la frequenza con cui si e' verificato ciascun risultato $P/D/A/B$}.
+\item Eseguire il programma \emph{roulette.c} per $N=10,100, 1000, 10000$. \item Scrivere su un file \emph{esiti.dat} il valore di $N$ e delle frequenze con cui si sono verificati i risultati $P/D/A/B$. Come cambiano le frequenze in funzione di N? Il risultato \`e coerente con le vostre aspettative?
+\end{enumerate}
+\colorbox{yellow}{\begin{minipage}{17cm}
+NB. Si ricorda che per compilare ed eseguire il programma in C si deve digitare sul terminale:\\
+\textbf{gcc roulette.c -o roulette.x -lm -Wall \\
+./roulette.x}
+\end{minipage}}
+
+
+\newpage
+\hrule
+\vspace{2mm}
+\textbf{$\RHD$ Seconda parte (facoltativa)} 
+\vspace{2mm}
+
+Scrivere  il programma \textbf{\emph{gioco.c}} per simulare una vera partita di roulette. 
+
+\begin{enumerate}
+
+\item All'inizio del gioco il giocatore ha un \textbf{credito di 100 euro} 
+
+\item Chiedere all'utente \textbf{che somma vuole puntare}. La cifra deve essere compresa tra 2 e 10 euro e comunque sempre inferiore o uguale al credito. 
+
+\item Chiedere all'utente \textbf{su che numero scommette}. Controllare che il numero sia tra 1 e 36.
+
+\item Generare il numero random tra 1 e 36 corrispondente all'esito del lancio della pallina
+
+\item Se la pallina \`e finita sullo stesso numero scelto dall'utente, questi \textbf{vince due volte la sua posta, altrimenti perde la posta}.
+
+\item Stampare su schermo il numero uscito e un messaggio che dica all'utente \textbf{se ha vinto o se ha perso e a quanto ammonta il suo credito}.
+
+\item Implementare l'opportuno costrutto iterativo che permetta all'utente di continuare a giocare \textbf{finch\`e il credito e' almeno 2 euro e comunque per non pi\`u di 20 mani}.
+
+\item Scrivere un messaggio che informi l'utente alla fine del gioco. Specificare quante mani sono state giocate e se il suo credito finale \`e nullo, altrimenti stamparne il valore.
+\end{enumerate}
+\vspace{2cm}
+
+\colorbox{yellow}{\begin{minipage}{17cm}
+
+\textbf{Suggerimenti:}
+\begin{itemize}
+\item La funzione \textbf{rand()} definita nella libreria \textbf{stdlib.h} permette di generare numeri \textbf{interi tra 0 e RAND\_MAX}.
+\item L'algoritmo di generazione deve essere inizializzato con un seme \textbf{una sola volta}:\\
+\textbf{int seed;\\
+seed  = time(0);\\
+srand(seed);}
+\item Per generare un numero \textbf{intero} casuale compreso \textbf{tra 1 e nmax} si usa la proprietà della funzione modulo (\%):\\
+\textbf{i=rand() \% nmax + 1;}
+\item Nel calcolo della frequenza, prima di fare il rapporto di due interi bisogna fare il casting del numeratore a double come segue:\\
+\textbf{double freq};\\
+\textbf{freq = (double)Num/Den;}
+
+\end{itemize}
+\end{minipage}}
+
+
+\vspace{2mm}
+
+
+\end{document}
+
+
+\begin{lstlisting}[language=C]
+
+\end{lstlisting}
