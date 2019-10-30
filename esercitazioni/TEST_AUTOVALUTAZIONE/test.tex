@@ -1,5 +1,5 @@
 %! TEX program = luatex
-\documentclass[11pt]{article}
+\documentclass[9pt]{article}
 \usepackage{textcomp}
 \usepackage{graphicx,wasysym, mdframed,xcolor,gensymb,verbatim}
 \usepackage{color}
@@ -27,8 +27,8 @@
 {\large Canale \canale, Docente: \docente}
 \end{center}
 \vspace{4mm}
-\def\AC{A-C}
-\ifx\cmacro\AC%if nicoletta print also following mdframed
+%\def\AC{A-C}
+%\ifx\cmacro\AC%if nicoletta print also following mdframed
 \begin{mdframed}[backgroundcolor=panna]
 {\bf Nome: \qquad \qquad \qquad\qquad \qquad \qquad Cognome:}\\
 \newline
@@ -36,7 +36,7 @@
 %\newline 
 Avete 20 minuti per rispondere alle domande. Potete usare il libro di testo e gli appunti.
 \end{mdframed}
-\fi
+%\fi
 %\vspace{1mm}
 %
 %
@@ -203,19 +203,12 @@ suddivisa su pi\`{u} righe, si indichi solo la prima di queste righe.}
 \item [\nonumber]
 \item {\bf Indicare il tipo del risultato prodotto dall'espressione 'a =123.45/45', sapendo che la variabile a \`{e} di tipo 'long int'}
 
-\item[$\square$] char
 \item[$\square$] unsigned char
-\item[$\square$] short int
-\item[$\square$] unsigned short int
 \item[$\square$] int
 \item[$\square$] unsigned int
 \item[$\square$] long int
 \item[$\square$] unsigned long int
 \item[$\square$] long long int
-\item[$\square$] unsigned long long int
-\item[$\square$] float
-\item[$\square$] double
-\item[$\square$] long double
 
 \item [\nonumber]
  \item {\bf Osservando la porzione di codice indicata, si scriva il valore contenuto nella variabile b. Si indichi il valore in base dieci.}
@@ -296,14 +289,14 @@ Risultato:
 \item [\nonumber]
 \item{\bf Indica al posto dei puntini l'operazione logica corrispondente alla tabella di verit\`{a} indicata.}
 \begin{center}
-\includegraphics[width=0.28\textwidth]{mm11_connettivi}
+\includegraphics[width=0.18\textwidth]{mm11_connettivi}
 \end{center}
 
 
 \item [\nonumber]
 \item {\bf A cosa serve il programma descritto dal seguente diagramma di flusso?}
 \begin{center}
-\includegraphics[width=0.45\textwidth]{mm4_fig5.jpg}
+\includegraphics[width=0.25\textwidth]{mm4_fig5.jpg}
 \end{center}
 
 \item[$\square$]a dare in ouput i numeri da 0 a 50 a ritroso e di 5 in 5
@@ -311,11 +304,11 @@ Risultato:
 \item[$\square$]a dare in ouput i numeri da 0 a 50
 
 \item [\nonumber]
-\item {\bf Che differenza esiste tra programma sorgente ed un programma oggetto?}
+\item {\bf Che differenza esiste tra codice sorgente ed codice oggetto?}
 
-\item[$\square$]Il programma sorgente \`{e} l'algoritmo scritto in un linguaggio ad alto livello mentre il programma oggetto \`{e} tradotto in linguaggio macchina
-\item[$\square$]Entrambi i programmi sono tradotti in linguaggio macchina
-\item[$\square$]Il programma sorgente \`{e} tradotto in linguaggio macchina mentre il programma oggetto \`{e} tradotto in linguaggio ad alto livello
+\item[$\square$]Dal codice sorgente si ottiene il codice oggetto mentre il codice oggetto \`{e} un programma in un formato intermedio non portabile ottenuto dal sorgente da cui verrà prodotto il codice finale in linguaggio macchina. 
+\item[$\square$]Nessuna sono la stessa cosa.
+\item[$\square$]Il codice sorgente \`{e} tradotto in linguaggio macchina mentre il codice oggetto \`{e} tradotto in linguaggio ad alto livello
 
 \item [\nonumber]
 \item {\bf Quali sono gli input del linker?}
