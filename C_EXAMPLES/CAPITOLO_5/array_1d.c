@@ -8,7 +8,7 @@ int main()
   double data[N] = {1.0,2.2,3.3};
   double data2[] = {0.1,0.2,0.3};
   double data4[N];
-  //inizializzazione di tutti gli elementi indicando dimensione 
+  //inizializzazione di tutti gli elementi indicando dimensione (vedi sopra)
   printf("  data[]=");
   for (i=0; i < N; i++)
     printf(" %f", data[i]);
