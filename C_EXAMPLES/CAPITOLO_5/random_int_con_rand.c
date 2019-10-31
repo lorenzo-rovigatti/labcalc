@@ -15,7 +15,11 @@ int main(int arcg, char**argv)
                   // UTC=coordinated universal time 
 #endif
   srand(seed);
+#ifdef MODO==1
   printf("sequenza di 10 numeri interi casuali tra 1 e %d:\n", N);
+#else
+  printf("sequenza di 10 numeri interi casuali tra 0 e %d:\n", N);
+#endif
   for (i = 0; i < 10; ++i) 
     {
 #if MODO==1
