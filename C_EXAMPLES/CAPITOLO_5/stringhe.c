@@ -11,10 +11,10 @@ int main(int arcg, char**argv)
   char testo[NUMMSG][MAXCHARS] = {
     "Immetti una stringa non vuota composta da sole lettere o spazi", 
     "Problema nella conversione",
-    "ERRORE: La stringa non è composta di solo lettere minuscole!",
+    "ERRORE: La stringa non è composta di solo lettere minuscole, maiuscole o spazi!",
     "Immissione corretta, hai immesso:",
-    {'c','i','a','o','!','\0'},
-    {99,105,97,111,33,'\0'}
+    {'c','i','a','o','!','\0'}, // una stringa è un array di char...
+    {99,105,97,111,33,'\0'}     // ...un char è un intero con segnao a 8 bit
   };
   
   char a[256];
@@ -52,5 +52,5 @@ int main(int arcg, char**argv)
       // successo e si avrebbe un ciclo infinito.  
       while ((c=getchar())!='\n'); 
     }
-  printf("%s %s\n%s, %s\n", testo[3], a, testo[4],testo[5]); 
+  printf("%s %s\n%s, %s\n", testo[3], a, testo[4], testo[5]); 
 }
