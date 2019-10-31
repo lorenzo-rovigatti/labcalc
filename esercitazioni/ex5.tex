@@ -43,10 +43,11 @@ che simula la gestione del personale di un piccolo negozio.
 \vspace{2mm}
 \textbf{$\RHD$ Prima parte:}
 \begin{enumerate}
+\item Creare una cartella chiamata EX5 che conterr\`{a} il materiale dell'esercitazione.
 \item Creare (con un editor) un file di testo, chiamato {\em trimestre1.dat}, che 
 contenga un riassunto dei dati trimestrali di vendita dei 10 commessi di
-un piccolo negozio di computer. Il file contiene tre colonne: numero del commesso (C);  euro totali incassati (V); ore lavorate (H) e
-10 righe (una per commesso).
+un piccolo negozio di computer. Copiate nel file i seguenti dati, divisi in tre colonne: numero del commesso;  euro totali incassati; ore lavorate e
+10 righe (una per commesso):
 \begin{mdframed}[backgroundcolor=panna]
 \texttt{1    450   32\\
 2    322   14\\
@@ -87,36 +88,41 @@ $\#$  Commesso $\#$ Ore $\#$ Vendite in Euro $\#$ Media $\#$ Voto\\
 \hrule
 \vspace{2mm}
 \textbf{$\RHD$ Terza parte (Facoltativa)}
-Far girare il programma \texttt{dai\_voto.c} per i quattro trimestri del 2016, utilizzando i dati riportati nel riquadro sottostante. Una volta ottenute le medie orarie e i voti di ciascun venditore per tutti i trimestri:
+Far girare il programma \texttt{dai\_voto.c} per i quattro trimestri del 2016, utilizzando i dati riportati nel riquadro sottostante che andranno copiati in un file chiamato \texttt{anno2016.dat}. 
+Il file contiene 9 colonne dove la colonna $0$ rappresenta il numero del commesso e le altre colonne sono gli euro totali incassati e le ore lavorate nei quattro trimestri. In particolare: le colonne $1$ e $2$ si riferiscono al primo trimestre, le colonne $3$ e $4$ al secondo, le colonne $5$ e $6$ al terzo e le colonne $7$ e $8$ al quarto trimestre.
+Una volta ottenute le medie orarie e i voti di ciascun venditore per tutti i trimestri:
 \begin{enumerate}
 \item Creare con \texttt{python} un grafico che mostri l'andamento delle medie orarie per ciascun commesso; sul grafico vanno riportati simultaneamente {\bf tutti i venditori}, con una legenda esplicativa.
 \item Fare un grafico simile che riporti l'andamento del voto di ciascun commesso in funzione del tempo.
-\item A partire dai due grafici precedenti, qual è il commesso che ha ottenuto la performance {\em media\/} migliore su ciascun trimestre? Quale la peggiore?
+\item A partire dai due grafici precedenti, qual \`{e} il commesso che ha ottenuto la performance {\em media\/} migliore su ciascun trimestre? Quale la peggiore?
 Quale dei commessi ha dimostrato un margine di miglioramento e quale \`e peggiorato in maniera significativa?
 Scrivere le risposte sul file \texttt{risposte.txt}.
 \end{enumerate}
-
-
-{\bf Vendite per trimestre:}
-
 \begin{mdframed}[backgroundcolor=panna]
-{\bf Primo trimestre:} file \texttt{trimestre1.dat}.
+{\bf Dati Annuali di vendita (Primo, Secondo, Terzo, Quarto trimestre)}
 \\
-{\bf Secondo, Terzo e quarto trimestre:}
-\\
- C $\;$V2  $\;$ H2 $\;$ V3 $\;$ H3 $\;$   V4 $\;$ H4\\
-\texttt{1$\;$          450$\;$             32$\;$       360$\;$         28$\;$            500$\;$        40 \\
-           2$\;$         380$\;$             31$\;$        415$\;$         31$\;$            324$\;$        60 \\
-           3$\;$          900$\;$             52$\;$        320$\;$         15$\;$            400$\;$        50\\
-           4$\;$          800$\;$             60$\;$        643$\;$         28$\;$            300$\;$        25\\
-           5$\;$         600$\;$             80$\;$        472$\;$         32$\;$            120$\;$        10\\
-           6$\;$         744$\;$             61$\;$        432$\;$         22$\;$            374$\;$        18\\ 
-           7$\;$        123$\;$             12$\;$        328$\;$         19$\;$            702$\;$        40\\ 
-           8$\;$        426$\;$             37$\;$        544$\;$         26$\;$            187$\;$        21\\
-           9$\;$        184$\;$             14$\;$        612$\;$         43$\;$            781$\;$        72\\
-           10$\;$      212$\;$         22$\;$        374$\;$         32$\;$            643$\;$        47\\}
-dove H$i$, V$i$ stanno per ore e vendite di ciascun trimestre $i$.
+\texttt{1$\;$	450$\;$	32$\;$	450$\;$             32$\;$       360$\;$         28$\;$            500$\;$        40 \\
+           2$\;$	322$\;$	14$\;$ 	380$\;$             31$\;$        415$\;$         31$\;$            324$\;$        60 \\
+           3$\;$      870$\;$	82$\;$ 	900$\;$             52$\;$        320$\;$         15$\;$            400$\;$        50\\
+           4$\;$      765$\;$	76$\;$ 	800$\;$             60$\;$        643$\;$         28$\;$            300$\;$        25\\
+           5$\;$      198$\;$ 	20$\;$ 	600$\;$             80$\;$        472$\;$         32$\;$            120$\;$        10\\
+           6$\;$      145$\;$	10$\;$ 	744$\;$             61$\;$        432$\;$         22$\;$            374$\;$        18\\ 
+           7$\;$       828$\;$	75$\;$	123$\;$             12$\;$        328$\;$         19$\;$            702$\;$        40\\ 
+           8$\;$       932$\;$	80$\;$	426$\;$             37$\;$        544$\;$         26$\;$            187$\;$        21\\
+           9$\;$       267$\;$	32$\;$	184$\;$             14$\;$        612$\;$         43$\;$            781$\;$        72\\
+           10$\;$	 424$\;$	18$\;$	212$\;$		22$\;$        374$\;$         32$\;$            643$\;$        47}
 \end{mdframed}
+ 
+ \begin{mdframed}[backgroundcolor=panna]
+ {\bf Lettura da file}
+ Per poter leggere i dati contenuti in un file \`{e} necessario definire nel codice un puntatore di tipo FILE. L'apertura del file avviene attraverso la funzione fopen() che vuole come parametri il nome del file e la modalita' in cui il file deve essere aperto (lettura o scrittura).\\
+ \lstinline[language=c]!FILE *fpoint;!\\
+ \lstinline[language=c]!fpoint = fopen("filename.dat","r");!\\
+Si ricorda che nella modalit\`{a} lettura (\texttt{"r"}), il file (nell'esempio \texttt{filename.dat}) deve essere gi\`{a} esistente, altrimenti la funzione  \lstinline[language=c]!fopen! restituir\`{a}  \lstinline[language=c]!NULL! e il programma dar\`{a} un \texttt{segmentation fault} appena si prover\`{a} a leggere il contenuto del file. Si pu\`{o} dunque usare un controllo sul valore del puntatore e in caso scrivere un messaggio di errore. Per leggere i dati dal file si usa  la funzione:\\
+\lstinline[language=c]!fscanf(fpoint,"%i %i....", &var1,&var2,....);! \\
+Una volta letti i dati, il file viene chiuso con la funzione\\
+\lstinline[language=c]!fclose(fpoint);!
+ \end{mdframed}
  
 
 \end{document}
