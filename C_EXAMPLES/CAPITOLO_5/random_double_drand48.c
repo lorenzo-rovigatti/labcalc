@@ -14,7 +14,7 @@ int main(int arcg, char**argv)
                   // UTC=coordinated universal time 
 #endif
   srand48(seed);
-  printf("sequenza di 10 numeri casuali double tra 0 e 1:\n");
+  printf("sequenza di 10 numeri casuali double tra 0 (incluso) e 1 (escluso):\n");
   for (i = 0; i < 10; ++i) 
     {
       r=(double)drand48(); 
