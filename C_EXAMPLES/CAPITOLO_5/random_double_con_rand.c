@@ -14,7 +14,7 @@ int main(int arcg, char**argv)
                   // UTC=coordinated universal time 
 #endif
   srand(seed);
-  printf("sequenza di 10 numeri casuali double tra 0 e 1:\n");
+  printf("sequenza di 10 numeri casuali double tra 0 (incluso) e 1 (incluso):\n");
   for (i = 0; i < 10; ++i) 
     {
       r=(double)rand()/RAND_MAX; 
