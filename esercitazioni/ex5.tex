@@ -46,8 +46,7 @@ che simula la gestione del personale di un piccolo negozio.
 \item Creare una cartella chiamata EX5 che conterr\`{a} il materiale dell'esercitazione.
 \item Creare (con un editor) un file di testo, chiamato {\em trimestre1.dat}, che 
 contenga un riassunto dei dati trimestrali di vendita dei 10 commessi di
-un piccolo negozio di computer. Copiate nel file i seguenti dati, divisi in tre colonne: numero del commesso;  euro totali incassati; ore lavorate e
-10 righe (una per commesso):
+un piccolo negozio di computer. Copiate nel file le seguenti 10 righe divise in tre colonne: numero del commesso;  euro totali incassati; ore lavorate:
 \begin{mdframed}[backgroundcolor=panna]
 \texttt{1    450   32\\
 2    322   14\\
@@ -62,7 +61,7 @@ un piccolo negozio di computer. Copiate nel file i seguenti dati, divisi in tre 
 \end{mdframed}
 
 \item Scrivere un programma \texttt{leggi.c} che, utilizzando opportunamente le funzioni di lettura da un file 
-legga i dati contenuti in {\em trimestre1.dat}, li salvi in un array multidimensionale, e li stampi su schermo.
+legga i dati contenuti in {\em trimestre1.dat}, li salvi in un array multidimensionale e li stampi su schermo.
 
 \item Oltre ai dati letti dal file, il programma \texttt{leggi.c} dovrà
 calcolare la {\em media oraria\/} di vendita di ciascun commesso e stamparla sullo schermo.
@@ -72,13 +71,13 @@ calcolare la {\em media oraria\/} di vendita di ciascun commesso e stamparla sul
 \vspace{2mm}
 \textbf{$\RHD$ Seconda parte:}
 
-Partendo dal programma precedente, scrivere un programma chiamato \texttt{dai\_voto.c} che a partire dall'elaborazione dei risultati di
+Partendo dal programma precedente, scrivere un programma chiamato \texttt{dai\_voto.c} che, a partire dall'elaborazione dei risultati di
 vendita trimestrale di ciascun commesso, stili una classifica dei 10 commessi e attribuisca loro
 un voto. In particolare, il programma deve: 
 \begin{enumerate}
 \item Stilare una classifica dei commessi in base alla media oraria di vendita.
-\item Dare a ciascun commesso un voto compreso tra 1 e 10 per valutare la sua performance; il commesso con la performance migliore ottiene 10 punti, il secondo 9, e così via.
-\item Stampare su schermo e su un file le seguenti informazioni per ciascun commesso:\\
+\item Dare a ciascun commesso un voto compreso tra 1 e 10 per valutare la sua performance: il commesso con la performance migliore ottiene 10 punti, il secondo 9, e così via.
+\item Stampare su schermo e su un file le seguenti cinque informazioni per ciascun commesso:\\
 \texttt{
 $\#$  Commesso $\#$ Ore $\#$ Vendite in Euro $\#$ Media $\#$ Voto\\
 }
@@ -120,7 +119,7 @@ Scrivere le risposte sul file \texttt{risposte.txt}.
  \lstinline[language=c]!fpoint = fopen("filename.dat","r");!\\
 Si ricorda che nella modalit\`{a} lettura (\texttt{"r"}), il file (nell'esempio \texttt{filename.dat}) deve essere gi\`{a} esistente, altrimenti la funzione  \lstinline[language=c]!fopen! restituir\`{a}  \lstinline[language=c]!NULL! e il programma dar\`{a} un \texttt{segmentation fault} appena si prover\`{a} a leggere il contenuto del file. Si pu\`{o} dunque usare un controllo sul valore del puntatore e in caso scrivere un messaggio di errore. Per leggere i dati dal file si usa  la funzione:\\
 \lstinline[language=c]!fscanf(fpoint,"%i %i....", &var1,&var2,....);! \\
-Una volta letti i dati, il file viene chiuso con la funzione\\
+Una volta letti i dati, il file deve essere chiuso con la funzione\\
 \lstinline[language=c]!fclose(fpoint);!
  \end{mdframed}
  
