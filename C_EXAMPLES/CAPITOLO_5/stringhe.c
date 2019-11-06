@@ -26,6 +26,8 @@ int main(int arcg, char**argv)
       fine=1;
       res=scanf("%255[^\n]", a); // massimo 255 caratteri, il 256-esimo carattere è per il null di fine stringa('\0')
         
+      // e se avessimo usato: 
+      // res=scanf("%s",a); // ? 
       // se il valore restituito da scanf è minore di 1 vuol dire che non è 
       // stata acquisita la stringa
       if (res < 1)
@@ -51,6 +53,7 @@ int main(int arcg, char**argv)
       // se non si facesse questo resterebbe uno '\n', la conversione nella scanf non avrebbe
       // successo e si avrebbe un ciclo infinito.  
       while ((c=getchar())!='\n'); 
+      // e se tolgo questa riga?
     }
   printf("%s %s\n%s, %s\n", testo[3], a, testo[4], testo[5]); 
 }
