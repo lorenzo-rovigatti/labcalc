@@ -17,7 +17,7 @@ int main(int arcg, char**argv)
   printf("sequenza di 10 numeri casuali double tra 0 (incluso) e 1 (escluso):\n");
   for (i = 0; i < 10; ++i) 
     {
-      r=(double)drand48(); 
+      r=drand48(); 
       printf("Ho generato il numero %18.16f\n", r);
     }
   return 0;
