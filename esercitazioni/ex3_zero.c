@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 #ifndef PRINT_MESH
   printf("Numero zeri trovati=%d\n", nzeri);
 #else
-      printf("%f 0.0\n", xR);
+  printf("%f 0.0\n", xR);
 #endif
   return 0;
 }
