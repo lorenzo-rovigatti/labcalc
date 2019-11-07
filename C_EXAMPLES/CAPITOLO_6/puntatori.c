@@ -23,7 +23,7 @@ int main()
   printf("*pa=%d\n", *pa);
 
   printf("\n");
-  // aritmetic dei puntatori 
+  // aritmetica dei puntatori 
   printf("data[5]=%d *(pa+5)=%d pa[5]=%d\n", data[5], *(pa+5), pa[5]);
   // pa[i] = *(pa+i) 
 
