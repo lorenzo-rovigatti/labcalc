@@ -1,9 +1,8 @@
-#include<time.h>
 #include<stdio.h>
 #include<stdlib.h>
 #define NUMMSG 6
 #define MAXCHARS 128
-int main(int arcg, char**argv)
+int main(void)
 {
   // immetti una stringa
   int fine, res, c, wrongchar=0;
@@ -13,7 +12,7 @@ int main(int arcg, char**argv)
     "Problema nella conversione",
     "ERRORE: La stringa non è composta di solo lettere minuscole, maiuscole o spazi!",
     "Immissione corretta, hai immesso:",
-    {'c','i','a','o','!','\0'}, // una stringa è un array di char che termina con '\0'
+    {'c','i','a','o','!','\0'}, //è equivalente a "ciao" una stringa è un array di char che termina con '\0'
     {99,105,97,111,33,'\0'}     // ...un char è un intero con segno a 8 bit
   };
   
@@ -52,7 +51,7 @@ int main(int arcg, char**argv)
       // svuota il buffer di tutti i caratteri e termina quando incontra un newline ('\n')
       // se non si facesse questo resterebbe uno '\n', la conversione nella scanf non avrebbe
       // successo e si avrebbe un ciclo infinito.  
-      while ((c=getchar())!='\n'); 
+      //while ((c=getchar())!='\n'); 
       // e se tolgo questa riga?
     }
   printf("%s %s\n%s, %s\n", testo[3], a, testo[4], testo[5]); 

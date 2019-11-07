@@ -1,9 +1,8 @@
 #include<time.h>
 #include<stdio.h>
 #include<stdlib.h>
-#define FIXED_SEED 0
+#define FIXED_SEED 1
 #define N 30
-#define MODO 1
 int main(int arcg, char**argv)
 {
   unsigned int seed;
