@@ -3,7 +3,7 @@
 #include<math.h>
 int main(int argc, char** argv)
 {
-  int i, N=6, nzeri=0;
+  int i, N=6, nzeri=0;// N qui è il numero di intervalli
   double xbest, xerr, s,fxL, fxR, xL, xR, dx, xmin=-15.0, xmax=15.0;
   xL=xmin;
   dx = (xmax-xmin)/N;

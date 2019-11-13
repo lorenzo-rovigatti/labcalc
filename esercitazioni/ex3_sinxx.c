@@ -3,7 +3,7 @@
 #include<math.h>
 int main(int argc, char** argv)
 {
-  int i, Np=100;
+  int i, Np=100;// Np qui è il numero di punti a cui calculare la funzione
   double fx, x, dx, xmin=-15.0, xmax=15.0;
   x=xmin;
   if (Np==1)
