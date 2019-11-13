@@ -4,7 +4,7 @@
 int main(int argc, char** argv)
 {
   int i, Np=100;
-  double fx, x, dx, sum=0.0, xmin=-15.0, xmax=15.0;
+  double fx, x, dx, xmin=-15.0, xmax=15.0;
   x=xmin;
   dx = (xmax-xmin)/Np;
   for (i=0; i < Np; i++)
