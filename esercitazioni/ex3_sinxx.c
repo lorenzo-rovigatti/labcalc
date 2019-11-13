@@ -6,7 +6,10 @@ int main(int argc, char** argv)
   int i, Np=100;
   double fx, x, dx, xmin=-15.0, xmax=15.0;
   x=xmin;
-  dx = (xmax-xmin)/Np;
+  if (Np==1)
+    dx=0.0;
+  else
+    dx = (xmax-xmin)/(Np-1);
   for (i=0; i < Np; i++)
     {
       if (x==0.0)
