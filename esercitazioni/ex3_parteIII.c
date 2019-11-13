@@ -1,11 +1,13 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
-#define PRINT_MESH
 int main(int argc, char** argv)
 {
   int i, N, nzeri;
-  double xbest, xerr, s,fxL, fxR, xL, xR, dx, xmin=-15.0, xmax=15.0;
+#ifdef PRINT_BEST
+  double xbest, xerr;
+#endif
+  double s,fxL, fxR, xL, xR, dx, xmin=-15.0, xmax=15.0;
   for (N=1; N < 20; N++)
     {
       xL=xmin;
@@ -23,10 +25,13 @@ int main(int argc, char** argv)
           else
             fxR=sin(xR)/xR;
           s = fxL * fxR;
-          xbest=(xL+xR)/2.0;
-          xerr=(xR-xL)/2.0;
-          if (s <= 0)
+         if (s <= 0)
             {
+#ifdef PRINT_BEST
+              xbest=(xL+xR)/2.0;
+              xerr=(xR-xL)/2.0;
+              printf("Trovato lo zero N. %d: %.15G errore: %.15G\n", xbest, xerr);
+#endif
               nzeri += 1.0;
             }
           xL+=dx;
