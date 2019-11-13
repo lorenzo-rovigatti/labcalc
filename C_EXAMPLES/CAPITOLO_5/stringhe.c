@@ -24,9 +24,8 @@ int main(void)
       printf("%s\n", testo[0]);
       fine=1;
       res=scanf("%255[^\n]", a); // massimo 255 caratteri, il 256-esimo carattere è per il null di fine stringa('\0')
-        
       // e se avessimo usato: 
-      // res=scanf("%s",a); // ? 
+      // res=scanf("%s",a);  
       // se il valore restituito da scanf è minore di 1 vuol dire che non è 
       // stata acquisita la stringa
       if (res < 1)
