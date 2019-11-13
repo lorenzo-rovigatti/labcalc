@@ -51,7 +51,7 @@ int main(void)
       // svuota il buffer di tutti i caratteri e termina quando incontra un newline ('\n')
       // se non si facesse questo resterebbe uno '\n', la conversione nella scanf non avrebbe
       // successo e si avrebbe un ciclo infinito.  
-      //while ((c=getchar())!='\n'); 
+      while ((c=getchar())!='\n'); 
       // e se tolgo questa riga?
     }
   printf("%s %s\n%s, %s\n", testo[3], a, testo[4], testo[5]); 
