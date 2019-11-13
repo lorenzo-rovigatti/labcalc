@@ -6,6 +6,7 @@ int main()
   int *pa;
   int data[10]={1,2,3,4,5,6,7,8,9,10};
 
+  printf("data={1,2,3,4,5,6,7,8,9,10}\n\n");
   // stampa di un puntatore
   pa = &a;
   printf("pa=%p\n", pa);

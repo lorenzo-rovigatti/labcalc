@@ -7,6 +7,8 @@ int main()
   int *p[3];
   int a[3][3]={{1,2,3},{4,5,6},{7,8,9}};
 
+  printf("a={{1,2,3},{4,5,6},{7,8,9}}\n\n");  
+
   // dereferenzio pp 
   pp = (int**) a;
   printf("*pp=%p\n", pp);
