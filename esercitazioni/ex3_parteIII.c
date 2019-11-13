@@ -4,9 +4,6 @@
 int main(int argc, char** argv)
 {
   int i, N, nzeri;
-#ifdef PRINT_BEST
-  double xbest, xerr;
-#endif
   double s,fxL, fxR, xL, xR, dx, xmin=-15.0, xmax=15.0;
   for (N=1; N < 20; N++)
     {
@@ -27,12 +24,7 @@ int main(int argc, char** argv)
           s = fxL * fxR;
          if (s <= 0)
             {
-#ifdef PRINT_BEST
-              xbest=(xL+xR)/2.0;
-              xerr=(xR-xL)/2.0;
-              printf("Trovato lo zero N. %d: %.15G errore: %.15G\n", xbest, xerr);
-#endif
-              nzeri += 1.0;
+              nzeri += 1;
             }
           xL+=dx;
         }
