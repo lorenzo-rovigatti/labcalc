@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
   sprintf(fn,"bernoulli_%d.dat", n);
   f=fopen(fn,"w+");
   for (k = 0; k <= n; ++k) {
-    fprintf(f, "%d %.7f\n", k, binomiale(k, n, p));
+    fprintf(f, "%d %.15f\n", k, binomiale(k, n, p));
   }
   fclose(f);
   return 0;
