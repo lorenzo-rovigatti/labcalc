@@ -2,7 +2,7 @@
 #include <stdio.h>
 int main()
 {
-  char *pc; // N.B. char tra -127 e +127 unsigned char tra 0 e 255 
+  char *pc; // N.B. char tra -128 e +127, unsigned char tra 0 e 255 
   char stringa[] = "ciao ";
   unsigned int a = 16;
   unsigned char *uc;
