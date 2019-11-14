@@ -11,7 +11,7 @@ int main()
 
   // dereferenzio pp 
   pp = (int**) a;
-  printf("*pp=%p\n", pp);
+  printf("pp=%p a=%p\n", pp, a);
 
   printf("\n");
   // array e puntatori
