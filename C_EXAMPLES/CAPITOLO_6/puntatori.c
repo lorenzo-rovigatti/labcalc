@@ -3,7 +3,7 @@
 int main()
 {
   int a=2;
-  int *pa;
+  int* pa;
   int data[10]={1,2,3,4,5,6,7,8,9,10};
 
   printf("data={1,2,3,4,5,6,7,8,9,10}\n\n");
