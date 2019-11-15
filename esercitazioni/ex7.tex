@@ -1,10 +1,13 @@
 %! TEX program = luatex
 \documentclass[11pt]{article}
+\usepackage{textcomp}
 \usepackage{graphicx,wasysym, mdframed,xcolor,gensymb,verbatim}
 \usepackage{color}
 \usepackage{floatflt}
-\usepackage[italian]{babel}
+\input{listings_styles.tex}
 \input{custom.tex}
+\usepackage[shortlabels]{enumitem}
+\usepackage[italian]{babel}
 \def\cmu{\mbox{cm$^{-1}$}}
 \def\half{\frac{1}{2}}
 
@@ -39,13 +42,13 @@ l'argomento di questa esercitazione è la gestione di matrici $3 \times 3$.
 
 \hrule
 \vspace{2mm}
-Il determinante di una matrice quadrata $3 \times 3$ si può calcolare usando la {\em regola di Sarrus}, che consiste in quanto segue: dalla matrice A, con $N = 3$ righe 
+Il determinante di una matrice quadrata $3 \times 3$ si pu\`{o} calcolare usando la {\em regola di Sarrus}, che consiste in quanto segue: dalla matrice A, con $N = 3$ righe 
 e altrettante colonne, se ne ricava una $B$ con $N$ righe e $2N$ colonne in
-cui la metà destra di $B$ è una copia esatta di $A$. Si calcolano quindi i prodotti $p$ degli elementi che si trovano
-lungo tutte le $N$ diagonali che si possono costruire partendo dall’elemento in alto a sinistra e si sommano tra loro
+cui la met\`{a} destra di $B$ \`{e} una copia esatta di $A$. Si calcolano quindi i prodotti $p$ degli elementi che si trovano
+lungo tutte le $N$ diagonali che si possono costruire partendo dall' elemento in alto a sinistra e si sommano tra loro
 algebricamente. Successivamente si calcolano gli $N$ prodotti degli elementi che si trovano lungo le $N$ diagonali che
-si possono costruire in direzione opposta partendo dall’elemento in alto a destra di $B$. Questi prodotti si sommano
-col segno cambiato a quanto ottenuto al passaggio precedente. Il risultato di questa somma è il determinante della
+si possono costruire in direzione opposta partendo dall' elemento in alto a destra di $B$. Questi prodotti si sommano
+col segno cambiato a quanto ottenuto al passaggio precedente. Il risultato di questa somma \`{e} il determinante della
 matrice.
 
 Consideriamo, per esempio, la matrice seguente:
@@ -57,7 +60,7 @@ A = \left(\begin{array}{ccc}
 \end{array}
 \right)
 \]
-‚
+
 Ricaviamo la matrice $B$ come
 \[
 B = \left(\begin{array}{cccccc}
@@ -67,7 +70,7 @@ B = \left(\begin{array}{cccccc}
 \end{array}
 \right)
 \]
-‚
+
 Le possibili diagonali dall'elemento in alto a sinistra formano i seguenti prodotti: $(5 \times 5 \times 9)= 225$;
 $(8 \times 9 \times 7)= 504$; 
 e $(6\times3\times9)=162$. Quelle in direzione opposta sono invece: 
@@ -82,11 +85,24 @@ $\det A = 225 + 504 +162 - 210 - 216 -405= 60$ .
 \textbf{$\RHD$ Prima parte:}
 
 \begin{enumerate}
-\item Creare un programma \texttt{sarrus.c} che calcoli il determinante di una matrice $3 \times 3$ 
-utilizzando la formula di Sarrus.
-\item Il programma dovrà offrire all'utente la possibilità di inserire gli elementi da tastiera 
-o di leggerli da file, e stampare il determinante su schermo.
-\item Stampate la matrice A sullo schermo in maniera leggibile.
+\item Creare una cartella EX7 dove raccogliere il materiale dell'esercitazione
+\item Creare un programma \texttt{sarrus.c} che calcoli il determinante di una matrice intera $3 \times 3$ 
+utilizzando la formula di Sarrus. Il programma dovr\`{a}:
+\begin{enumerate}
+\item stampare un messaggio iniziale che spieghi all'utente che cosa fa il programma
+\item offrire all'utente la possibilit\`{a} di inserire gli elementi della matrice da tastiera 
+o di leggerli da file. Se si sceglie la seconda opzione viene richiesto il nome del file  da leggere 
+\item scrivere una funzione chiamata \texttt{CalcSarrus} che 
+\begin{itemize}
+\item prenda in input la matrice
+\item crei un array multidimensionale \texttt{B[3][6]} contente 
+la matrice in input duplicata (come nell'esempio sopra)
+\item calcoli i prodotti lungo le diagonali di B usando dei cicli
+\item restituisca il valore del determinante
+\end{itemize}
+\item stampare la matrice in input sullo schermo in maniera leggibile
+\item stampare su schermo il determinante della matrice in input calcolato attraverso la funzione \texttt{CalcSarrus}
+\end{enumerate}
 \end{enumerate}
 
 \hrule
@@ -95,25 +111,35 @@ o di leggerli da file, e stampare il determinante su schermo.
 \vspace{2mm}
 \begin{enumerate}
 \item
-Aggiungete al programma una funzione \texttt{genvec} che generi un vettore $\vec{x}$ con tre componenti {\em random} 
-$\left(x_1,x_2,x_3\right)$.
+Aggiungere al programma una funzione \texttt{genvec} che generi un vettore di numeri casuali $\vec{x}=\left(x_1,x_2,x_3\right)$ 
+compresi tra $[-1,1)$. Si dividano le tre componenti per il modulo del vettore e si controlli che il 
+vettore risultante \`e un versore (ossia un vettore di modulo 1).
 \item Aggiungere una funzione \texttt{product} che calcoli il risultato del prodotto: 
-$\vec{y}=A \vec{x}$ e lo salvi nel vettore $\vec{y}$.
-\item Infine create una funzione \texttt{stampa}  perché stampi su schermo in un formato elegante:
-$\vec{y}=A \vec{x}$.
+$A \vec{x}$ e lo salvi nel vettore $\vec{y}$.
+\item Stampare su schermo le componenti del vettore $\vec{y}$
+\item Controllare che, usando come input la matrice
+\[
+R = \left(\begin{array}{ccc}
+ 0 & 0 & 1\\
+ 0 & 1 & 0\\
+-1 & 0 & 0
+\end{array}
+\right),
+\]
+Il prodotto $\vec{y}=A \vec{x}$ restituisca un vettore $\vec{y}$ di modulo 1.
+\item Usando come matrice di input la matrice $R$ descritta sopra, generare tanti vettori $\vec{y}$ (almeno 100 usando un ciclo \texttt{for}) e scriverli su un file chiamato
+\texttt{coordinate.dat} nel formato
+y[0] y[1] y[2].\\
+\item Usando python, graficare la prima e ultima colonna del file cos\`i generato e salvare il grafico nel file \texttt{coordinate.png}.
 \end{enumerate}
-{\bf N.B.:} Tutte le operazioni indicate sopra potrebbero essere eseguite direttamente nel \texttt{main}, ma lo scopo
-di questa esercitazione è fare pratica con le funzioni che gestiscono vettori e array multidimensionali (paragrafo 7.3
-del libro di testo). 
-\\
+
 \begin{mdframed}[backgroundcolor=gray!10]
-{\em Un piccolo aiuto:} Per passare un array multidimensionale a una funzione è sempre necessario specificare la seconda  dimensione dell'array in maniera esplicita sia in fase di dichiarazione che di definizione della funzione;
-il {\em prototipo} della funzione \texttt{prodotto} è perciò qualcosa del tipo:
+{\em Un piccolo aiuto:} Per passare un array multidimensionale a una funzione \`{e} sempre necessario specificare la seconda  dimensione dell'array in maniera esplicita sia in fase di dichiarazione che di definizione della funzione;
+il {\em prototipo} della funzione \texttt{prodotto} \`{e} perci\`{o} qualcosa del tipo:
 \\
 \texttt{
-void product (float [][3], float *, float *);}.
+void product (double [][3], ecc... );}.
+
 \end{mdframed}
-
-
 
 \end{document}
