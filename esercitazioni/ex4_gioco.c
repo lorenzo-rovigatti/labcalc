@@ -1,6 +1,6 @@
 #include<stdlib.h>
 #include<stdio.h>
-#include<math.h>
+#include<time.h>
 int main(int argc, char *argv[])
 {
   const int nmax=36;
@@ -9,7 +9,11 @@ int main(int argc, char *argv[])
   char giocata;
   int c, fine, vinto, res, ngioc;
   int i, n;
+#ifdef USE_RAND
   srand(0);
+#else
+  srand48(0);
+#endif
   pocket=100.0;
   fine=0;
   while (!fine)
@@ -117,7 +121,11 @@ int main(int argc, char *argv[])
             }
           while ((c=getchar())!='\n'); // svuota il buffer di tutti i caratteri eccetto '\n'=newline
         }
+#ifdef USE_RAND
       n=rand()%nmax + 1;
+#else
+      n=drand48()*nmax+1;
+#endif
       vinto=0;
       if (n%2==0 && ngioc==0)
         vinto=1;

@@ -1,14 +1,18 @@
 #include<stdlib.h>
 #include<stdio.h>
-#include<math.h>
+#include<time.h>
 int main(int argc, char *argv[])
 {
   const int nmax=36; 
   int n;
 
+#ifdef USE_RAND
   srand(0);
-
   n=rand()%nmax + 1;
+#else
+  srand48(0);
+  n=drand48()*nmax + 1;
+#endif
   printf("%2d ",n);
   if (n%2==0)
     {
