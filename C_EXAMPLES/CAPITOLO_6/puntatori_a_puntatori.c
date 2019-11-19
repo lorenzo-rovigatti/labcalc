@@ -15,7 +15,7 @@ int main()
 
   printf("\n");
   // array e puntatori
-  //printf("pa[1][1]=%d\n", pp[1][1]);//<--- SBAGLIATO!!!
+  //printf("pp[1][1]=%d\n", pp[1][1]);//<--- SBAGLIATO!!!
 
   for (i=0; i < 3; i++)
     {
