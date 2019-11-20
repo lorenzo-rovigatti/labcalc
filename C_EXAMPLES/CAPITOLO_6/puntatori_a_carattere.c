@@ -4,7 +4,7 @@ int main()
 {
   char *pc; // N.B. char tra -128 e +127, unsigned char tra 0 e 255 
   char stringa[] = "ciao ";
-  unsigned int a = 16;
+  unsigned int a = 65534;
   unsigned char *uc;
 
   //stampo la stringa
@@ -21,5 +21,8 @@ int main()
 
   //puntare ad un int
   uc = (unsigned char*) &a;// cast esplicito per evitare la warning del comp.
-  printf("a=%d *uc=%02X (10 in esadecimale = 16 base 10)\n", a, *uc);
+  printf("a=%d *uc=%2x (fe (=254 in base 10) è il contenuto del primo byte)\n", a, *uc);
+
+  uc = uc + 1;
+  printf("a=%d *uc=%2x (ff (=255 in base 10) è il contenuto del secondo byte)\n", a, *uc);
 }
