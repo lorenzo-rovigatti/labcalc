@@ -3,7 +3,7 @@
 #include<time.h>
 int main(int argc, char *argv[])
 {
-  unsigned int nmax=RAND_MAX*2.0/3.0, N=1000000000; 
+  unsigned int nmax=RAND_MAX*2.0/3.0, N=100000000; 
   int i, nE=0, nM=0;
   unsigned int n; 
   int nocc[2];

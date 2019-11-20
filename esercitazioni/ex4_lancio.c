@@ -1,7 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<time.h>
-int main(int argc, char *argv[])
+int main(void)
 {
   const int nmax=36; 
   int n;
@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
   srand(0);
   n=nmax*((double)rand()/(RAND_MAX+1.0))+1;
 #else
-  srand48(0);
+  srand48(time(0));
   n=drand48()*nmax + 1;
 #endif
   printf("%2d ",n);
