@@ -6,6 +6,7 @@ int main()
   int a=1;
   printf("a=%d f(a)=%d\n", a, f(a));
 }
+// definizione della funzione
 int f(int a) // di default è int
 {
   // corpo della funzione
