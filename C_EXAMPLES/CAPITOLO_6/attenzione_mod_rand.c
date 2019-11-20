@@ -1,11 +1,9 @@
 #include<stdlib.h>
 #include<stdio.h>
-#include<math.h>
 #include<time.h>
-const unsigned int maxint= RAND_MAX;
 int main(int argc, char *argv[])
 {
-  unsigned int nmax=maxint*2.0/3.0, N=1000000000; 
+  unsigned int nmax=RAND_MAX*2.0/3.0, N=1000000000; 
   int i, nE=0, nM=0;
   unsigned int n; 
   int nocc[2];
@@ -13,9 +11,15 @@ int main(int argc, char *argv[])
   for (int i = 0; i < 2; i++) {
     nocc[i]=0;
   }
-  printf("nmax=%u\n", nmax);
+  printf("nmax=%u verifico che le probabilità di ottenere\n")
+  printf("un numero minore o maggiore di %u/2=%u siano uguali\n ", 
+         nmax, nmax, nmax/2);
   for (i = 0; i < N; ++i) {
+#ifdef NO_USE_MOD
+    n=nmax*((double)rand()/(RAND_MAX+1.0))+1; 
+#else
     n=rand()%nmax + 1;
+#endif
     if (n < nmax/2.0)
       nocc[0] += 1;
     else 
