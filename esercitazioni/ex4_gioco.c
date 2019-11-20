@@ -21,15 +21,18 @@ int main(int argc, char *argv[])
       printf("Numero mani (10/20)? ");
       fine=1;
       res=scanf("%d", &N);
+#if 1 // se comment questo e digito ad es. CTRL-D il programma entra in un loop
+      // nel while sottostante con la getchar()
       if (ferror(stdin)||feof(stdin))
         {
           // qui ci arriva se si preme CTRL-D = EOF
           printf("\n");
-          clearerr(stdin);
+          clearerr(stdin);// cancella gli indicatori di end-of-file (EOF) e
+                          // di errore che altrimenti rimarrebbero impostati
           fine=0;
           continue;
         }
-          
+#endif     
       if (res < 1)
         {
           printf("Problema nella conversione\n");
