@@ -122,7 +122,7 @@ int main(int argc, char *argv[])
           while ((c=getchar())!='\n'); // svuota il buffer di tutti i caratteri eccetto '\n'=newline
         }
 #ifdef USE_RAND
-      n=rand()%nmax + 1;
+      n=nmax*((double)rand()/(RAND_MAX+1.0))+1;
 #else
       n=drand48()*nmax+1;
 #endif

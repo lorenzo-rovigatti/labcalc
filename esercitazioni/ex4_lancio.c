@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 
 #ifdef USE_RAND
   srand(0);
-  n=rand()%nmax + 1;
+  n=nmax*((double)rand()/(RAND_MAX+1.0))+1;
 #else
   srand48(0);
   n=drand48()*nmax + 1;
