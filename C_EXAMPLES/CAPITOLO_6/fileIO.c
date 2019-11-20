@@ -30,7 +30,7 @@ int main()
 	}
       nc = nc + ret;
     }
-  printf("Ho scritto n. %d caratteri\n", nc);
+  printf("Ho scritto n. %d caratteri (contando anche gli \\n)\n", nc);
 
   // assicura che tutto sia scritto (in questo caso invero è inutile
   // poiché poi chiude il file
