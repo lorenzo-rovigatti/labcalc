@@ -46,7 +46,7 @@ int main()
     }
   nc = 0;
   for (i=0; i < 4; i++)
-    nc += fscanf(fp, "%lf %lf\n", &(data[i][0]), &(data[i][1]));
+    nc += fscanf(fp, "%lf %lf", &(data[i][0]), &(data[i][1]));
 
   if (nc < 8)
     {
