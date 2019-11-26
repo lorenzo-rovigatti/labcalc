@@ -63,10 +63,10 @@ fatto da ciascun giocatore.
 \item  A una funzione si passano in input i segni del giocatore A e del giocatore B generati tramite la funzione definita al punto precedente. La
 funzione determina il vincitore in base alle regole sopra citate e restituisce
 un valore che permetta di discriminare chi ha vinto il getto o se il getto \`e finito in parit\`a. La scelta della maniera in cui questo si ottiene \`e lasciata
-allo studente.
-\item Per ciascun getto si determina il vincitore e si aggiunge un punto al vincitore, se esiste.
-\item Dopo ogni getto, il punteggio dei due giocatori viene memorizzato in array opportuni.
-\item Al termine delle partita si decreta il vincitore, stampando un messaggio su schermo assieme al totale dei punteggi dei giocatori A e B. Viene inoltre stampata sul file \texttt{punteggio.dat} la serie temporale dei punteggi dei due giocatori salvata precedentemente.
+allo studente. 
+\item Per ciascun getto si determina il vincitore e si assegna un punto al vincitore (0 punti al perdente), se esiste.
+\item Dopo ogni getto, il punteggio parziale dei due giocatori (ossia la somma dei punti fino a quel momento ottenuti per ciascun giocatore)  viene memorizzato in array opportuni.
+\item Al termine delle partita si decreta il vincitore, stampando un messaggio su schermo assieme ai punteggi finali  dei giocatori A e B. Viene inoltre stampata sul file \texttt{punteggio.dat} la serie temporale dei punteggi dei due giocatori (ossia il punteggio parziale di ciascun giocatore calcolato getto dopo getto) salvata precedentemente.
 \item Un opportuno script python crea un unico grafico \texttt{punteggio.png} contenente le serie temporali dei punteggi dei due giocatori per una partita da 20 getti.
 
 \end{enumerate}

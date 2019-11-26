@@ -123,6 +123,7 @@ int getto(void){
 void morra(int vittoria[][NMAX],int mano){
   int value_A;
   int value_B;
+  int PUNTOA=0,PUNTOB=0;
   int diff=0;
   
   do{
@@ -149,59 +150,69 @@ void morra(int vittoria[][NMAX],int mano){
     
     quindi significa che ogni volta che diff=-2 o 1 allora ha vinto il giocatore A
     se invece diff=2 o -1 ha vinto il giocatore B
+    SE I SEGNI DI A e B SONO UGUALI (es. CARTA-CARTA, FORBICI-FORBICI,SASSO-SASSO)
+    si effettua di nuovo un getto senza considerare la condizione di parita' 
   */
   
   if((diff==-2) || (diff==1)){//VITTORIA DI A
-    //fprintf(stdout,"HA VINTO A %i %i %i %i\n",value_A,value_B,diff,mano);
-    //*(*vittoria+mano)=1;
-    //*(*(vittoria+1)+mano)=0;//stesse istruzioni usando l'operatore di deferenza
-    vittoria[0][mano]=1;
-    vittoria[1][mano]=0;
+    PUNTOA=1;
+    PUNTOB=0;
+    if(mano>0){
+      vittoria[0][mano]=vittoria[0][mano-1]+PUNTOA;
+      vittoria[1][mano]=vittoria[1][mano-1]+PUNTOB;
+    }else{
+      vittoria[0][mano]=PUNTOA;
+      vittoria[1][mano]=PUNTOB;
+    }
     
   }
   
   if((diff==-1) || (diff==2)){//VITTORIA DI B
-    //fprintf(stdout,"HA VINTO B %i %i %i\n",value_A,value_B,diff);
-    //*(*vittoria+mano)=0;
-    //*(*(vittoria+1)+mano)=1;//stesse istruzioni usando l'operatore di deferenza
-    vittoria[0][mano]=0;
-    vittoria[1][mano]=1;
+    PUNTOA=0;
+    PUNTOB=1;
+    if(mano>0){
+    vittoria[0][mano]=vittoria[0][mano-1]+PUNTOA;
+    vittoria[1][mano]=vittoria[1][mano-1]+PUNTOB;
+    }else{
+      vittoria[0][mano]=PUNTOA;
+      vittoria[1][mano]=PUNTOB;
+    }
   }
   //volendo posso farmi stampare i risultati di ogni getto (si puo' commentare questa parte)
-  fprintf(stdout,"%c\t%c\t%i %i\n",convert_into_string(value_A),convert_into_string(value_B),vittoria[0][mano],vittoria[1][mano]);
+  fprintf(stdout,"GETTO N. %i\tSEGNI %c %c\tPUNTI %i %i\tPUNTEGGIO PARZIALE %i %i\n",mano,convert_into_string(value_A),convert_into_string(value_B),PUNTOA,PUNTOB,vittoria[0][mano],vittoria[1][mano]);
 }
 
 /*stampa la serie temporale dei punteggi ottenuti in un file*/
 void Scrivi_punteggio(int vittoria[][NMAX], int n_getti){
   FILE *fp;
   int i;
-  int countA=0,countB=0;
+  int TotalA=vittoria[0][n_getti-1],TotalB=vittoria[1][n_getti-1];
   fp=fopen("punteggio.dat","w");
   
   for(i=0;i<n_getti;i++){
-    fprintf(fp,"%i %i %i\n",i+1,vittoria[0][i],vittoria[1][i]);
-    countA+=vittoria[0][i];
-    countB+=vittoria[1][i];
+    fprintf(fp,"%i %i %i\n",i+1,vittoria[0][i],vittoria[1][i]);    
   }
   fclose(fp);
 
-  if(countA>countB){
+
+  
+  if(TotalA>TotalB){
     fprintf(stdout,"\n");
     fprintf(stdout,"******************************************************************\n");
-    fprintf(stdout,"IL VINCITORE DELLA PARTIRA E' IL GIOCATORE A con %i VITTORIE SU %i\n",countA,n_getti);
+    fprintf(stdout,"IL VINCITORE DELLA PARTIRA E' IL GIOCATORE A con %i VITTORIE SU %i\n",TotalA,n_getti);
     fprintf(stdout,"******************************************************************\n");
     fprintf(stdout,"\n");
   }else{
-   if(countA==countB){
+   if(TotalA==TotalB){
      fprintf(stdout,"\n");
      fprintf(stdout,"***********************************************************************\n");
-     fprintf(stdout,"I DUE GIOCATORI HANNO OTTENUTO LO STESSO PUNTEGGIO DI %i VITTORIE su %i\n",countA,n_getti);
-      fprintf(stdout,"**********************************************************************\n");
+     fprintf(stdout,"I DUE GIOCATORI HANNO OTTENUTO LO STESSO PUNTEGGIO DI %i VITTORIE su %i\n",TotalA,n_getti);
+     fprintf(stdout,"**********************************************************************\n");
     fprintf(stdout,"\n");
    }else{
      fprintf(stdout,"\n");
      fprintf(stdout,"******************************************************************\n");
-     fprintf(stdout,"IL VINCITORE DELLA PARTIRA E' IL GIOCATORE B con %i VITTORIE SU %i\n",countB,n_getti);
+     fprintf(stdout,"IL VINCITORE DELLA PARTIRA E' IL GIOCATORE B con %i VITTORIE SU %i\n",TotalB,n_getti);
      fprintf(stdout,"******************************************************************\n");
      fprintf(stdout,"\n");
    }
