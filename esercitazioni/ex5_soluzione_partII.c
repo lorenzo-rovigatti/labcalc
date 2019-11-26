@@ -3,9 +3,9 @@
 #include <string.h>
 #define NC 10 
 
-int main()
+int main(void)
 {
-  int i,j,dumb,voto[NC],vendite[NC],ore[NC];
+  int i,j,dumb, voto[NC], dati[NC][2]; // colonna 0 vendite; colonna 1 ore
   double media[NC],sortmedia[NC][2],temp1,temp2;
   FILE *fpr;
 
@@ -19,12 +19,13 @@ int main()
   fpr=fopen("tri1.dat","r");
   for (i=0;i<NC;i++)
     {
-      fscanf(fpr,"%i %i %i",&dumb,&vendite[i],&ore[i]);
-      media[i]=((double)vendite[i])/ore[i];
+      fscanf(fpr,"%i %i %i",&dumb,&dati[i][0],&dati[i][1]);
+      media[i]=((double)dati[i][0])/dati[i][1];
       sortmedia[i][1]=media[i];
       sortmedia[i][0]=(double)(i+1); // voglio che i commessi vadano da 1 a 10 quindi sommo 1       
     }  
 
+  fclose(fpr);
   /* Ordino i commessi in ordine di produttivita' */
 
   printf("ordino\n");
@@ -63,8 +64,7 @@ int main()
   // stampo i commessi con i voti
   for (j=0;j<NC;j++)
     {
-      printf("commesso n. %f Media= %f\n",sortmedia[j][0],sortmedia[j][1]);
-      //printf("commesso n. %3i Ore %3i Vendite %5i Media= %7.2f voto= %3i\n",j+1,ore[j],vendite[j],media[j],voto[j]);
+      printf("commesso n. %3i # Ore %3i # Vendite in euro %5i # Media= %7.2f # voto= %3i\n",j+1,dati[j][0],dati[j][1],media[j],voto[j]);
     }
 
 }
