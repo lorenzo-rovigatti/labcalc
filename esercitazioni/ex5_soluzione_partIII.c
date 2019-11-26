@@ -74,18 +74,25 @@ int main(void)
           voto[j][n]=NC-i;
         }
     }
-  // stampo i commessi con i voti
-  for (j=0;j<NC;j++)
+  // stampo medie e voti (ogni colonna è un commesso)
+  fpr=fopen("medie_2016.dat", "w");
+  for (n=0; n < NTRIM; n++)
     {
-      sprintf(fn,"medie_commesso_N%d.dat", j+1);
-      fpr=fopen(fn, "w");
-      for (n=0; n < NTRIM; n++)
-        fprintf(fpr,"%3i %7.2f\n",n,media[j][n]);
-      fclose(fpr);
-      sprintf(fn,"voti_commesso_N%d.dat", j+1);
-      fpr=fopen(fn, "w");
-      for (n=0; n < NTRIM; n++)
-        fprintf(fpr,"%3i %3i\n",n,voto[j][n]);
-      fclose(fpr);
+      for (j=0;j<NC;j++)
+        {
+          fprintf(fpr,"%7.2f ",media[j][n]);
+        }
+      fprintf(fpr, "\n");
     }
+  fclose(fpr);
+  fpr=fopen("voti_2016.dat", "w");
+  for (n=0; n < NTRIM; n++)
+    {
+      for (j=0;j<NC;j++)
+        {
+          fprintf(fpr,"%3i ",voto[j][n]);
+        }
+      fprintf(fpr, "\n");
+    }
+  fclose(fpr);
 }
