@@ -78,6 +78,7 @@ int main(void)
   fpr=fopen("medie_2016.dat", "w");
   for (n=0; n < NTRIM; n++)
     {
+      fprintf(fpr, "%d ", n+1);
       for (j=0;j<NC;j++)
         {
           fprintf(fpr,"%7.2f ",media[j][n]);
@@ -88,6 +89,7 @@ int main(void)
   fpr=fopen("voti_2016.dat", "w");
   for (n=0; n < NTRIM; n++)
     {
+      fprintf(fpr, "%d ", n+1);
       for (j=0;j<NC;j++)
         {
           fprintf(fpr,"%3i ",voto[j][n]);
