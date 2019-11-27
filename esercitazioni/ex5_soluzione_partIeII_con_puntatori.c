@@ -78,7 +78,7 @@ int main()
   // stampo i commessi con i voti
   for (j=0;j<NC;j++)
     {
-      printf("commesso n. %3i Ore %3i Vendite %5i Media= %7.2f voto= %3i\n",j+1,ore[j],vendite[j],media[j],voto[j]);
+      printf("commesso n. %3i # Ore %3i # Vendite in euro %5i # Media= %7.2f # voto= %3i\n",j+1,ore[j],vendite[j],media[j],voto[j]);
     }
 
 }
