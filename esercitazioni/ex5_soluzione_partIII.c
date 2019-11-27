@@ -33,7 +33,7 @@ int main(void)
   fclose(fpr);
   /* Ordino i commessi in ordine di produttivita' */
 
-  printf("ordino\n");
+  printf("ordino...");
 
   for (n=0; n < NTRIM; n++)
     {
@@ -74,6 +74,7 @@ int main(void)
           voto[j][n]=NC-i;
         }
     }
+  printf("...fatto\n");
   // stampo medie e voti (ogni colonna è un commesso)
   fpr=fopen("medie_2016.dat", "w");
   for (n=0; n < NTRIM; n++)
