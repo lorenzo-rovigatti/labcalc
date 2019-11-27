@@ -96,6 +96,8 @@ La libreria `matplotlib` (solitamente importata con l'*alias* `plt`) permette di
 
 Si possono aggiungere curve e *dataset* al grafico utilizzando il comando `plt.plot(x, y)`, dove `x` ed `y` devono essere *array* della stessa lunghezza contenenti le ascisse e le ordinate dei dati che vogliamo graficare. Lo stesso comando può essere ripetuto più volte (con gli stessi o con altri *array*). Il terzo argomento (opzionale) di `plt.plot` permette di specificare il formato con cui la curva verrà visualizzata. Alcuni esempi sono `'x'` per utilizzare delle croci, `'o'` per dei cerchi, `'-'` per una linea continua. Ulteriori parametri opzionali di `plt.plot` permettono di controllare alcune proprietà del *dataset* da graficare. Ad esempio il parametro `label='nome dataset'` permette di impostare l'etichetta che apparirà in legenda. Un elenco esaustivo delle opzioni possibili è consultabile all'indirizzo [https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.plot.html](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.plot.html).
 
+Se al posto di `plt.plot(x, y)` viene usato `plt.bar(x, y)` il *dataset* verrà graficato in forma di istogramma.
+
 ###Visualizzazione (e/o salvataggio su file)
 
 Una volta aggiunti tutti i *dataset* possiamo caricare la legenda col comando `plt.legend()` e mostrare la figura con `plt.show()`. Opzionalmente è anche possibile salvare la figura su *file* con il comando `plt.savefig('prova.png')` *prima* (o al posto di) chiamare `plt.show()`.
@@ -117,6 +119,8 @@ plt.ylabel("Asse y")
 
 # aggiungiamo il dataset
 plt.plot(x, y, label='prova dataset')
+# dopo aver caricato tutti i dataset facciamo apparire la legenda
+plt.legend()
 # salviamo la figura nel file grafico.png
 plt.savefig('grafico.png')
 # mostriamo il grafico
