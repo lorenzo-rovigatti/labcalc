@@ -35,7 +35,7 @@ int main(void)
   for (i=0;i<NC-1;i++) // mi fermo a NC-2 poiché j parte da NC - 1 quindi se i=NC-1 il ciclo in j
                        // non verrebbe effettuato
     {
-      for (j=NC-1; j > 0; j--)//j=NC-1 è l'elemento più in "basso" 0 quello più in "alto"
+      for (j=NC-1; j > i; j--)//j=NC-1 è l'elemento più in "basso" 0 quello più in "alto"
 	// arrivo fino a i, infatti 
 	// 1) dopo il primo ciclo in 0 ho sicuramente l'elemento 
        	//    più grande quindi è inutile fari confronti con l'elemento in 0
