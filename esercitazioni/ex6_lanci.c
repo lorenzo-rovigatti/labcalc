@@ -30,7 +30,7 @@ void inserimento(char *msg, char *fmt, void *v)
 }
 int lancio_dado()
 {
-  return rand()%6+1;
+  return drand48()*6+1;
 }
 #define NMAX 1000
 double isto[NMAX];
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
   int k, nl, n, i, Nlanci, successi=0;
   FILE *f;
   double sum=0;
-  srand(time(0));
+  srand48(time(0));
   for (i=0; i < NMAX; i++)
     {
       isto[i] = 0;
