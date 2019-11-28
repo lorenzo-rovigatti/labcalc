@@ -55,6 +55,8 @@ int main(int argc, char *argv[])
   FILE *f;
   char fn[256];
 
+  printf("Calcolo della distribuzione di Bernoulli corrispondente a n lanci\n");
+  printf("dove p è la probabilità di un certo evento nel singolo lancio\n");
   inserimento("Inserisci n: ", "%d", &n);// per grandi n tende ad una gaussiana
   inserimento("Inserisci p: ", "%lf", &p);  
   printf("ok n=%d p=%.7f\n", n, p);
