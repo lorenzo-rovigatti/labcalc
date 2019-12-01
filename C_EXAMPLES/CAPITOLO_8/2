@@ -26,32 +26,16 @@ int main(int argc, char *argv[])
 #ifdef TRAPEZI
   double x2;
 #endif
-  double sumex;
+  double sumex = log(10.0);
   int N, i;
   xmin=1.0;
   xmax=10.0;
- if (argc > 1)
-    xmin=atof(argv[1]);
-  if (argc > 2)
-    xmax=atof(argv[2]);
-  if (argc > 3)
-    N=atoi(argv[3]);
+
+  if (argc > 1)
+    N=atoi(argv[1]);
   else
-    N=pow(2,26);
-  //sumex = (xmax-xmin)/(xmax*xmin);//log(xmax);
-  sumex=log(xmax/xmin);
-  printf("Uso il metodo ");
-#if defined(MIDPOINT)
-  printf("del punto di mezzo ");
-#elif defined(TRAPEZI)
-  printf("dei trapezi ");
-#else
-  printf("dei rettangoli ");
-#endif
-  printf("con N=%d intervalli\n", N);
-#ifdef KSUM
-  printf("Le somme verranno effettuate usando l'algoritmo di Kahan\n");
-#endif
+    N=pow(2,16);
+  printf("Uso N=%d intervalli\n", N);
   sum=0.0;
   h = (xmax-xmin)/N;
   for (i=0; i < N; i++)
@@ -68,12 +52,13 @@ int main(int argc, char *argv[])
       term = func(x1);
 #endif
 #ifdef KSUM
-      sum= kahan_sum(term, sum, &corr); 
+      sum=kahan_sum(term, sum, &corr); 
 #else 
-      sum += term;
+      sum+=term;
 #endif
     }
   sum *= h;
-  printf("L'integrale di 1/x tra %.1f e %.1f è: %.16f\n", xmin, xmax, sum);
+  
+  printf("L'integrale di 1/x tra 1 e 10 è: %.16f\n", sum);
   printf("L'errore è pari a: %.16f\n", fabs(sum-sumex));
 }
