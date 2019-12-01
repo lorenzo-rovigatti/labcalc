@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
       term = func(x1);
 #endif
 #ifdef KSUM
-      sum= kahan_sum(term, sum, &corr); 
+      sum = kahan_sum(term, sum, &corr); 
 #else 
       sum += term;
 #endif
