@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
   double x2;
 #endif
   double sumex;
-  int N, i;
+  long long int N, i;
   xmin=1.0;
   xmax=10.0;
  if (argc > 1)
@@ -35,10 +35,9 @@ int main(int argc, char *argv[])
   if (argc > 2)
     xmax=atof(argv[2]);
   if (argc > 3)
-    N=atoi(argv[3]);
+    N=atoll(argv[3]);
   else
     N=pow(2,26);
-  //sumex = (xmax-xmin)/(xmax*xmin);//log(xmax);
   sumex=log(xmax/xmin);
   printf("Uso il metodo ");
 #if defined(MIDPOINT)
@@ -48,7 +47,7 @@ int main(int argc, char *argv[])
 #else
   printf("dei rettangoli ");
 #endif
-  printf("con N=%d intervalli\n", N);
+  printf("con N=%lld intervalli\n", N);
 #ifdef KSUM
   printf("Le somme verranno effettuate usando l'algoritmo di Kahan\n");
 #endif
