@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import matplotlib.pyplot as plt
 import numpy as np
-#ogni colonna è un commesso (in tutto sono 10)
-data = np.loadtxt('data.dat', unpack=False)
+#ogni riga è un commesso (in tutto sono 10)
+data = np.loadtxt('read_by_row.dat', unpack=False)
 cc=1
 for l in data:
     print('row #'+str(cc)+'=', l)
