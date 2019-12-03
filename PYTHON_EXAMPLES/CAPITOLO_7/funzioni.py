@@ -1,15 +1,10 @@
-#include<stdlib.h>
-#include<stdio.h>
-int f(int);//dichiarazione ovvero prototipo
-int main()
-{
-  int a=1;
-  printf("a=%d f(a)=%d\n", a, f(a));
-}
-// definizione della funzione
-int f(int a) // di default è int
-{
-  // corpo della funzione
-  int b=2;
-  return a+1+b;
-}
+def func(arg1,arg2):
+    s=''
+    for i in range(0,3):
+        s=s+arg1+arg2
+    return s
+a='a'
+b='b'
+print('>>>'+func(arg2=b,arg1=a))
+#o equivalentemente
+print('>>>'+func(a,b))
