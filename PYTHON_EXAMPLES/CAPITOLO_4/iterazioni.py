@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 print('while () ....')
 i=0
 while i < 3:
