@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
       printf("[main:ERRORE] n troppo grande incrementare NMAX nel codice!\n");
       exit(1);
     }
-  printf("ok Nlanci=%d n=%d\n", Nlanci, n);
+  printf("ok numero lanci=%d, n=%d\n", Nlanci, n);
 
   for (nl=0; nl < Nlanci; nl++)
     {
