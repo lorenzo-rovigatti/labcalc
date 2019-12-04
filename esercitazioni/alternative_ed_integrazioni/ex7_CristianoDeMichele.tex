@@ -1,0 +1,82 @@
+%! TEX program = luatex
+\documentclass[11pt]{article}
+\usepackage{graphicx,wasysym, mdframed,xcolor,gensymb,verbatim}
+\usepackage{color}
+\usepackage{floatflt}
+\usepackage[italian]{babel}
+\input{custom.tex}
+\def\cmu{\mbox{cm$^{-1}$}}
+\def\half{\frac{1}{2}}
+
+\voffset -2cm
+\hoffset -2.5cm
+%\marginparwidth 0cm
+\textheight 22cm
+\textwidth 17cm
+%\oddsidemargin  0.2cm                                                                                         
+%\evensidemargin 0.4cm                                                                                         
+\parindent 0pt
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+{\Large \bf  Laboratorio di Calcolo per Fisici,\\ Settima esercitazione \\[2mm]}
+{\large Canale \canale, Docente: \docente}
+\end{center}
+\vspace{4mm}
+
+\begin{mdframed}[backgroundcolor=gray!10]
+Lo scopo della settima esercitazione di laboratorio è di fare pratica con
+gli argomenti appresi durante il corso in vista delle esercitazioni valutate;\\
+Vi consigliamo di utilizzarla per simulare un'esercitazione valutata: usate libri di testo e appunti,
+discutete la soluzione con il vostro compagno di gruppo (a bassa voce), ma non con gli altri gruppi o con il docente.
+  \end{mdframed}
+%\vspace{1mm}
+%
+%
+
+
+
+\hrule
+\vspace{2mm}
+\textbf{$\RHD$ Esercizio:}
+La morra cinese \`e un antico gioco che si svolge tra due persone come segue.
+Ciascuno dei giocatori porta la mano dietro la testa e, ritmicamente, la riporta
+rapidamente davanti a s\'e facendo un gesto convenzionale ({\em getto}). 
+I gesti possono essere di tre tipi: il pungo chiuso rappresenta un sasso, la mano aperta un foglio di carta e la mano chiusa con l'indice e il medio stesi un paio di forbici. Si confrontano i segni di ciascuno dei due giocatori e si stabilisce chi vince secondo le regole che seguono:
+\begin{itemize}
+\item Il sasso vince sulle forbici. 
+\item Le forbici vincono sulla carta.
+\item La carta vince sul sasso.
+\end{itemize}
+Due segni uguali conducono a un pareggio e s'ignorano. Vince chi, dopo un numero prestabilito di getti ottiene il maggior numero di vittorie. Simulare una partita di morra cinese nel modo che segue.
+\begin{enumerate}
+\item Tutti i codici e file relativi all'esercitazione devono essere contenuti nella cartella EX7. Il nome del programma che simula il gioco della morra cinese dovr\`{a} essere \texttt{morra.c}.
+\item il programma stampa un messaggio iniziale che spiega che cosa fa
+\item Il programma chiede all'utente di quanti getti sar\`a composta la partita.
+L'utente inserisce questo numero attraverso la tastiera.
+\item Il programma controlla che il numero di getti introdotto sia positivo e minore o uguale a 20. In caso non sia cos\`{i}, il programma stampa un messaggio di errore e chiede di nuovo in input il numero di getti.
+\item Si simula il comportamento di un giocatore attraverso una funzione che
+restituisce con uguale probabilit\`a un numero intero che rappresenta il segno
+fatto da ciascun giocatore.
+\item  A una funzione si passano in input i segni del giocatore A e del giocatore B generati tramite la funzione definita al punto precedente. La
+funzione determina il vincitore in base alle regole sopra citate e restituisce
+un valore che permetta di discriminare chi ha vinto il getto o se il getto \`e finito in parit\`a. La scelta della maniera in cui questo si ottiene \`e lasciata
+allo studente. 
+\item Per ciascun getto si determina il vincitore e si assegna un punto al vincitore (0 punti al perdente), se esiste.
+\item Dopo ogni getto, il punteggio parziale dei due giocatori (ossia la somma dei punti fino a quel momento ottenuti per ciascun giocatore)  viene memorizzato in array opportuni.
+\item Al termine delle partita si decreta il vincitore, stampando un messaggio su schermo assieme ai punteggi finali  dei giocatori A e B. Viene inoltre stampata sul file \texttt{punteggio.dat} la serie temporale dei punteggi dei due giocatori (ossia il punteggio parziale di ciascun giocatore calcolato getto dopo getto) salvata precedentemente.
+\item Un opportuno script python crea un unico grafico \texttt{punteggio.png} contenente le serie temporali dei punteggi dei due giocatori per una partita da 20 getti.
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+\end{document}
