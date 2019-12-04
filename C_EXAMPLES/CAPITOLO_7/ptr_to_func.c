@@ -11,7 +11,7 @@ int main()
   printf("Prima:\n");
   for (i=0; i < 2; i++)
     {
-      for (j=0; j < N; j++)
+      for (j=0; j < M; j++)
 	{
 	  printf(" %5d", a[i][j]);
 	}
@@ -21,7 +21,7 @@ int main()
   printf("Dopo:\n");
   for (i=0; i < 2; i++)
     {
-      for (j=0; j < N; j++)
+      for (j=0; j < M; j++)
 	{
 	  printf(" %5d", a[i][j]);
 	}
