@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import (MultipleLocator, FormatStrFormatter)
-plt.title('Istogramma',size='18',color='green')
+plt.title('Confronto',size='18',color='green')
 ax = plt.gca()
 ax.xaxis.set_major_formatter(FormatStrFormatter('%.0f'))
 ax.xaxis.set_major_locator(MultipleLocator(2))
