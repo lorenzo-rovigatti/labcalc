@@ -67,7 +67,7 @@ int main(void)
   f=fopen("punteggio.dat","w"); 
   for (i=0; i < Ngetti; i++)
     {
-      fprintf(f,"%d %d %d\n", i, storico[i][0], storico[i][1]);
+      fprintf(f,"%d %d %d\n", i+1, storico[i][0], storico[i][1]);
     }
   fclose(f);
   return 0;
