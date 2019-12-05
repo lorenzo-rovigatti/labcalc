@@ -47,7 +47,7 @@ int main(void)
 
   for (i=0; i < Ngetti; i++)
     {
-      if ((s=singolo_getto()) > 0)
+      if ((s=singolo_getto()) >= 0)
         (punteggi[s])++;
       storico[i][0] = punteggi[0];
       storico[i][1] = punteggi[1];
