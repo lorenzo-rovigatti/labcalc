@@ -9,17 +9,17 @@ void inserimento(char *msg, char *fmt, void *v);
 int singolo_getto(void);
 void morra(void);
 
+int storico[NMAX][2];
 /************************MAIN*******************************/
 int main(void)
 {
-  int s,i,n,fine, Ngetti;
-  int punteggi[NMAX][2];
+  int punteggi[2], s,i,n,fine, Ngetti;
   FILE *f;
   /* inzializzazione sequenza di numeri pseudo-casuali */
   srand48(time(NULL));
 
   //********** STAMPA MESSAGGIO INIZIALE E LETTURA DATI ***********
-  printf("Simulazione del gioco della morra cinese (giocatore 0 vs giocatore 1)\n");
+  printf("Simulazione del gioco della morra cinese (giocatore A vs giocatore B)\n");
   do
     {
       inserimento("Inserisci il numero di getti (massimo n. consentito e' 20): ", "%i", &Ngetti);
@@ -40,30 +40,34 @@ int main(void)
     {
       for (n = 0; n < 2; n++) 
         {
-          punteggi[i][n] = 0;
+          storico[i][n] = 0;
         }
     }
+  punteggi[0]=punteggi[1]=0;
+
   for (i=0; i < Ngetti; i++)
     {
       if ((s=singolo_getto()) > 0)
-        punteggi[i][s]++;
-      printf("Getto #%d puntteggo di 0:%d punteggio di 1:%d\n", i, punteggi[i][0], punteggi[i][1]);
+        (punteggi[s])++;
+      storico[i][0] = punteggi[0];
+      storico[i][1] = punteggi[1];
+      printf("Getto #%d punteggio di A:%d...punteggio di B:%d\n", i, punteggi[0], punteggi[1]);
     }
 
 
   //**************** STAMPA PUNTEGGIO SU FILE *******************
-  printf("0 ha totalizzato %d punti\n", punteggi[Ngetti-1][0]);
-  printf("1 ha totalizzato %d punti\n", punteggi[Ngetti-1][1]);
-  if (punteggi[Ngetti-1][0] > punteggi[Ngetti-1][1])
-    printf("Ha vinto il giocatore 0\n");
-  else if (punteggi[Ngetti-1][0] < punteggi[Ngetti-1][1])
-    printf("Ha vinto il giocatore 1\n");
+  printf("A ha totalizzato %d punti\n", punteggi[0]);
+  printf("B ha totalizzato %d punti\n", punteggi[1]);
+  if (punteggi[0] > punteggi[1])
+    printf("Ha vinto il giocatore A\n");
+  else if (punteggi[0] < punteggi[1])
+    printf("Ha vinto il giocatore B\n");
   else
     printf("E' finita in parità\n");
   f=fopen("punteggio.dat","w"); 
   for (i=0; i < Ngetti; i++)
     {
-      fprintf(f,"%d %d %d\n", i, punteggi[i][0], punteggi[i][1]);
+      fprintf(f,"%d %d %d\n", i, storico[i][0], storico[i][1]);
     }
   fclose(f);
   return 0;
@@ -76,9 +80,11 @@ int genera_segno(void)
 }
 int singolo_getto(void)
 {
+  char segni[3]={'C','S','F'};
   int segno0, segno1, vincitore;
   segno0 = genera_segno();
   segno1 = genera_segno();
+  printf("Giocatore A: %c Giocatore B: %c\n", segni[segno0-1], segni[segno1-1]);
   if (segno0==1 && segno1==2)      // carta vince su sasso
     vincitore=0;
   else if (segno0==2 && segno1==1)
