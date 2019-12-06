@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include <time.h>
 #define NMAX 20
 
@@ -85,7 +84,7 @@ int singolo_getto(void)
   segno0 = genera_segno();
   segno1 = genera_segno();
   printf("Giocatore A: %c Giocatore B: %c\n", segni[segno0-1], segni[segno1-1]);
-  if (segno0==1 && segno1==2)      // carta vince su sasso
+  if      (segno0==1 && segno1==2)      // carta vince su sasso
     vincitore=0;
   else if (segno0==2 && segno1==1)
     vincitore=1;
