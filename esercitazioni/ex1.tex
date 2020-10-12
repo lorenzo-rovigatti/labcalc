@@ -106,7 +106,23 @@ plt.show()
 \texttt{plt.ylabel('Tf')}
          % {\em Ogni volta che si d\`a un nuovo comando a gnuplot bisogna ricordarsi di fare il refresh dello schermo con il comando \texttt{replot}.}
  \item Eseguire nuovamente lo script.
- \end{enumerate}
+ \item Aggiungere prima di \texttt{plt.show()} il seguente comando:
+\\
+\texttt{plt.savefig('temp.png')}
+\\\
+\item Eseguire nuovamente lo script. Impartendo il comando 'ls' nel terminale troverete che è stato
+  creato il file 'temp.png' che è un'immagine png del plot ottenuto con python. Per visualizzarlo potete
+  usare il comando:
+  \begin{lstlisting}[language=bash,numbers=none]
+    xdg-open ./temp.png
+\end{lstlisting}
+
+\item Notate che potete personalizzare colori, simboli e tipo di linea come indicato in figura 1. Ad
+  esempio, sostituendo la stringa \texttt{'x'} nel comando \texttt{plt.plot()} con \texttt{'o--g'}, otterreste una linea verde
+ tratteggiate dove i vari punti saranno rappresentati con dei cerchietti. Fate questa modifica ed eseguie
+ nuovamente lo script python. Provate anche altri possibili scelte.
+
+\end{enumerate}
 
 
 \hrule
@@ -129,4 +145,9 @@ Inserire una legenda nel grafico per la retta interpolante aggiungendo nel progr
 \lstinline[language=python]!plt.show()! 
 il comando \lstinline[language=python]!plt.legend()! e riscalare gli assi $x$ e $y$ in modo che vadano dalla più piccola alla più grande delle temperature scelte. {\em Suggerimento}: Per modificare il range degli assi $x$ e $y$ modificare gli argomenti di \texttt{plt.xlim()} e \texttt{plt.ylim()}.
 \end{enumerate}  
+\begin{figure}[!h]
+\includegraphics[width=1.0\columnwidth]{./options.png}
+\caption{opzioni per personalizzare lo stile di un grafico}
+\label{fig:fig1}
+\end{figure}
 \end{document}

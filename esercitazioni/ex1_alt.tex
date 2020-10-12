@@ -1,0 +1,321 @@
+%! TEX program = luatex
+\documentclass[11pt]{article}
+\usepackage{textcomp}
+\usepackage{graphicx,wasysym, mdframed,xcolor,gensymb,verbatim}
+\usepackage{color}
+\usepackage{floatflt}
+\usepackage[italian]{babel}
+%T1 garantisce la visualizzazione corretta del font  FiraMono usato per i codici
+%con T1 i caratteri sono rappresentati a 8 bit e quindi si hanno a disposizione 256 glyphs
+%la scelta migliore sare TU (unicode) ma questa è supportata solo da XeTeX e LuaTeX
+\input{listings_styles.tex}
+\newcommand{\voto}[1]{[\textbf{#1} punti]}
+\def\cmu{\mbox{cm$^{-1}$}}
+\def\half{\frac{1}{2}}
+
+\voffset -2cm
+\hoffset -2.5cm
+%\marginparwidth 0cm
+\textheight 22cm
+\textwidth 17cm
+%\oddsidemargin  0.2cm                                                                                         
+%\evensidemargin 0.4cm                                                                                         
+\parindent=0pt
+
+\begin{document}
+\pagestyle{empty}
+\begin{center}
+{\Large \bf  Laboratorio di Calcolo per Fisici, Prima esercitazione\\[2mm]}
+{\large Canale A-C 2019-2020}
+\end{center}
+\vspace{4mm}
+\begin{mdframed}[backgroundcolor=panna]
+  Lo scopo della prima esercitazione di laboratorio \`e di introdurre gli strumenti di base che verranno usati nel corso delle successive esercitazioni:
+  la {\em shell}, l'editor di testo, il compilatore {\em gcc}, e {\em python\/} (tramite le librerie
+  {\em matplotlib\/} e {\em numpy\/}) per la grafica.
+\\
+% Sulla pagina web del corso
+% ({\em https://lboeri.wordpress.com/teaching/labcalc/ex/})
+% sono disponibili dei tutorial pi\`u avanzati su ciascuno di questi argomenti.
+\end{mdframed}
+%\vspace{1mm}
+%
+%
+\hrule
+\vspace{2mm}
+\textbf{$\RHD$ Prima parte (obbligatoria)} 
+\begin{enumerate}
+%\item  Se stai facendo l'esercitazione in presenza, fai  il {\em login\/} sulla propria macchina {\em Unix\/} utilizzando lo {\em userid\/} \texttt{lcgnxx}, 
+%dove $xx$ \`e il tuo numero utente. 
+\item Aprire una finestra di {\em terminale}.
+\item Creare una cartella  \texttt{EX1}.
+\item Entrare nella cartella \texttt{EX1} aprire con l'editor di testo il file \texttt{temp.c}, e digitare il listato sottostante. Salvare il contenuto del file.
+\item Compilare il programma in c digitando sul terminale:
+\texttt{gcc temp.c -o temp.o}
+\item Eseguire il file {\em temp.o\/} digitando \texttt{./temp.o}
+\item Inserire i dati richiesti dal programma; il programma \`e un semplice convertitore di temperature da gradi Celsius a gradi Fahrenheit.
+\end{enumerate}
+\begin{lstlisting}[caption={Programma \texttt{temp.c}},language=c]
+#include <stdio.h>
+int main()
+{
+  double tc, tf, conv, offset;
+  conv = 5./9.;
+  offset = 32.;
+  printf("Inserisci la temperatura in gradi Celsius \n");
+  scanf("%lf", &tc);
+  tf = tc/conv + offset;
+  printf("La temperatura in gradi Fahrenheit vale %5.2f gradi\n",tf);
+}
+\end{lstlisting}
+\newpage
+\textbf{$\RHD$ Seconda parte (obbligatoria)}\\
+\vspace{2mm}
+\textbf{Esercizio 1: Lanciare l'interprete python}\\
+digitare sul vostro terminale il comando
+\vspace{2mm}
+\begin{lstlisting}[language=Python]
+python3
+\end{lstlisting}
+\vspace{2mm}
+e premere invio. Noterete che sul terminale compariranno tre freccette $>>>$ . Digitare ora il comando python
+\vspace{2mm}
+\begin{lstlisting}[language=Python]
+print("Ciao Mondo")
+\end{lstlisting}
+\vspace{2mm}
+e premere invio. Osservate il risultato.
+Per chiudere l'interprete python digitate il comando
+\vspace{2mm}
+\begin{lstlisting}[language=Python]
+exit()
+\end{lstlisting}
+\vspace{2mm}
+
+Un altro modo \`{e} quello di creare uno script in  python da far interpretare. Aprire un editor di testo e digitare 
+\vspace{2mm}
+\begin{lstlisting}[language=Python]
+#lo script scrive su terminale la frase "Ciao Mondo"
+print("Ciao Mondo")
+\end{lstlisting}
+\vspace{2mm}
+salvate il contenuto del file e nominate il file \texttt{ex1.py}. Chiudete l'editor di testo.
+Nel terminale scrivete il comando
+\vspace{2mm}
+\begin{lstlisting}[language=Python]
+python3 ex1.py
+\end{lstlisting}
+\vspace{2mm}
+e premete invio. Osservate il risultato.
+\vspace{2mm}
+\hrule
+\vspace{4mm}
+\textbf{Esercizio 1.2: L'indentazione in python}\\
+Questo esercizio mostra come l'indentazione sia obbligatoria in python quando un insieme di istruzioni devono essere raggruppate. Essa \`{e} l'equivalente dell'uso delle parentesi graffe in C.
+Aprire un editor di testo e digitare 
+\vspace{2mm}
+\begin{lstlisting}[language=Python]
+for i in "ciao":
+    print(i)
+\end{lstlisting}
+\vspace{2mm}
+dove nella seconda linea avete lasciato $4$ spazi vuoti dall'inizio della riga (indentazione).Salvate il contenuto del file e nominate il file \texttt{ex1-2.py}. Chiudete l'editor di testo.
+Nel terminale scrivere il comando
+\vspace{2mm}
+\begin{lstlisting}[language=Python]
+python3 ex1-2.py
+\end{lstlisting}
+\vspace{2mm}
+e premete invio. Osservare il risultato.
+Adesso aprire \texttt{ex1-2.py} e togliere i primi $4$ spazi nella seconda linea del codice. Salvare e lanciare lo script come fatto nel primo caso. Osservare il risultato.
+\vspace{2mm}
+\hrule
+\vspace{4mm}
+\textbf{Esercizio 2: I moduli matplotlib e pyplot}\\
+Questo esercizio mostra come importare il modulo pyplot in matplotlib e come graficare dei dati.
+Aprire un editor di testo e digitare
+\vspace{2mm}
+\begin{lstlisting}[caption= ex2.py, language=Python]
+#un primo grafico in python
+import matplotlib.pyplot as plt
+plt.plot([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+plt.show()
+\end{lstlisting}
+\vspace{2mm}
+Salvare lo script con il nome ex2.py e lanciare lo script come visto in precendenza. Esplorare le opzioni della toolbar del grafico.
+Modificare ora lo script \texttt{ex2.py} nel seguente modo
+\vspace{2mm}
+\begin{lstlisting}[caption= ex2.py modificato, language=Python]
+#un primo grafico in python
+import matplotlib.pyplot as plt
+plt.plot([-4, -3, -2, -1, 0, 1, 2, 3, 4], [16, 9, 4, 1, 0, 1, 4, 9, 16])
+plt.show()
+\end{lstlisting}
+\vspace{2mm}
+salvare il file e lanciare lo script. Osservare il risultato.
+\vspace{2mm}
+\hrule
+\vspace{4mm}
+\textbf{Esercizio 3: Il modulo numpy}\\
+Questo esercizio mostra come  il modulo numpy permetta di graficare funzioni matematiche in maniera agile rispetto ai casi visti prima.
+Aprire un editor di testo e digitare le seguenti istruzioni:
+\vspace{2mm}
+\begin{lstlisting}[caption= ex3.py, language=Python]
+#lo script grafica una parabola
+import matplotlib.pyplot as plt
+import numpy as np
+x=np.linspace(-4, 4, 50, endpoint=True)
+y=x*x 
+plt.plot(x,y,'o')
+plt.show()
+\end{lstlisting}
+\vspace{2mm}
+salvare il file  con il nome ex3.py e lanciare lo script. Osservare il risultato e successivamente fare delle prove modificando il numero dei punti e gli estremi della curva.
+\vspace{2mm}
+\hrule
+\vspace{4mm}
+\textbf{Esercizio 3-1: lettura dei dati da file}\\
+Questo esercizio mostra come importare dei dati contenuti in un file di testo per graficarlo. Aprire un editor di testo e copiare le seguenti colonne all'interno del nuovo file:
+\vspace{2mm}
+\begin{lstlisting}[caption= myfile.dat, language=Python]
+#x	#y
+-4	16
+-3	 9
+-2	 4
+-1 	 1
+ 0	 0
+ 1	 1
+ 2	 4
+ 3	 9	
+ 4	16
+\end{lstlisting}
+\vspace{2mm}
+nominare il file myfile.dat .
+Aprire un secondo file con un editor di testo e copiare al suo interno il seguente script:
+\vspace{2mm}
+\begin{lstlisting}[caption= ex3-1.py, language=Python]
+#un primo grafico in python
+import matplotlib.pyplot as plt
+import numpy as np
+x,y=np.loadtxt('myfile.dat',unpack=True, usecols=(0,1))
+plt.plot(x,y,'-o')
+plt.savefig('grafico.png')   #comando per salvare il grafico con il nome grafico.png
+plt.show()
+\end{lstlisting}
+\vspace{2mm}
+salvare il file con il nome \texttt{ex3-1.py} e lanciare lo script. Osservate il risultato.
+Aggiungete ora una terza colonna nel file myfile.dat.
+\vspace{2mm}
+\begin{lstlisting}[caption= myfile.dat modificato, language=Python]
+#x	#y	#z
+-4	16	-64
+-3	 9	-27	
+-2	 4	-8
+-1 	 1	-1
+ 0	 0	0
+ 1	 1	1
+ 2	 4	8	
+ 3	 9	27
+ 4	16	64
+\end{lstlisting}
+\vspace{2mm}
+Modificare lo script \texttt{ex3-1.py} in modo da leggere anche la terza colonna come mostrato di seguito
+\vspace{2mm}
+\begin{lstlisting}[caption= ex3-1.py modificato, language=Python]
+#un primo grafico in python
+import matplotlib.pyplot as plt
+import numpy as np
+x,y,z=np.loadtxt('myfile.dat',unpack=True, usecols=(0,1,2))
+plt.plot(x,z,'-o')
+plt.savefig('grafico1.png') 
+plt.show()
+\end{lstlisting}
+\vspace{2mm}
+Apportare le seguenti modifiche: (1) Modificare il codice in modo da prendere in input solo la seconda e terza colonna di myfile.dat (2) Modificare il codice in modo da leggere tutte e tre le colonne da myfile.dat e graficare sia x vs y che y vs z.
+Il secondo grafico si ottiene aggiungendo una seconda istruzione plt.plot(...) subito dopo la prima.
+\vspace{2mm}
+\hrule
+\vspace{4mm}
+\textbf{Esercizio 4: personalizzazione dei grafici}
+Con questo esempio vedremo alcune opzioni per migliorare l'estestica di un grafico. Copiare in un file di testo il seguente script python (non c'e' bisogno di copiare i commenti):
+\vspace{2mm}
+\begin{lstlisting}[caption= ex4.py, language=Python]
+#questo programma grafica il cos(x) tra [-2pi;2pi]
+#sia pi (pigreco) che cos() (funzione coseno) fanno parte del modulo numpy
+#Vanno quindi precedute da np.
+import matplotlib.pyplot as plt
+import numpy as np
+x=np.linspace(-2*np.pi,2*np.pi,100,endpoint=True) 
+y=np.cos(x) 
+plt.plot(x,y,linewidth=4,color='b',linestyle='-',marker='o')
+plt.savefig('cos.png')
+plt.show()
+\end{lstlisting}
+\vspace{2mm}
+salvare e nominare il file ex4.py. Lanciare lo script e osservare il risultato. Modificare i parametri della funzione plt.plot()  usando le opzioni in Fig.\ref{fig:fig1} (in fondo al testo).
+\vspace{2mm}
+\hrule
+\vspace{4mm}
+\textbf{Esercizio 4-1: modificare l'intervallo del grafico}
+Modificate lo script precedente (ex4.py) aggiungendo la seguente riga di codice prima dell'istruzione per fare il grafico
+(non c'e' bisogno di copiare i commenti)
+\vspace{2mm}
+\begin{lstlisting}[caption= ex4.py modificato, language=Python]
+plt.xlim(-np.pi,np.pi) #restringe l'intervallo su x tra -pigreco e pigreco
+plt.ylim(-2.,2.)       #restringe l'intervallo su y tra  -2  e 2
+\end{lstlisting}
+\vspace{2mm}
+modificare i campi delle due istruzioni per variare l'intervallo dell'asse x e y.
+\vspace{2mm}
+\hrule
+\vspace{4mm}
+\newpage
+\textbf{Esercizio 5: Etichette degli assi, titolo  e legenda}\\
+In questo esempio vedremo come aggiungere delle etichette sull'asse x e y, dare un titolo al grafico e graficare la legenda.
+Copiare lo script \texttt{ex4.py} in un nuovo file di testo  e modificarlo come mostrato di seguito (non c'e' bisogno di copiare i commenti):
+\vspace{2mm}
+\begin{lstlisting}[caption= ex4.py modificato, language=Python]
+#questo programma grafica il cos(x) tra [-2pi;2pi]
+import matplotlib.pyplot as plt
+import numpy as np
+x=np.linspace(-2*np.pi,2*np.pi,100,endpoint=True)
+y=np.cos(x)
+plt.title('funzione coseno')     #titolo del grafico               
+plt.xlabel('asse x')             #etichetta asse x
+plt.ylabel('asse y')             #etichetta assey
+plt.plot(x,y,'b-',label='cos(x)',linewidth=3) #il campo label rappresenta la legenda
+plt.legend()                     #visualizza la legenda nel grafico (da mettere sempre dopo plt.plot())
+plt.savefig('cos.png')
+plt.show()
+\end{lstlisting}
+\vspace{2mm}
+chiamare il file creato \texttt{ex5.py}. Lanciare lo script e osservare il risultato. Provare a modificare il titolo, la legenda e i nomi degli assi. (Opzionale:) Graficare assieme al coseno anche sin(x). Aggiungere la legenda anche per questo seconda curva.
+\vspace{2mm}
+\hrule
+\vspace{4mm}
+\textbf{$\RHD$ Esercizio (facoltativo)} 
+Si grafichi funzione $y(x)=x3$ con x [$-5.25$, $5.25$] (con l'estremo destro incluso). Il grafico deve contenere una legenda, un titolo  e delle etichette sull'asse $x$ e $y$. Il numero di punti con cui la curva deve essere rappresentata \`{e} $80$. Il range lungo l'asse x del grafico deve essere [$-5.5$, $5.5$] mentre sull'asse y [$-200.0$, $200.0$]. Giocare con gli stili, colori, simboli ecc. e salvare il grafico come un file .png dal nome cubic.png
+\vspace{2mm}
+\hrule
+\vspace{4mm}
+\textbf{$\RHD$ Esercizio (facoltativo)} 
+%
+\begin{enumerate}
+\item Eseguire il programma \texttt{temp.x} quattro o pi\`u volte, con valori di input diversi, e creare un file di testo chiamato \texttt{temp.dat} con due colonne,
+che contenga i valori di input e di output --- temperatura in Celsius (Tc) e temperatura in Fahrenheit (Tf) (dal valore piu' piccolo al piu' grande).
+%\item 
+%Aprire il programma di grafica \texttt{gnuplot} digitando nella shell il
+%comando \texttt{gnuplot}.
+\item Graficare i dati contenuti nel file \texttt{temp.dat} creando uno script python che crei un grafico con un titolo e con nomi sull'asse $x$ e $y$:\\
+\item graficare assieme ai dati del file  \texttt{temp.dat} la retta li interpola, conoscendo la relazione che lega la temperatura in Celsius e Fahrenheit
+\end{enumerate}
+%Utilizzando l'{\em help} di {\em gnuplot}, che si invoca con il comando \texttt{help},
+
+
+\begin{figure}[!h]
+\includegraphics[width=1.0\columnwidth]{./options.png}
+\caption{opzioni per personalizzare lo stile di un grafico}
+\label{fig:fig1}
+\end{figure}
+
+\end{document}
