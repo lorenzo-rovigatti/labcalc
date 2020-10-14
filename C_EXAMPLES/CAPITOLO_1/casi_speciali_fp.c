@@ -80,7 +80,7 @@ void print_sep(void)
 int main(int argc, char **argv)
 {
   float fmin=FLT_MIN*FLT_EPSILON, fmax=FLT_MAX, //feps=FLT_EPSILON, 
-        fzero=0, finf=1./0.0, fnan=sqrt(-1.0); 
+        fzero=0, finf=1./0.0, fnan=sqrt(-1.0), fone=1.0; 
   init_press_key();
 
   printf("Minimo numero float rappresentabile:%.7G\n", fmin); 
@@ -120,9 +120,9 @@ int main(int argc, char **argv)
   printf("   (esponente con tutti 1 e mantissa diversa a 0)\n");
   press_key();
 
-  printf("1 float:%f\n", 1.0); 
+  printf("1 float:%f\n", fone); 
   printf("che in notazione binaria si rappresenta così:\n");
-  printBits(4,(void*)&fnan);
+  printBits(4,(void*)&fone);
   printf("   (esponente 127 = 0 in eccesso a N e mantissa uguale a 0)\n");
   press_key();
 
