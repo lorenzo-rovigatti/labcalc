@@ -172,6 +172,7 @@ int main(int argc, char **argv)
   ec = getexponent(&c);
   printf("   (0 = +, %d-127=%d, mantissa)", ec+127,ec);
   printf("\n");
+  printf("\n Il numero ottenuto (ovvero +1.101101 x 2^(10000011)) è proprio 27.25 come potete verificare voi stessi!\n");
   press_key();
   print_sep();
   printf("\nesempio di errore di arrotondamento\n");
