@@ -119,4 +119,12 @@ int main(int argc, char **argv)
   printBits(4,(void*)&fnan);
   printf("   (esponente con tutti 1 e mantissa diversa a 0)\n");
   press_key();
+
+  printf("1 float:%f\n", 1.0); 
+  printf("che in notazione binaria si rappresenta così:\n");
+  printBits(4,(void*)&fnan);
+  printf("   (esponente 127 = 0 in eccesso a N e mantissa uguale a 0)\n");
+  press_key();
+
+
 }

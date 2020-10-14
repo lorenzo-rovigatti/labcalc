@@ -92,7 +92,7 @@ void immetti_intero(char *a, char *s)
 int main(int argc, char **argv)
 {
   char ia;
-  immetti_intero(&ia, "Immetti un intero a 16 bit con segno (ossia compreso tra -32768 e 32767):");
+  immetti_intero(&ia, "Immetti un intero a 8 bit con segno (ossia compreso tra -128 e 127):");
   printf("il numero intero inserito è così rappresentato in binario (complemento a 2):\n");
   printBits(1, (void*)&ia);
   printf("\n");
