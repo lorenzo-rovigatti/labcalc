@@ -49,6 +49,6 @@ _main:
 
         # exit(0)
         movl     $0, %edi               # metto il codice da ritornare alla shell nel registro $edi
-        movl     $exit_syscall, %eax       # metto in %eax il valore 0x2000001 ($60 in linux) ovvero exit()
+        movl     $exit_syscall, %eax    # metto in %eax il valore 0x2000001 ($60 in linux) ovvero exit()
         syscall                         # effettua la chiamata di sistema cioè fa una jump a codice di sistema
 
