@@ -1,5 +1,5 @@
 #include <stdio.h> // dichiarazioni di printf e scanf
-/* commento */
+
 int main()
 {
   double tc, tf, conv, offset;
@@ -9,5 +9,4 @@ int main()
   scanf("%lf", &tc);
   tf = tc/conv + offset;
   printf("La temperatura in gradi Fahrenheit vale %5.2f gradi\n",tf);
-  return 0;
 }
