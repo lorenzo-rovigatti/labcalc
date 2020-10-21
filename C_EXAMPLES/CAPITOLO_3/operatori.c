@@ -10,6 +10,7 @@ ia=1;
 c = a*b + c + 2.0;
 d /= b;
 
+// operatori di assegnazione e unari
 ib = ++ia; // aggiunge 1 a ia e restituisce il valore ottenuto
 ib += 2; // equivalente a ib=ib+2
 
@@ -17,5 +18,9 @@ ib += 2; // equivalente a ib=ib+2
 ia = 1;
 ib = 1;
 ic = ia && ib;
+
+// operatori relazionali
+ic = a < b;
+ic = a != b;
 return 0;
 }
