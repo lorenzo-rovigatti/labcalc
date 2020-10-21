@@ -43,10 +43,10 @@ int main(void)
 
   // gli operatori relazionali (>, <, !=, ==) agiscono su interi o float e restituiscono vero (1) o falso (0) 
   k = i > l;
-  printf("k=%d\t!k=%d\n", k, !k);
+  printf("k=%d  !k=%d\n", k, !k);
 
 
-  printf("k=3\t!k=%d\n", !3); // diverso da 0 vuol dire "vero", uguale a 0 vuol dire "falso"
+  printf("k=3  !k=%d\n", !3); // diverso da 0 vuol dire "vero", uguale a 0 vuol dire "falso"
   
   printf("(%d > %d) && 1 = %d\n", i, l, (i > l) && 1);
 }
