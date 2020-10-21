@@ -93,6 +93,7 @@ int main(int argc, char **argv)
   printf("che in notazione binaria si rappresenta così:\n");
   printBits(4,(void*)&fmax);
   printf("\n");
+  printf("   (l'esponente vale 255-127-1=127)\n");
   press_key();
 
 #if 0

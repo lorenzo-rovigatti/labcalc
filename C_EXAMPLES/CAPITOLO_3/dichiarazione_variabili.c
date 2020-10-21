@@ -10,13 +10,4 @@ long long int e; // intero con segno a 64 bit (rappresentazione in complemento a
 unsigned int ua0; // intero positivo a 32 bit 
 unsigned char uc; // intero positivo a 8 bit 
 long double lc; // precisione quadruipla 128 bit flotaing point (ma di fatto se ne usano 96)
-printf ("sqrt(9)=%f\n", 
-        sqrt(9.0));
-/* operatori unari ++ e -- */
-d2=-3;
-a=1;
-printf("a=%d\n", a++);
-a=1;
-printf("a=%d\n", ++a);
-return 0;
 }

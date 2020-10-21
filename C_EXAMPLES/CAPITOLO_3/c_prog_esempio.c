@@ -3,14 +3,14 @@
 int main(void) {
 // dichiarazioni di variabili (char, int, float e double e modificatori)
 char c1, c2='c'; // c2 viene inizializzata nella dichirazione
-unsigned uc1;
-int ia;
+unsigned uc1; // intero positivo a 32 bit 
+int ia; // intero con segno (rappr. in complemento a 2) a 32 bit
 long int ib=3;  // ib viene inizializzata nella dichiarazione
-long long int ic;
-unsigned int uia;
-float fa;
-double da, da_, da1; // fp a 64 bit
-long double lda=3E10, lda_b; // lda viene inizializzata nella dichiarazione
+long long int ic; // intero con segno a 64 bit
+unsigned int uia; // intero positivo a 32 bit
+float fa; // floating point a singola precisione (32 bit)
+double da, da_, da1; // floating point a 64 bit
+long double lda=3E10, lda_b; // floating point a 128 bit, lda viene inizializzata nella dichiarazione
 
 // stampa dimensione 
 printf("un char occupa: %lu bytes\n", sizeof(char));
