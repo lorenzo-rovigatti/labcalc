@@ -1,0 +1,1 @@
+./main_as_func.c

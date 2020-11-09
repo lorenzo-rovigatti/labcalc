@@ -1,0 +1,1 @@
+./funzioni_heap_stack.c
